@@ -1,6 +1,6 @@
-# Leaning Web Media
+# 100 Days Of WebMedia
 
-Get started with Web Media in 100 days.
+100 days of WebMedia is a step by step guide to learn Web Media in 100 days.
 
 ## Bookmarks
 
