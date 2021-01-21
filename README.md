@@ -38,6 +38,7 @@
   - [Music](https://github.com/ciconia/awesome-music)
   - [Audio Visualization](https://github.com/willianjusten/awesome-audio-visualization)
   - [WebAudio](https://github.com/notthetup/awesome-webaudio)
+  - [Video](https://github.com/krzemienski/awesome-video)
 - 其他
   - [MP4Box.js](https://github.com/gpac/mp4box.js): JavaScript library to process MP4 files in the browser (and in NodeJS)
   - [Chromium Media](https://github.com/chromium/chromium/tree/master/media): 媒体元素实现源码
