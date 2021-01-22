@@ -34,11 +34,13 @@
 - 视频播放
   - [video.js](https://github.com/videojs/video.js): A web video player built from the ground up for an HTML5 world.
   - [flv.js](https://github.com/bilibili/flv.js): An HTML5 Flash Video (FLV) Player written in pure JavaScript without Flash.
-- Awesome
-  - [Music](https://github.com/ciconia/awesome-music)
-  - [Audio Visualization](https://github.com/willianjusten/awesome-audio-visualization)
-  - [WebAudio](https://github.com/notthetup/awesome-webaudio)
-  - [Video](https://github.com/krzemienski/awesome-video)
 - 其他
   - [MP4Box.js](https://github.com/gpac/mp4box.js): JavaScript library to process MP4 files in the browser (and in NodeJS)
   - [Chromium Media](https://github.com/chromium/chromium/tree/master/media): 媒体元素实现源码
+  
+### Awesome
+
+- [Music](https://github.com/ciconia/awesome-music)
+- [Audio Visualization](https://github.com/willianjusten/awesome-audio-visualization)
+- [WebAudio](https://github.com/notthetup/awesome-webaudio)
+- [Video](https://github.com/krzemienski/awesome-video)
