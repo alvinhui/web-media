@@ -18,6 +18,7 @@
 
 - [MDN: Web media technologies](https://developer.mozilla.org/en-US/docs/Web/Media)
 - [W3C Web Roadmap: Overview of Media Technologies for the Web](https://w3c.github.io/web-roadmaps/media/)
+- [Digital Video_Introduction](https://github.com/leandromoreira/digital_video_introduction): A hands-on introduction to video technology: image, video, codec (av1, vp9, h265) and more (ffmpeg encoding).
 
 ### 开源技术
 
