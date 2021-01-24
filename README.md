@@ -26,7 +26,7 @@
 ### 文档
 
 - MDN
-    - [Web media technologies](https://developer.mozilla.org/en-US/docs/Web/Media)
+    - [Web media technologies](https://developer.mozilla.org/en-US/docs/Web/Media): [媒体流处理 API(MediaStream API)](https://developer.mozilla.org/zh-CN/docs/Web/API/Media_Streams_API)、[网络音频 API(Web Audio API)](https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Audio_API)、[媒体源扩展 API(Media Source Extensions API)](https://developer.mozilla.org/zh-CN/docs/Web/API/Media_Source_Extensions_API)、[加密媒体扩展 API(Encrypted Media Extensions API)](https://developer.mozilla.org/en-US/docs/Web/API/Encrypted_Media_Extensions_API)、[网络视频文本轨道 API(Web Video Text Tracks Format)](https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API)
 - W3C:
     - [Web Roadmap - Overview of Media Technologies for the Web](https://w3c.github.io/web-roadmaps/media/)
     - [Web Media Application Developer Guidelines](https://github.com/w3c/webmediaguidelines/)
