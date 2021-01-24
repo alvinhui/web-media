@@ -17,8 +17,16 @@
 ### 文档
 
 - [MDN: Web media technologies](https://developer.mozilla.org/en-US/docs/Web/Media)
-- [W3C Web Roadmap: Overview of Media Technologies for the Web](https://w3c.github.io/web-roadmaps/media/)
+- W3C:
+    - [Web Roadmap: Overview of Media Technologies for the Web](https://w3c.github.io/web-roadmaps/media/)
+    - [Web Media Application Developer Guidelines](https://github.com/w3c/webmediaguidelines/)
+    - [Web Media API](https://github.com/w3c/webmediaapi/)
 - [Digital Video Introduction](https://github.com/leandromoreira/digital_video_introduction): A hands-on introduction to video technology: image, video, codec (av1, vp9, h265) and more (ffmpeg encoding).
+
+### 组织
+
+- [Web Media API Community Group](https://www.w3.org/community/webmediaapi)
+- [Media and Entertainment Interest Group](https://www.w3.org/groups/ig/me)
 
 ### 开源技术
 
