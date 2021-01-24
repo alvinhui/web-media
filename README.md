@@ -63,3 +63,11 @@
 - [Audio Visualization](https://github.com/willianjusten/awesome-audio-visualization)
 - [WebAudio](https://github.com/notthetup/awesome-webaudio)
 - [Video](https://github.com/krzemienski/awesome-video)
+
+### 资源
+
+演讲视频、PPT、图像。
+
+- 图像
+    - [多媒体前端知识图谱](https://cdn.nlark.com/yuque/0/2019/jpeg/666307/1576205595971-af321329-d743-4ad8-8263-ca9a49531b1e.jpeg)，来自[《多媒体前端手册》](https://www.yuque.com/webmedia/handbook)
+    - [多媒体前端体系](https://img.alicdn.com/tfs/TB1wLphSXY7gK0jSZKzXXaikpXa-2348-1220.png)，来自[《我的前端成长之路： 在阿里七年，我的成长和迷茫》](https://fed.taobao.org/blog/taofed/do71ct/ttpk5r)
