@@ -51,11 +51,11 @@
 ## 课程
 
 - [Digital Video Introduction](https://github.com/leandromoreira/digital_video_introduction): A hands-on introduction to video technology: image, video, codec (av1, vp9, h265) and more (ffmpeg encoding).
+- [多媒体前端手册](https://www.yuque.com/webmedia/handbook)
 - [Coursera - 数字图像和视频处理的基础](https://www.coursera.org/learn/digital)
 - [即时通讯音视频开发](http://www.52im.net/thread-228-1-1.html)
 
-> - [网易云课堂](https://study.163.com/)
-> - [腾讯课堂](https://ke.qq.com/)
+> 更多：[网易云课堂](https://study.163.com/)、[腾讯课堂](https://ke.qq.com/)
   
 ### Awesome
 
