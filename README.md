@@ -57,7 +57,7 @@
 
 > 更多：[网易云课堂](https://study.163.com/)、[腾讯课堂](https://ke.qq.com/)
   
-### Awesome
+### [Awesome](https://github.com/sindresorhus/awesome)
 
 - [Music](https://github.com/ciconia/awesome-music)
 - [Audio Visualization](https://github.com/willianjusten/awesome-audio-visualization)
