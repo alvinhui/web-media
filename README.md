@@ -14,6 +14,15 @@
 
 ## 收藏夹
 
+### 课程
+
+- [Digital Video Introduction](https://github.com/leandromoreira/digital_video_introduction): A hands-on introduction to video technology: image, video, codec (av1, vp9, h265) and more (ffmpeg encoding).
+- [多媒体前端手册](https://www.yuque.com/webmedia/handbook)
+- [Coursera - 数字图像和视频处理的基础](https://www.coursera.org/learn/digital)
+- [即时通讯音视频开发](http://www.52im.net/thread-228-1-1.html)
+
+> 更多：[网易云课堂](https://study.163.com/)、[腾讯课堂](https://ke.qq.com/)
+
 ### 文档
 
 - MDN
@@ -22,12 +31,6 @@
     - [Web Roadmap - Overview of Media Technologies for the Web](https://w3c.github.io/web-roadmaps/media/)
     - [Web Media Application Developer Guidelines](https://github.com/w3c/webmediaguidelines/)
     - [Web Media API](https://github.com/w3c/webmediaapi/)
-
-### 组织
-
-- [W3C - Web Media API Community Group](https://www.w3.org/community/webmediaapi)
-- [W3C - Media and Entertainment Interest Group](https://www.w3.org/groups/ig/me)
-- [开放媒体联盟（AOMedia）](http://aomedia.org/)：由硬件厂商（Intel, AMD, ARM , Nvidia, Cisco）、内容分发商（Google, Netflix, Amazon）和浏览器维护者（Google, Mozilla）等公司创建，目标是打造一个免版税的视频编解码器。
 
 ### 开源技术
 
@@ -48,14 +51,11 @@
   - [MP4Box.js](https://github.com/gpac/mp4box.js): JavaScript library to process MP4 files in the browser (and in NodeJS)
   - [Chromium Media](https://github.com/chromium/chromium/tree/master/media): 媒体元素实现源码
 
-## 课程
+### 组织
 
-- [Digital Video Introduction](https://github.com/leandromoreira/digital_video_introduction): A hands-on introduction to video technology: image, video, codec (av1, vp9, h265) and more (ffmpeg encoding).
-- [多媒体前端手册](https://www.yuque.com/webmedia/handbook)
-- [Coursera - 数字图像和视频处理的基础](https://www.coursera.org/learn/digital)
-- [即时通讯音视频开发](http://www.52im.net/thread-228-1-1.html)
-
-> 更多：[网易云课堂](https://study.163.com/)、[腾讯课堂](https://ke.qq.com/)
+- [W3C - Web Media API Community Group](https://www.w3.org/community/webmediaapi)
+- [W3C - Media and Entertainment Interest Group](https://www.w3.org/groups/ig/me)
+- [开放媒体联盟（AOMedia）](http://aomedia.org/)：由硬件厂商（Intel, AMD, ARM , Nvidia, Cisco）、内容分发商（Google, Netflix, Amazon）和浏览器维护者（Google, Mozilla）等公司创建，目标是打造一个免版税的视频编解码器。
   
 ### [Awesome](https://github.com/sindresorhus/awesome)
 
