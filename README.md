@@ -27,7 +27,7 @@
 
 - [W3C - Web Media API Community Group](https://www.w3.org/community/webmediaapi)
 - [W3C - Media and Entertainment Interest Group](https://www.w3.org/groups/ig/me)
-- [开放媒体联盟（AOMedia）](http://aomedia.org/)：由硬件厂商（Intel, AMD, ARM , Nvidia, Cisco），内容分发商（Google, Netflix, Amazon）和浏览器维护者（Google, Mozilla）等公司创建，目标是创建一个一个免版税的视频编解码器。
+- [开放媒体联盟（AOMedia）](http://aomedia.org/)：由硬件厂商（Intel, AMD, ARM , Nvidia, Cisco）、内容分发商（Google, Netflix, Amazon）和浏览器维护者（Google, Mozilla）等公司创建，目标是打造一个免版税的视频编解码器。
 
 ### 开源技术
 
