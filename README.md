@@ -46,6 +46,14 @@
 - 其他
   - [MP4Box.js](https://github.com/gpac/mp4box.js): JavaScript library to process MP4 files in the browser (and in NodeJS)
   - [Chromium Media](https://github.com/chromium/chromium/tree/master/media): 媒体元素实现源码
+
+## 课程
+
+- [Coursera - 数字图像和视频处理的基础](https://www.coursera.org/learn/digital)
+- [即时通讯音视频开发](http://www.52im.net/thread-228-1-1.html)
+
+> - [网易云课堂](https://study.163.com/)
+> - [腾讯课堂](https://ke.qq.com/)
   
 ### Awesome
 
