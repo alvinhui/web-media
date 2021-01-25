@@ -49,6 +49,8 @@
 - 媒体交互（视频播放）
   - [video.js](https://github.com/videojs/video.js): A web video player built from the ground up for an HTML5 world.
   - [flv.js](https://github.com/bilibili/flv.js): An HTML5 Flash Video (FLV) Player written in pure JavaScript without Flash.
+  - [hls.js](https://github.com/video-dev/hls.js): JavaScript HLS client using Media Source Extension
+  - [Shaka Player](https://github.com/google/shaka-player): JavaScript player library / DASH & HLS client / MSE-EME player
 - 媒体渲染
   - [Chromium Media](https://github.com/chromium/chromium/tree/master/media): 媒体元素实现源码
 - 媒体服务
