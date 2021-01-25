@@ -36,22 +36,24 @@
 
 ### 开源技术
 
-- 视频封装
+- 媒体捕获
+- 媒体理解
+- 媒体处理
   - [Shaka Packager](https://github.com/google/shaka-packager): A media packaging and development framework for VOD and Live DASH and HLS applications, supporting Common Encryption for Widevine and other DRM Systems.
-- 视频处理
+  - [MP4Box.js](https://github.com/gpac/mp4box.js): JavaScript library to process MP4 files in the browser (and in NodeJS)
+- 媒体编排
   - [Shotcut](https://github.com/mltframework/shotcut): A free, open source, cross-platform video editor
   - [MLT Multimedia Framework](https://github.com/mltframework/mlt): Author, manage, and run multitrack audio/video compositions.
-- 视频服务
-  - [Red5](https://github.com/Red5): An open source media server for live streaming solutions of all kinds.
-  - [SRS](https://github.com/ossrs): Simple RealTime Streaming Server.
-- 视频传输
+- 媒体传输
   - [WebRTC](https://webrtc.org/)
-- 视频播放
+- 媒体交互（视频播放）
   - [video.js](https://github.com/videojs/video.js): A web video player built from the ground up for an HTML5 world.
   - [flv.js](https://github.com/bilibili/flv.js): An HTML5 Flash Video (FLV) Player written in pure JavaScript without Flash.
-- 其他
-  - [MP4Box.js](https://github.com/gpac/mp4box.js): JavaScript library to process MP4 files in the browser (and in NodeJS)
+- 媒体渲染
   - [Chromium Media](https://github.com/chromium/chromium/tree/master/media): 媒体元素实现源码
+- 媒体服务
+  - [Red5](https://github.com/Red5): An open source media server for live streaming solutions of all kinds.
+  - [SRS](https://github.com/ossrs): Simple RealTime Streaming Server.
 
 ### 组织
 
