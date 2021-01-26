@@ -52,10 +52,10 @@
   - [hls.js](https://github.com/video-dev/hls.js) ![](https://img.shields.io/github/stars/video-dev/hls.js?style=social): JavaScript HLS client using Media Source Extension
   - [Shaka Player](https://github.com/google/shaka-player) ![](https://img.shields.io/github/stars/google/shaka-player?style=social): JavaScript player library / DASH & HLS client / MSE-EME player
 - 媒体渲染
-  - [Chromium Media](https://github.com/chromium/chromium/tree/master/media): 媒体元素实现源码
+  - [Chromium Media](https://github.com/chromium/chromium/tree/master/media) ![](https://img.shields.io/github/stars/chromium/chromium?style=social): 媒体元素实现源码
 - 媒体服务
-  - [Red5](https://github.com/Red5): An open source media server for live streaming solutions of all kinds.
-  - [SRS](https://github.com/ossrs): Simple RealTime Streaming Server.
+  - [SRS](https://github.com/ossrs) ![](https://img.shields.io/github/stars/ossrs/srs?style=social): Simple RealTime Streaming Server.
+  - [Red5](https://github.com/Red5) ![](https://img.shields.io/github/stars/Red5/red5-server?style=social): An open source media server for live streaming solutions of all kinds.
 
 ### 组织
 
