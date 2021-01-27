@@ -39,7 +39,7 @@
     - [Web Media Application Developer Guidelines](https://github.com/w3c/webmediaguidelines/)
     - [Web Media API](https://github.com/w3c/webmediaapi/)
 
-### 开源技术
+### 开源
 
 - 媒体捕获
 - 媒体理解
