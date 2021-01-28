@@ -14,9 +14,9 @@
 
 ## 目录
 
-- [使用 Web 进行拍照](./01_capturestill)
-- [使用 Web 进行视频通话](./02_video_call)
-- [使用 Web 进行直播](./03_live_broadcast)
+- [在 Web 上进行拍照](./01_capturestill)
+- [在 Web 上进行视频通话](./02_video_call)
+- [在 Web 上进行直播](./03_live_broadcast)
 - [Web 多媒体的应用场景](./99_application)
 
 ## 收藏夹

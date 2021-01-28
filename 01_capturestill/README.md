@@ -1,3 +1,8 @@
-# 使用 Web 进行拍照
+# 在 Web 上进行拍照
 
-_WIP_
+核心 API：
+
+- getUserMedia
+- video
+- canvas
+- img
