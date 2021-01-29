@@ -1,4 +1,4 @@
-# 在 Web 上进行拍照
+  # 在 Web 上进行拍照
 
 可以访问[线上示例](https://codesandbox.io/s/github/alvinhui/100-Days-Of-WebMedia/tree/main/01_capture)来看看效果。
 
@@ -11,6 +11,7 @@
 - [video](https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement)
 - [image](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement)
 
-同时可参考：
+参考：
 
+- [Taking still photos with WebRTC](https://developer.mozilla.org/en-US/docs/Web/API/WebRTC_API/Taking_still_photos)
 - [MediaStream Image Capture API](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream_Image_Capture_API)
