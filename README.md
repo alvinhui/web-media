@@ -25,16 +25,17 @@
 
 - [Digital Video Introduction](https://github.com/leandromoreira/digital_video_introduction): A hands-on introduction to video technology: image, video, codec (av1, vp9, h265) and more (ffmpeg encoding).
 - [多媒体前端手册](https://www.yuque.com/webmedia/handbook)：包括音视频基础、直播技术、播放器技术、web媒体技术、开源产品和框架介绍等
-- [Coursera - 数字图像和视频处理的基础](https://www.coursera.org/learn/digital)
+- [Coursera: 数字图像和视频处理的基础](https://www.coursera.org/learn/digital)
+- [web.dev: Media](https://web.dev/media/): Learn to add media capabilities to your website using either basic markdown or a media framework such as Google's Shaka Player, JW Player or Video.js.
 - [即时通讯音视频开发](http://www.52im.net/thread-228-1-1.html)
 
 > 更多：[网易云课堂](https://study.163.com/)、[腾讯课堂](https://ke.qq.com/)
 
 ### 文档
 
-- MDN
+- [MDN(Mozilla Developer Network)](https://developer.mozilla.org/zh-CN/)
     - [Web media technologies](https://developer.mozilla.org/en-US/docs/Web/Media): [媒体流处理 API(MediaStream API)](https://developer.mozilla.org/zh-CN/docs/Web/API/Media_Streams_API)、[网络音频 API(Web Audio API)](https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Audio_API)、[媒体源扩展 API(Media Source Extensions API)](https://developer.mozilla.org/zh-CN/docs/Web/API/Media_Source_Extensions_API)、[加密媒体扩展 API(Encrypted Media Extensions API)](https://developer.mozilla.org/en-US/docs/Web/API/Encrypted_Media_Extensions_API)、[网络视频文本轨道 API(Web Video Text Tracks Format)](https://developer.mozilla.org/en-US/docs/Web/API/WebVTT_API)
-- W3C:
+- [W3C(World Wide Web Consortium)](https://www.w3.org/):
     - [Web Roadmap - Overview of Media Technologies for the Web](https://w3c.github.io/web-roadmaps/media/)
     - [Web Media Application Developer Guidelines](https://github.com/w3c/webmediaguidelines/)
     - [Web Media API](https://github.com/w3c/webmediaapi/)
