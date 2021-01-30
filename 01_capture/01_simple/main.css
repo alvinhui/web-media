@@ -1,3 +1,23 @@
+.wrapper {
+  width: 760px;
+  font-size: 16px;
+  font-family: "Lucida Grande", "Arial", sans-serif;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+}
+
+.camera {
+  display: inline-block;
+}
+
+.output {
+  display: inline-block;
+  margin-left: 24px;
+}
+
 #video {
   width: 320px;
   height: 240px;
@@ -6,6 +26,7 @@
 }
 
 #photo {
+  display: inline-block;
   width: 320px;
   height: 240px;
   border: 1px solid black;
@@ -28,19 +49,4 @@
   font-size: 14px;
   font-family: "Lucida Grande", "Arial", sans-serif;
   color: rgba(255, 255, 255, 1.0);
-}
-
-.wrapper {
-  width: 760px;
-  font-size: 16px;
-  font-family: "Lucida Grande", "Arial", sans-serif;
-}
-
-.camera {
-  display: inline-block;
-}
-
-.output {
-  display: inline-block;
-  margin-left: 12px;
 }

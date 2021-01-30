@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+  <title>在 Web 上进行拍照</title>
+  <meta charset='utf-8'>
+  <link rel="stylesheet" href="main.css" type="text/css" media="all">
+</head>
+<body>
+  <div class="wrapper">
+    <h3>Background</h3>
+    <p>
+      Web 开发者可以使用 ImageCapture Web API 中的 <code>takePhoto()</code> 或者 <code>grabFrame()</code> 从设备的摄像头捕获图像。
+    </p>
+    <div id='results'>
+      <div>
+        <video autoplay></video>
+        <button id='getUserMediaButton'>Get User Media</button>
+      </div>
+      <div>
+        <canvas id='grabFrameCanvas'></canvas>
+        <button id='grabFrameButton' disabled>Grab Frame</button>
+      </div>
+      <div>
+        <canvas id='takePhotoCanvas'></canvas>
+        <button id='takePhotoButton' disabled>Take Photo</button>
+      </div>
+    </div>
+    <p>
+      访问<a href="https://github.com/alvinhui/100-Days-Of-WebMedia">《100 天自学 Web 多媒体技术》</a>学习更多相关知识.
+    </p>
+  </div>
+  <script src="main.js">
+  </script>
+</body>
+</html>
