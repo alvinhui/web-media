@@ -5,5 +5,5 @@
 
 你可以通过下面的线上示例来看看演示效果和实现源码：
 
-- [Simple](https://codesandbox.io/s/github/alvinhui/100-Days-Of-WebMedia/tree/main/simple/01_capture/01_simple)
-- [Image Capture](https://codesandbox.io/s/github/alvinhui/100-Days-Of-WebMedia/tree/main/simple/01_capture/02_imageCapture)
+- [Simple](https://codesandbox.io/s/github/alvinhui/100-Days-Of-WebMedia/tree/main/01_capture/01_simple)
+- [Image Capture](https://codesandbox.io/s/github/alvinhui/100-Days-Of-WebMedia/tree/main/01_capture/02_imageCapture)

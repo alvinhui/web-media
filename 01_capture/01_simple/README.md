@@ -1,5 +1,7 @@
 # Simple
 
+[线上示例](https://codesandbox.io/s/github/alvinhui/100-Days-Of-WebMedia/tree/main/01_capture/01_simple)
+
 ## 使用的 API
 
 - [MediaDevices.getUserMedia()](https://developer.mozilla.org/en-US/docs/Web/API/MediaDevices/getUserMedia)
