@@ -14,22 +14,23 @@
 
 ## 目录
 
-- 媒体基础
-  - 理解图像
-  - 理解视频
-- 媒体捕获
-  - [在 Web 上进行拍照](./01_capture)
-- 媒体传输
-  - [在 Web 上进行视频通话](./02_video_call)
-  - [在 Web 上进行直播](./03_live_broadcast)
-- 媒体交互
-  - HTML 5 播放器
-- 媒体处理
-  - 使用 Web 技术进行视频格式转换
-- 媒体编排
-  - 在 Web 上进行视频剪辑
-- 媒体应用
-  - [Web 多媒体的应用场景](./99_application)
+- [媒体基础](./01_basic)
+  - [理解图像](./01_basic/01_image)
+  - [理解视频](./01_basic/02_video)
+- [媒体捕获](./01_capture)
+  - [在 Web 上进行拍照](./01_capture/01_task_photo)
+- [媒体传输](./03_transport)
+  - [在 Web 上进行视频通话](./03_transport/01_video_call)
+  - [在 Web 上进行直播](./03_transport/02_live_broadcast)
+- [媒体交互](./04_interactive)
+  - [播放器](./04_interactive/01_player)
+- [媒体处理](./05_process)
+  - [使用 Web 技术进行视频格式转换](./05_process/01_transform)
+- [媒体编排](./06_edit)
+  - [在 Web 上进行视频剪辑](./01_edit/01_video_clip)
+- [媒体渲染](./07_render)
+- [媒体服务](./08_server)
+- [应用场景](./09_application)
 
 ## 收藏夹
 
@@ -51,30 +52,6 @@
     - [Web Roadmap - Overview of Media Technologies for the Web](https://w3c.github.io/web-roadmaps/media/)
     - [Web Media Application Developer Guidelines](https://github.com/w3c/webmediaguidelines/)
     - [Web Media API](https://github.com/w3c/webmediaapi/)
-
-### 开源
-
-- 媒体捕获
-- 媒体理解
-- 媒体处理
-  - [Shaka Packager](https://github.com/google/shaka-packager) ![](https://img.shields.io/github/stars/google/shaka-packager?style=social): A media packaging and development framework for VOD and Live DASH and HLS applications, supporting Common Encryption for Widevine and other DRM Systems.
-  - [MP4Box.js](https://github.com/gpac/mp4box.js) ![](https://img.shields.io/github/stars/gpac/mp4box.js?style=social): JavaScript library to process MP4 files in the browser (and in NodeJS)
-- 媒体编排
-  - [Shotcut](https://github.com/mltframework/shotcut) ![](https://img.shields.io/github/stars/mltframework/shotcut?style=social): A free, open source, cross-platform video editor
-  - [MLT Multimedia Framework](https://github.com/mltframework/mlt) ![](https://img.shields.io/github/stars/mltframework/mlt?style=social): Author, manage, and run multitrack audio/video compositions.
-- 媒体传输
-  - [WebRTC](https://webrtc.org/)
-- 媒体交互（视频播放）
-  - [video.js](https://github.com/videojs/video.js) ![](https://img.shields.io/github/stars/videojs/video.js?style=social): A web video player built from the ground up for an HTML5 world.
-  - [flv.js](https://github.com/bilibili/flv.js) ![](https://img.shields.io/github/stars/bilibili/flv.js?style=social): An HTML5 Flash Video (FLV) Player written in pure JavaScript without Flash.
-  - [hls.js](https://github.com/video-dev/hls.js) ![](https://img.shields.io/github/stars/video-dev/hls.js?style=social): JavaScript HLS client using Media Source Extension
-  - [Shaka Player](https://github.com/google/shaka-player) ![](https://img.shields.io/github/stars/google/shaka-player?style=social): JavaScript player library / DASH & HLS client / MSE-EME player
-  - React Components: [ReactPlayer](https://github.com/CookPete/react-player) ![](https://img.shields.io/github/stars/CookPete/react-player?style=social)、[video-react](https://github.com/video-react/video-react) ![](https://img.shields.io/github/stars/video-react/video-react?style=social)
-- 媒体渲染
-  - [Chromium Media](https://github.com/chromium/chromium/tree/master/media) ![](https://img.shields.io/github/stars/chromium/chromium?style=social): 媒体元素实现源码
-- 媒体服务
-  - [SRS](https://github.com/ossrs) ![](https://img.shields.io/github/stars/ossrs/srs?style=social): Simple RealTime Streaming Server.
-  - [Red5](https://github.com/Red5) ![](https://img.shields.io/github/stars/Red5/red5-server?style=social): An open source media server for live streaming solutions of all kinds.
 
 ### 组织
 
