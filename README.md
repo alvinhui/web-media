@@ -14,10 +14,20 @@
 
 ## 目录
 
-- [在 Web 上进行拍照](./01_capture)
-- [在 Web 上进行视频通话](./02_video_call)
-- [在 Web 上进行直播](./03_live_broadcast)
-- [Web 多媒体的应用场景](./99_application)
+- 媒体基础
+  - 理解图像
+  - 理解视频
+- 媒体捕获
+  - [在 Web 上进行拍照](./01_capture)
+- 媒体传输
+  - [在 Web 上进行视频通话](./02_video_call)
+  - [在 Web 上进行直播](./03_live_broadcast)
+- 媒体交互
+  - HTML 5 播放器
+- 媒体处理
+  - 使用 Web 技术进行视频格式转换
+- 媒体应用
+  - [Web 多媒体的应用场景](./99_application)
 
 ## 收藏夹
 
@@ -82,6 +92,5 @@
 
 演讲视频、PPT、图像。
 
-- 图像
-  - [多媒体前端知识图谱](https://cdn.nlark.com/yuque/0/2019/jpeg/666307/1576205595971-af321329-d743-4ad8-8263-ca9a49531b1e.jpeg)，来自[《多媒体前端手册》](https://www.yuque.com/webmedia/handbook)
-  - [多媒体前端体系](https://img.alicdn.com/tfs/TB1wLphSXY7gK0jSZKzXXaikpXa-2348-1220.png)，来自[《我的前端成长之路： 在阿里七年，我的成长和迷茫》](https://fed.taobao.org/blog/taofed/do71ct/ttpk5r)
+- [多媒体前端知识图谱](https://cdn.nlark.com/yuque/0/2019/jpeg/666307/1576205595971-af321329-d743-4ad8-8263-ca9a49531b1e.jpeg)，来自[《多媒体前端手册》](https://www.yuque.com/webmedia/handbook)
+- [多媒体前端体系](https://img.alicdn.com/tfs/TB1wLphSXY7gK0jSZKzXXaikpXa-2348-1220.png)，来自[《我的前端成长之路： 在阿里七年，我的成长和迷茫》](https://fed.taobao.org/blog/taofed/do71ct/ttpk5r)
