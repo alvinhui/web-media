@@ -18,7 +18,7 @@
   - [理解图像](./zh-cn/01_basic/01_image)
   - [理解视频](./zh-cn/01_basic/02_video)
 - [媒体捕获](./zh-cn/02_capture)
-  - [在 Web 上进行拍照](./zh-cn/02_capture/01_task_photo)
+  - [在 Web 上进行拍照](./zh-cn/02_capture/01_take_photo)
 - [媒体传输](./zh-cn/03_transport)
   - [在 Web 上进行视频通话](./zh-cn/03_transport/01_video_call)
   - [在 Web 上进行直播](./zh-cn/03_transport/02_live_broadcast)

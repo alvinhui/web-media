@@ -1,6 +1,6 @@
 # ImageCapture
 
-[线上示例](https://codesandbox.io/s/github/alvinhui/100-Days-Of-WebMedia/tree/main/zh-cn/02_capture/01_task_photo/02_imageCapture)
+[线上示例](https://codesandbox.io/s/github/alvinhui/100-Days-Of-WebMedia/tree/main/zh-cn/02_capture/01_take_photo/02_imageCapture)
 
 ## 使用的 API
 
