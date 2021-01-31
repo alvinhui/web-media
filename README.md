@@ -51,8 +51,8 @@
 
 - [Web 媒体技术](https://developer.mozilla.org/zh-CN/docs/Web/媒体)
 - Web 开发指南：
-  - [音频和视频传输](https://developer.mozilla.org/zh-CN/docs/Web/Guide/Audio_and_video_delivery)
-  - [音频和视频操作](https://developer.mozilla.org/zh-CN/docs/Web/Guide/Audio_and_video_manipulation)
+  - [添加音视频](https://developer.mozilla.org/zh-CN/docs/Web/Guide/Audio_and_video_delivery)
+  - [控制音视频](https://developer.mozilla.org/zh-CN/docs/Web/Guide/Audio_and_video_manipulation)
 - Web APIs:
   - [媒体流处理 API（MediaStream API）](https://developer.mozilla.org/zh-CN/docs/Web/API/Media_Streams_API)
   - [网络音频 API（Web Audio API）](https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Audio_API)
