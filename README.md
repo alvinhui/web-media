@@ -47,7 +47,7 @@
 ### 文档
 
 - [MDN(Mozilla Developer Network)](https://developer.mozilla.org/zh-CN/)
-    - [Web 媒体技术](https://developer.mozilla.org/zh-CN/docs/Web/Media)
+    - [Web 媒体技术](https://developer.mozilla.org/zh-CN/docs/Web/媒体)
     - [媒体流处理 API（MediaStream API）](https://developer.mozilla.org/zh-CN/docs/Web/API/Media_Streams_API)
     - [网络音频 API（Web Audio API）](https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Audio_API)
     - [媒体源扩展 API（Media Source Extensions API）](https://developer.mozilla.org/zh-CN/docs/Web/API/Media_Source_Extensions_API) 

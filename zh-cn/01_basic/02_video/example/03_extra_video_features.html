@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>使用视频元素的其他特性</title>
+    <style>
+      video {
+        background: black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>视频元素的其他特性示例</h1>
+    <video 
+      controls
+      width="400"
+      height="400"
+      loop
+      muted
+      preload="auto"
+      poster="https://img.alicdn.com/imgextra/i4/O1CN0159dgwS1TMaXfDoJKP_!!6000000002368-0-tps-460-460.jpg"
+    >
+      <source src="http://jPlayer.org/video/webm/Big_Buck_Bunny_Trailer.m4v" type="video/mp4">
+      <source src="http://jPlayer.org/video/webm/Big_Buck_Bunny_Trailer.webm" type="video/webm">
+      <p>你的浏览器不支持该视频的播放。</p> 
+    </video>
+  </body>
+</html>
