@@ -1,4 +1,4 @@
-简体中文 | [English](./README.en-US.md)
+简体中文 | [English](./zh-cn/README.en-US.md)
 
 <p align="center">
   <img alt="100 days" src="https://user-images.githubusercontent.com/4392234/105186201-6c823400-5b6c-11eb-825d-c97a949233a2.png" width="250px">
@@ -14,23 +14,23 @@
 
 ## 目录
 
-- [媒体基础](./01_basic)
-  - [理解图像](./01_basic/01_image)
-  - [理解视频](./01_basic/02_video)
-- [媒体捕获](./02_capture)
-  - [在 Web 上进行拍照](./02_capture/01_task_photo)
-- [媒体传输](./03_transport)
-  - [在 Web 上进行视频通话](./03_transport/01_video_call)
-  - [在 Web 上进行直播](./03_transport/02_live_broadcast)
-- [媒体交互](./04_interactive)
-  - [播放器](./04_interactive/01_player)
-- [媒体处理](./05_process)
-  - [使用 Web 技术进行视频格式转换](./05_process/01_transform)
-- [媒体编排](./06_edit)
-  - [在 Web 上进行视频剪辑](./06_edit/01_video_clip)
-- [媒体渲染](./07_render)
-- [媒体服务](./08_server)
-- [应用场景](./09_application)
+- [媒体基础](./zh-cn/01_basic)
+  - [理解图像](./zh-cn/01_basic/01_image)
+  - [理解视频](./zh-cn/01_basic/02_video)
+- [媒体捕获](./zh-cn/02_capture)
+  - [在 Web 上进行拍照](./zh-cn/02_capture/01_task_photo)
+- [媒体传输](./zh-cn/03_transport)
+  - [在 Web 上进行视频通话](./zh-cn/03_transport/01_video_call)
+  - [在 Web 上进行直播](./zh-cn/03_transport/02_live_broadcast)
+- [媒体交互](./zh-cn/04_interactive)
+  - [播放器](./zh-cn/04_interactive/01_player)
+- [媒体处理](./zh-cn/05_process)
+  - [使用 Web 技术进行视频格式转换](./zh-cn/05_process/01_transform)
+- [媒体编排](./zh-cn/06_edit)
+  - [在 Web 上进行视频剪辑](./zh-cn/06_edit/01_video_clip)
+- [媒体渲染](./zh-cn/07_render)
+- [媒体服务](./zh-cn/08_server)
+- [应用场景](./zh-cn/09_application)
 
 ## 收藏夹
 
