@@ -50,7 +50,7 @@
 [MDN(Mozilla Developer Network)](https://developer.mozilla.org/zh-CN/):
 
 - [Web 媒体技术](https://developer.mozilla.org/zh-CN/docs/Web/媒体)
-- Web 开发指南
+- Web 开发指南：
   - [音频和视频传输](https://developer.mozilla.org/zh-CN/docs/Web/Guide/Audio_and_video_delivery)
   - [音频和视频操作](https://developer.mozilla.org/zh-CN/docs/Web/Guide/Audio_and_video_manipulation)
 - Web APIs:
