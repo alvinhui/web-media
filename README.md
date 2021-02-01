@@ -30,17 +30,19 @@
   - [在 Web 上进行视频剪辑](./zh-cn/06_edit/01_video_clip)
 - [媒体渲染](./zh-cn/07_render)
 - [媒体服务](./zh-cn/08_server)
-- [应用场景](./zh-cn/09_application)
+- [媒体应用](./zh-cn/09_application)
+  - 应用场景
+  - 实际业务
 
 ## 收藏夹
 
 ### 课程
 
 - [数字视频技术介绍](https://github.com/leandromoreira/digital_video_introduction)：一份循序渐进的视频技术的介绍，包含图像，视频，编解码器（av1，vp9，h265）以及更多内容（ffmpeg 编码）。
-- [多媒体前端手册](https://www.yuque.com/webmedia/handbook)：包括音视频基础、直播技术、播放器技术、web媒体技术、开源产品和框架介绍等。
+- [web.dev - Media](https://web.dev/media/)：学习使用基本元素或媒体框架向网站添加媒体功能，例如 Shaka Player, JW Player, Video.js。
 - [MDN - 学习 Web 开发 - HTML 指南与教程 - 多媒体与嵌入](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding)：探索怎样用 HTM L来让网页包含多媒体，包括可以包含图像的不同方式，以及怎样嵌入视频。
+- [多媒体前端手册](https://www.yuque.com/webmedia/handbook)：包括音视频基础、直播技术、播放器技术、web媒体技术、开源产品和框架介绍等。
 - [Coursera - 数字图像和视频处理的基础](https://www.coursera.org/learn/digital)
-- [web.dev - Media](https://web.dev/media/)：学习使用基本元素或媒体框架向网站添加媒体功能，例如 Shaka Player，JW Player，Video.js。
 - [即时通讯音视频开发](http://www.52im.net/thread-228-1-1.html)：讲解实时音视频技术中视频技术的编解码基础理论。
 
 > 更多：[网易云课堂](https://study.163.com/)、[腾讯课堂](https://ke.qq.com/)
