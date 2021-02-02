@@ -1,6 +1,6 @@
-# Simple
+# 调用 API 来启用相机和麦克风进行媒体捕获
 
-[线上示例](https://codesandbox.io/s/github/alvinhui/100-Days-Of-WebMedia/tree/main/zh-cn/02_capture/01_take_photo/01_simple)
+[线上示例](https://codesandbox.io/s/github/alvinhui/100-Days-Of-WebMedia/tree/main/zh-cn/02_capture/01_camera_and_mike/01_getUserMedia)
 
 ## 使用的 API
 

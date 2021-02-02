@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML 表单进行媒体捕获</title>
+</head>
+<body>
+  <div class="wrapper">
+    <h3>在文件上传控件中进行媒体捕获</h3>
+    <p>
+      HTML Media Capture 规范定义了 HTML 表单扩展能力，该扩展能力是便于用户从文件上传控件中访问设备的媒体捕获机制，例如照相机或麦克风。
+    </p>
+    <p>
+      注意该 API 的浏览器支持程度不一，需要在手机端浏览器访问该页面以观看演示效果。
+    </p>
+    <div>
+      <form action="/" method="post" enctype="multipart/form-data">
+        <p>
+          <label for="">
+            上传照片
+            <input type="file" name="image" accept="image/*" capture="user">
+          </label>
+        </p>
+        <p>
+          <label for="">
+            上传视频
+            <input type="file" name="video" accept="video/*" capture="environment">
+          </label>
+        </p>
+        <p>
+          <label for="">
+            上传音频
+            <input type="file" name="audio" accept="audio/*" capture>
+          </label>
+        </p>
+        <input type="submit" value="提交">
+      </form>
+    </div>
+    <p>
+      访问<a href="https://github.com/alvinhui/100-Days-Of-WebMedia">《100 天自学 Web 多媒体技术》</a>学习更多相关知识.
+    </p>
+  </div>
+</body>
+</html>

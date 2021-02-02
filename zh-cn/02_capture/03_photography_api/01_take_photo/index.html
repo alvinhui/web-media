@@ -1,15 +1,15 @@
 <!doctype html>
 <html>
 <head>
-  <title>在 Web 上进行拍照</title>
+  <title>调用摄像头进行拍照</title>
   <meta charset='utf-8'>
   <link rel="stylesheet" href="main.css" type="text/css" media="all">
 </head>
 <body>
   <div class="wrapper">
-    <h3>Background</h3>
+    <h3>调用摄像头进行拍照</h3>
     <p>
-      Web 开发者可以使用 ImageCapture Web API 中的 <code>takePhoto()</code> 或者 <code>grabFrame()</code> 从设备的摄像头捕获图像。
+      Web 开发者可以使用 ImageCapture Web API 中的 <code>takePhoto()</code> 从设备的摄像头或者 <code>grabFrame()</code> 从媒体流抓帧捕获图像。
     </p>
     <div id='results'>
       <div>
@@ -18,11 +18,11 @@
       </div>
       <div>
         <canvas id='grabFrameCanvas'></canvas>
-        <button id='grabFrameButton' disabled>抓帧</button>
+        <button id='grabFrameButton' disabled>从媒体流抓帧</button>
       </div>
       <div>
         <canvas id='takePhotoCanvas'></canvas>
-        <button id='takePhotoButton' disabled>拍照</button>
+        <button id='takePhotoButton' disabled>调用摄像头拍照</button>
       </div>
     </div>
     <p>

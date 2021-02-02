@@ -18,7 +18,9 @@
   - [理解图像](./zh-cn/01_basic/01_image)
   - [理解视频](./zh-cn/01_basic/02_video)
 - [媒体捕获](./zh-cn/02_capture)
-  - [在 Web 上进行拍照](./zh-cn/02_capture/01_take_photo)
+  - [使用相机和麦克风捕获媒体流](./zh-cn/02_capture/01_camera_and_mike)
+  - [屏幕截图](./zh-cn/02_capture/02_html_media_capture )
+  - [控制摄像设备](./zh-cn/02_capture/03_photography_api)
 - [媒体传输](./zh-cn/03_transport)
   - [在 Web 上进行视频通话](./zh-cn/03_transport/01_video_call)
   - [在 Web 上进行直播](./zh-cn/03_transport/02_live_broadcast)
@@ -40,7 +42,7 @@
 
 - [数字视频技术介绍](https://github.com/leandromoreira/digital_video_introduction)：一份循序渐进的视频技术的介绍，包含图像，视频，编解码器（av1，vp9，h265）以及更多内容（ffmpeg 编码）。
 - [web.dev - Media](https://web.dev/media/)：学习使用基本元素或媒体框架向网站添加媒体功能，例如 Shaka Player, JW Player, Video.js。
-- [MDN - 学习 Web 开发 - HTML 指南与教程 - 多媒体与嵌入](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding)：探索怎样用 HTM L来让网页包含多媒体，包括可以包含图像的不同方式，以及怎样嵌入视频。
+- [MDN - 学习 Web 开发 - HTML 指南与教程 - 多媒体与嵌入](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding)：探索怎样用 HTML 来让网页包含多媒体，包括可以包含图像的不同方式，以及怎样嵌入视频。
 - [多媒体前端手册](https://www.yuque.com/webmedia/handbook)：包括音视频基础、直播技术、播放器技术、web媒体技术、开源产品和框架介绍等。
 - [Coursera - 数字图像和视频处理的基础](https://www.coursera.org/learn/digital)
 - [即时通讯音视频开发](http://www.52im.net/thread-228-1-1.html)：讲解实时音视频技术中视频技术的编解码基础理论。
@@ -71,8 +73,10 @@
 
 ### 组织
 
-- [W3C - Web Media API Community Group](https://www.w3.org/community/webmediaapi)
-- [W3C - Media and Entertainment Interest Group](https://www.w3.org/groups/ig/me)
+- W3C
+  - [Web Real-Time Communications Working Group](https://www.w3.org/groups/wg/webrtc)
+  - [Web Media API Community Group](https://www.w3.org/community/webmediaapi)
+  - [Media and Entertainment Interest Group](https://www.w3.org/groups/ig/me)
 - [开放媒体联盟（AOMedia）](http://aomedia.org/)：由硬件厂商（Intel, AMD, ARM , Nvidia, Cisco）、内容分发商（Google, Netflix, Amazon）和浏览器维护者（Google, Mozilla）等公司创建，目标是打造一个免版税的视频编解码器。
   
 ### [Awesome](https://github.com/sindresorhus/awesome)

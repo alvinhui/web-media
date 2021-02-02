@@ -1,0 +1,11 @@
+{
+  "name": "html-media-capture",
+  "version": "1.0.0",
+  "main": "index.html",
+  "devDependencies": {
+    "http-server": "^0.12.3"
+  },
+  "scripts": {
+    "start": "http-server"
+  }
+}
