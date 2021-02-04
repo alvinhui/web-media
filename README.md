@@ -15,25 +15,26 @@
 ## 目录
 
 - [媒体基础](./zh-cn/01_basic)
-  - [理解图像](./zh-cn/01_basic/01_image)
+  - 理解图像
+  - 理解音频
   - [理解视频](./zh-cn/01_basic/02_video)
 - [媒体捕获](./zh-cn/02_capture)
   - [使用相机和麦克风](./zh-cn/02_capture/01_camera_and_mike)
-  - [屏幕截图](./zh-cn/02_capture/02_html_media_capture )
-  - [设置摄像设备](./zh-cn/02_capture/03_photography_api)
-- [媒体传输](./zh-cn/03_distribution)
-  - [自适应流](./zh-cn/03_distribution/01_adaptive_streaming)
-  - [片段流](./zh-cn/03_distribution/02_fragment_streaming)
-  - [实时分发](./zh-cn/03_distribution/03_realtime_distribution)
-- [媒体交互](./zh-cn/04_interactive)
-  - [播放器](./zh-cn/04_interactive/01_player)
-- [媒体处理](./zh-cn/05_process)
-  - [使用 Web 技术进行视频格式转换](./zh-cn/05_process/01_transform)
-- [媒体编排](./zh-cn/06_edit)
-  - [在 Web 上进行视频剪辑](./zh-cn/06_edit/01_video_clip)
-- [媒体渲染](./zh-cn/07_render)
-- [媒体服务](./zh-cn/08_server)
-- [媒体应用](./zh-cn/09_application)
+  - 屏幕截图
+  - 设置摄像设备
+- 媒体传输
+  - 自适应流
+  - 片段流
+  - 实时分发
+- 媒体交互
+  - 自动播放
+  - 预加载
+  - 定制播放器
+- 媒体处理
+- 媒体编排
+- 媒体渲染
+- 媒体服务
+- 媒体应用
   - 应用场景    
   - 业务案例
   - 示例应用
