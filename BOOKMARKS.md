@@ -6,19 +6,19 @@
 - [web.dev - Media](https://web.dev/media/)：学习使用基本元素或媒体框架向网站添加媒体功能，例如 Shaka Player, JW Player, Video.js。
 - [MDN - 学习 Web 开发 - HTML 指南与教程 - 多媒体与嵌入](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding)：探索怎样用 HTML 来让网页包含多媒体，包括可以包含图像的不同方式，以及怎样嵌入视频。
 - [多媒体前端手册](https://www.yuque.com/webmedia/handbook)：包括音视频基础、直播技术、播放器技术、web媒体技术、开源产品和框架介绍等。
-- [Coursera - 数字图像和视频处理的基础](https://www.coursera.org/learn/digital)
+- [Coursera - 数字图像和视频处理的基础](https://www.coursera.org/learn/digital)：学习用于处理图像和视频的基本原理和工具，以及如何将其应用于解决商业和科学中的实际问题。
 - [即时通讯音视频开发](http://www.52im.net/thread-228-1-1.html)：讲解实时音视频技术中视频技术的编解码基础理论。
 
-> 更多：[网易云课堂](https://study.163.com/)、[腾讯课堂](https://ke.qq.com/)
+> 更多待发掘：[网易云课堂](https://study.163.com/)、[腾讯课堂](https://ke.qq.com/)
 
 ## 文档
 
 [MDN(Mozilla Developer Network)](https://developer.mozilla.org/zh-CN/):
 
-- [Web 媒体技术](https://developer.mozilla.org/zh-CN/docs/Web/媒体)
+- [Web 媒体技术](https://developer.mozilla.org/zh-CN/docs/Web/媒体)：列出了可能对掌握 Web 媒体技术有帮助的多种 API 与其文档链接。
 - Web 开发指南：
-  - [添加音视频](https://developer.mozilla.org/zh-CN/docs/Web/Guide/Audio_and_video_delivery)
-  - [控制音视频](https://developer.mozilla.org/zh-CN/docs/Web/Guide/Audio_and_video_manipulation)
+  - [添加音视频](https://developer.mozilla.org/zh-CN/docs/Web/Guide/Audio_and_video_delivery)：基于 Web 的媒体的各种传输机制以及与流行浏览器的兼容性的入门参考。
+  - [控制音视频](https://developer.mozilla.org/zh-CN/docs/Web/Guide/Audio_and_video_manipulation)：将音频和视频数据流与 `<canvas>`，WebGL 或 Web Audio API 等技术一起使用，以直接修改音频和视频的参考。
 - Web APIs:
   - [媒体流处理 API（MediaStream API）](https://developer.mozilla.org/zh-CN/docs/Web/API/Media_Streams_API)
   - [网络音频 API（Web Audio API）](https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Audio_API)
