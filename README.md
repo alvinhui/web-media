@@ -21,9 +21,10 @@
   - [使用相机和麦克风](./zh-cn/02_capture/01_camera_and_mike)
   - [屏幕截图](./zh-cn/02_capture/02_html_media_capture )
   - [设置摄像设备](./zh-cn/02_capture/03_photography_api)
-- [媒体传输](./zh-cn/03_transport)
-  - [在 Web 上进行视频通话](./zh-cn/03_transport/01_video_call)
-  - [在 Web 上进行直播](./zh-cn/03_transport/02_live_broadcast)
+- [媒体传输](./zh-cn/03_distribution)
+  - [自适应流](./zh-cn/03_distribution/01_adaptive_streaming)
+  - [片段流](./zh-cn/03_distribution/02_fragment_streaming)
+  - [实时分发](./zh-cn/03_distribution/03_realtime_distribution)
 - [媒体交互](./zh-cn/04_interactive)
   - [播放器](./zh-cn/04_interactive/01_player)
 - [媒体处理](./zh-cn/05_process)
@@ -33,8 +34,9 @@
 - [媒体渲染](./zh-cn/07_render)
 - [媒体服务](./zh-cn/08_server)
 - [媒体应用](./zh-cn/09_application)
-  - 应用场景
-  - 实际业务
+  - 应用场景    
+  - 业务案例
+  - 示例应用
 
 ## 收藏夹
 
