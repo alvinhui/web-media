@@ -35,10 +35,21 @@
 
 ## 组织
 
-- W3C
-  - [Web Real-Time Communications Working Group](https://www.w3.org/groups/wg/webrtc)
-  - [Web Media API Community Group](https://www.w3.org/community/webmediaapi)
-  - [Media and Entertainment Interest Group](https://www.w3.org/groups/ig/me)
+W3C:
+
+- 工作组
+  - [Web 超文本应用技术工作组（WHATWG）](https://whatwg.org/)
+  - [网络实时通信工作组（Web Real-Time Communications Working Group）](https://www.w3.org/groups/wg/webrtc)
+  - [音频工作组（Audio Working Group）](https://www.w3.org/2011/audio/)
+  - [媒体工作组（Media Working Group）](https://www.w3.org/media-wg/)
+  - [定时文本工作组（Timed Text Working Group）](https://www.w3.org/AudioVideo/TT/)
+- 社区组
+  - [Web 媒体 API 社区组（Web Media API Community Group）](https://www.w3.org/community/webmediaapi)
+- 兴趣小组
+  - [媒体和娱乐兴趣小组（Media and Entertainment Interest Group）](https://www.w3.org/groups/ig/me)
+
+其他：
+
 - [开放媒体联盟（AOMedia）](http://aomedia.org/)：由硬件厂商（Intel, AMD, ARM , Nvidia, Cisco）、内容分发商（Google, Netflix, Amazon）和浏览器维护者（Google, Mozilla）等公司创建，目标是打造一个免版税的视频编解码器。
   
 ## [Awesome](https://github.com/sindresorhus/awesome)
