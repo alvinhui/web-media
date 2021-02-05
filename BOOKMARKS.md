@@ -4,6 +4,7 @@
 
 - [数字视频技术介绍](https://github.com/leandromoreira/digital_video_introduction)：一份循序渐进的视频技术的介绍，包含图像，视频，编解码器（av1，vp9，h265）以及更多内容（ffmpeg 编码）。
 - [web.dev - Media](https://web.dev/media/)：学习使用基本元素或媒体框架向网站添加媒体功能，例如 Shaka Player, JW Player, Video.js。
+- [Google Web Fundamentals - Media & VR](https://developers.google.com/web/fundamentals/media/mobile-web-video-playback)
 - [MDN - 学习 Web 开发 - HTML 指南与教程 - 多媒体与嵌入](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding)：探索怎样用 HTML 来让网页包含多媒体，包括可以包含图像的不同方式，以及怎样嵌入视频。
 - [多媒体前端手册](https://www.yuque.com/webmedia/handbook)：包括音视频基础、直播技术、播放器技术、web媒体技术、开源产品和框架介绍等。
 - [Coursera - 数字图像和视频处理的基础](https://www.coursera.org/learn/digital)：学习用于处理图像和视频的基本原理和工具，以及如何将其应用于解决商业和科学中的实际问题。
@@ -33,6 +34,10 @@
 - [Web Media Application Developer Guidelines](https://github.com/w3c/webmediaguidelines/)
 - [Web Media API](https://github.com/w3c/webmediaapi/)
 
+[Chrome]:
+
+- [Chromium docs - Media](https://github.com/chromium/chromium/blob/master/docs/README.md#media)
+
 ## 组织
 
 W3C:
@@ -51,14 +56,19 @@ W3C:
 其他：
 
 - [开放媒体联盟（AOMedia）](http://aomedia.org/)：由硬件厂商（Intel, AMD, ARM , Nvidia, Cisco）、内容分发商（Google, Netflix, Amazon）和浏览器维护者（Google, Mozilla）等公司创建，目标是打造一个免版税的视频编解码器。
-  
+
+## 浏览器支持性
+
+- [Chrome Releases](https://chromestatus.com/features/schedule)
+- [Firefox Releases](https://www.mozilla.org/firefox/releases/)
+- [Safari Release Notes](https://developer.apple.com/documentation/safari-release-notes)
+
 ## [Awesome](https://github.com/sindresorhus/awesome)
 
 - [Music](https://github.com/ciconia/awesome-music)
 - [Audio Visualization](https://github.com/willianjusten/awesome-audio-visualization)
 - [WebAudio](https://github.com/notthetup/awesome-webaudio)
 - [Video](https://github.com/krzemienski/awesome-video)
-  
 
 ## 资源
 
