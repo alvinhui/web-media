@@ -34,7 +34,7 @@
 - [Web Media Application Developer Guidelines](https://github.com/w3c/webmediaguidelines/)
 - [Web Media API](https://github.com/w3c/webmediaapi/)
 
-[Chrome]:
+[Chrome](https://developer.chrome.com/):
 
 - [Chromium docs - Media](https://github.com/chromium/chromium/blob/master/docs/README.md#media)
 
