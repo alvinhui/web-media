@@ -2,7 +2,7 @@
 
 ## 课程
 
-- [数字视频技术介绍](https://github.com/leandromoreira/digital_video_introduction)：一份循序渐进的视频技术的介绍，包含图像，视频，编解码器（av1，vp9，h265）以及更多内容（ffmpeg 编码）。
+- [数字视频技术介绍](https://github.com/leandromoreira/digital_video_introduction/blob/master/README-cn.md)：一份循序渐进的视频技术的介绍，包含图像，视频，编解码器（av1，vp9，h265）以及更多内容（ffmpeg 编码）。
 - [web.dev - Media](https://web.dev/media/)：学习使用基本元素或媒体框架向网站添加媒体功能，例如 Shaka Player, JW Player, Video.js。
 - [Google Web Fundamentals - Media & VR](https://developers.google.com/web/fundamentals/media/mobile-web-video-playback)
 - [MDN - 学习 Web 开发 - HTML 指南与教程 - 多媒体与嵌入](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding)：探索怎样用 HTML 来让网页包含多媒体，包括可以包含图像的不同方式，以及怎样嵌入视频。
@@ -65,10 +65,13 @@ W3C:
 
 ## [Awesome](https://github.com/sindresorhus/awesome)
 
-- [Music](https://github.com/ciconia/awesome-music)
-- [Audio Visualization](https://github.com/willianjusten/awesome-audio-visualization)
-- [WebAudio](https://github.com/notthetup/awesome-webaudio)
-- [Video](https://github.com/krzemienski/awesome-video)
+- Audio
+  - [Awesome Music](https://github.com/ciconia/awesome-music)
+  - [Audio Visualization](https://github.com/willianjusten/awesome-audio-visualization)
+  - [Awesome WebAudio](https://github.com/notthetup/awesome-webaudio)
+- Video
+  - [Awesome Video](https://github.com/krzemienski/awesome-video)
+  - [Streaming Onboarding](https://github.com/Eyevinn/streaming-onboarding)
 
 ## 资源
 
