@@ -15,7 +15,7 @@
 ## 目录
 
 - [媒体基础](./zh-cn/01_basic)
-  - 理解图像
+  - [理解图像](./zh-cn/01_basic/01_image)
   - 理解音频
   - [理解视频](./zh-cn/01_basic/02_video)
 - [媒体捕获](./zh-cn/02_capture)
