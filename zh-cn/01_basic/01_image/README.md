@@ -96,9 +96,9 @@ _WIP_
 
 我们将介绍网页浏览器普遍支持的图像文件类型，并提供一些关于他们的信息与见解，帮助你为你的网站选择最合适的图像格式。
 
-### 常见文件类型
+### 常用文件类型
 
-下面列举了网页上常用的格式，其中 BMP 由于浏览器支持限制而不被推荐，通常应该避免在网页内容中使用。
+下面列举了网页上常用的图像文件格式。
 
 <table>
  <thead>
@@ -128,27 +128,11 @@ _WIP_
    <td>Chrome, Opera, Firefox (feature flag)</td>
   </tr>
   <tr>
-   <th><a>BMP</a></th>
-   <th>Bitmap file<br>
-    <strong>位图</strong>文件</th>
-   <td><code>image/bmp</code></td>
-   <td><code>.bmp</code></td>
-   <td>Chrome, Edge, Firefox, Internet Explorer, Opera, Safari</td>
-  </tr>
-  <tr>
    <th><a>GIF</a></th>
    <th>Graphics Interchange Format<br>
     图像互换格式</th>
    <td><code>image/gif</code></td>
    <td><code>.gif</code></td>
-   <td>Chrome, Edge, Firefox, Internet Explorer, Opera, Safari</td>
-  </tr>
-  <tr>
-   <th><a>ICO</a></th>
-   <th>Microsoft Icon<br>
-    微软图标</th>
-   <td><code>image/x-icon</code></td>
-   <td><code>.ico</code>, <code>.cur</code></td>
    <td>Chrome, Edge, Firefox, Internet Explorer, Opera, Safari</td>
   </tr>
   <tr>
@@ -176,20 +160,49 @@ _WIP_
    <td>Chrome, Edge, Firefox, Internet Explorer, Opera, Safari</td>
   </tr>
   <tr>
-   <th><a>TIFF</a></th>
-   <th>Tagged Image File Format<br>
-    标签图像文件格式</th>
-   <td><code>image/tiff</code></td>
-   <td><code>.tif</code>, <code>.tiff</code></td>
-   <td>Safari</td>
-  </tr>
-  <tr>
    <th><a>WebP</a></th>
    <th>Web Picture format<br>
     万维网图像格式</th>
    <td><code>image/webp</code></td>
    <td><code>.webp</code></td>
    <td>Chrome, Edge, Firefox, Opera, Safari</td>
+  </tr>
+ </tbody>
+</table>
+
+以下列表包括出现在 Web 上的图像格式，但应避免用于 Web 内容（通常是因为它们没有广泛的浏览器支持，或者因为有更好的选择）。
+
+<table>
+ <thead>
+  <tr>
+   <th>缩写</th>
+   <th>文件格式</th>
+   <th>MIME 类型</th>
+   <th>文件扩展名</th>
+   <th>浏览器兼容性</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <th><a>BMP</a></th>
+   <th>Bitmap file</th>
+   <td><code>image/bmp</code></td>
+   <td><code>.bmp</code></td>
+   <td>Chrome, Edge, Firefox, IE, Opera, Safari</td>
+  </tr>
+  <tr>
+   <th><a>ICO</a></th>
+   <th>Microsoft Icon</th>
+   <td><code>image/x-icon</code></td>
+   <td><code>.ico</code>, <code>.cur</code></td>
+   <td>Chrome, Edge, Firefox, IE, Opera, Safari</td>
+  </tr>
+  <tr>
+   <th><a>TIFF</a></th>
+   <th>Tagged Image File Format</th>
+   <td><code>image/tiff</code></td>
+   <td><code>.tif</code>, <code>.tiff</code></td>
+   <td>Safari</td>
   </tr>
  </tbody>
 </table>
