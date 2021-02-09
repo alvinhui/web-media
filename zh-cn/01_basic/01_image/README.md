@@ -119,8 +119,8 @@ _WIP_
    <th><a>AVIF</a></th>
    <th>AV1 Image File Format<br>
     AV1&nbsp;图像文件格式</th>
-   <td><code>image/</code>avif</td>
-   <td><code>.</code>avif</td>
+   <td><code>image/avif</code></td>
+   <td><code>.avif</code></td>
    <td>Chrome, Opera, Firefox (feature flag)</td>
   </tr>
   <tr>
@@ -192,11 +192,57 @@ _WIP_
 
 ### 选择合适的图像格式
 
-_WIP_
+#### 照片
 
-### 提供备用图像
+照片通常在有损压缩下表现良好。JPEG 和 WebP 格式是照片片的理想选择，JPEG浏览器兼容性更好，但 WebP 可以提供更好的压缩效果。为了最大程度地提高质量并最大程度地减少下载时间，请考虑使用备选功能：将 WebP 作为第一选择，JPEG 作为第二选择。否则 JPEG 是兼容性的最佳选择。
 
-_WIP_
+| 最佳 | 备选 |
+| ---- | ---- |
+| WebP | JPEG |
+
+#### 图标
+
+对于较小的图像，例如图标，请使用无损格式，以避免尺寸受限的图像中细节的丢失。
+
+尽管无损 WebP 是实现此目的的理想选择，但支持尚不广泛。因此，除非使用备选功能，否则 PNG 是更好的选择。如果图像包含的颜色少于 256 种颜色，则可以使用GIF。
+
+如果可以使用矢量图形表示图标，请考虑使用 SVG，因为它可以在各种分辨率和大小上缩放，因此非常适合响应式设计。尽管现代浏览器对 SVG 的支持很好，但还需要考虑为较旧的浏览器使用备选功能将 PNG 作为第二选择。
+
+| 最佳 | 备选 |
+| ---- | ---- |
+| SVG，无损 WebP 或 PNG | PNG |
+
+
+#### 屏幕截图
+
+除非你愿意在质量上做出妥协，否则应该对屏幕截图使用无损格式。因为如果屏幕快照中有文本，在有损压缩下，文本很容易变得模糊不清。
+
+PNG 可能是最好的选择，但是无损 WebP 可以得到更好的压缩效果。
+
+| 最佳 | 备选 |
+| ---- | ---- |
+| 无损 WebP 或 PNG | PNG 或 JPEG |
+| JPEG，如果不考虑压缩伪影 | GIF 用于较少颜色范围的屏幕截图 |
+
+#### 图表
+
+对于可以使用矢量图形表示的任何图像，SVG 是最佳选择。否则，你应该使用无损格式，例如 PNG。如果确实选择有损格式，例如 JPEG 或有损 WebP，请仔细权衡压缩级别，以免导致文本或其他形状变得模糊或不清楚。
+
+| 最佳 | 备选 |
+| ---- | ---- |
+| SVG | PNG |
+
+
+### 使用备选功能
+
+```html
+<picture>
+  <source srcset="diagram.svg" type="image/svg+xml">
+  <source srcset="diagram.png" type="image/png">
+  <img src="diagram.gif" width="620" height="540"
+       alt="Diagram showing the data channels">
+</picture>
+```
 
 ## 参考资料
 
