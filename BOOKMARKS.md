@@ -6,7 +6,7 @@
 - [web.dev - Media](https://web.dev/media/)：介绍了媒体文件格式的基本概念，演示了准备媒体文件并将它们添加到网站的过程。
 - [Google Web Fundamentals - Media & VR](https://developers.google.com/web/fundamentals/media/mobile-web-video-playback)："web.dev - Miedia" 课程的进阶版本，包含媒体捕获、媒体处理和音视频播放相关内容。
 - [MDN - 学习 Web 开发 - HTML 指南与教程 - 多媒体与嵌入](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding)：探索怎样用 HTML 来让网页包含多媒体，包括可以包含图像的不同方式，以及怎样嵌入视频。
-- [多媒体前端手册](https://www.yuque.com/webmedia/handbook)：包括音视频基础、直播技术、播放器技术、web媒体技术、开源产品和框架介绍等。
+- [多媒体前端手册](https://www.yuque.com/webmedia/handbook)：包括音视频基础、直播技术、播放器技术、Web 媒体技术、开源产品和框架介绍等。
 - [Coursera - 数字图像和视频处理的基础](https://www.coursera.org/learn/digital)：学习用于处理图像和视频的基本原理和工具，以及如何将其应用于解决商业和科学中的实际问题。
 - [即时通讯音视频开发](http://www.52im.net/thread-228-1-1.html)：讲解实时音视频技术中视频技术的编解码基础理论。
 
