@@ -16,29 +16,29 @@ English | [简体中文](./README.md)
 ## Index
 
 - Media Basic
-  - Image Basic
-  - Audio Basic
-  - Video Basic
-- Media capture
-  - Camera and mike capture
+  - Image basic
+  - Audio basic
+  - Video basic
+- Media Capture
+  - Camera and Mike capture
   - Screen capture
   - Photography API
 - Media Distribution
   - Adaptive streaming
   - Fragment streaming
   - Realtime distribution
-- Media interaction
-  - Embedding Video and Audio
+- Media Interaction
+  - Embedding video and audio
   - Autoplay and Preload
   - Player
 - Media Processing
-  - Protected Media
-  - Audio Processing
-  - Image and Video Processing
-- Media orchestration
+  - Protected media
+  - Audio processing
+  - Image and Video processing
+- Media Orchestration
   - Timeline management
   - Audio synchronization
-  - Closed Captioning
+  - Closed captioning
 - Media Rendering
   - Audio/Video/Captions rendering
   - Rendering of protected media
