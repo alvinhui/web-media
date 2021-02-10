@@ -1,4 +1,4 @@
-简体中文 | [English](./zh-cn/README.en-US.md)
+简体中文 | [English](./README.en-US.md)
 
 <p align="center">
   <img alt="100 days" src="https://user-images.githubusercontent.com/4392234/105186201-6c823400-5b6c-11eb-825d-c97a949233a2.png" width="250px">
