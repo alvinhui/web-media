@@ -11,10 +11,13 @@
   - [副作用](#副作用)
 - [编解码器](#编解码器)
   - [是什么？为什么？怎么做？](#是什么？为什么？怎么做？)
-  - [影响编码的因素](#影响编码的因素)
-  - [通用编解码器](#通用编解码器)
+  - [影响编码质量的因素](#影响编码质量的因素)
+  - [常用的编码格式](#常用的编码格式)
   - [选择合适的编码格式](#选择合适的编码格式)
 - [视频容器](#视频容器)
+  - [什么是容器格式](什么是容器格式)
+  - [常用的容器格式](#常用的容器格式)
+  - [选择合适的容器格式](#选择合适的容器格式)
 - [参考资料](#参考资料)
 
 ## 基础概念
@@ -95,25 +98,25 @@
     <tr>
       <th style="width: 144px;">色度（ U 和 V ）</th>
       <td style="width: 144px; text-align: right;">
-        <img alt="" src="https://mdn.mozillademos.org/files/16710/yuv-chroma-420.svg" loading="lazy">
+        <img src="https://mdn.mozillademos.org/files/16710/yuv-chroma-420.svg" loading="lazy">
       </td>
       <td style="width: 144px; text-align: right;">
-        <img alt="" src="https://mdn.mozillademos.org/files/16714/yuv-chroma-422.svg" loading="lazy">
+        <img src="https://mdn.mozillademos.org/files/16714/yuv-chroma-422.svg" loading="lazy">
       </td>
       <td style="width: 144px; text-align: right;">
-        <img alt="" src="https://mdn.mozillademos.org/files/16716/yuv-chroma-444.svg" loading="lazy">
+        <img src="https://mdn.mozillademos.org/files/16716/yuv-chroma-444.svg" loading="lazy">
       </td>
     </tr>
     <tr>
       <th style="width: 144px;">像素解码</th>
       <td style="width: 144px; text-align: right;">
-        <img alt="" src="https://mdn.mozillademos.org/files/16713/yuv-decoded-420.png" loading="lazy">
+        <img src="https://mdn.mozillademos.org/files/16713/yuv-decoded-420.png" loading="lazy">
       </td>
       <td style="width: 144px; text-align: right;">
-        <img alt="" src="https://mdn.mozillademos.org/files/16715/yuv-decoded-422.png" loading="lazy">
+        <img src="https://mdn.mozillademos.org/files/16715/yuv-decoded-422.png" loading="lazy">
       </td>
       <td style="width: 144px; text-align: right;">
-        <img alt="" src="https://mdn.mozillademos.org/files/16717/yuv-decoded-444.png" loading="lazy">
+        <img src="https://mdn.mozillademos.org/files/16717/yuv-decoded-444.png" loading="lazy">
       </td>
     </tr>
   </tbody>
@@ -212,6 +215,46 @@ P 帧利用了一个事实：当前的画面几乎总能**使用之前的一帧�
 ![smw 残差](./assets/smw_residual.png)
 
 ### 副作用
+
+伪影是有损压缩过程的副作用，丢失或重新排列数据会导致明显的负面影响。
+
+为了解决这个问题，并改善通过视频数据查找问题的时间，需要在一段周期内将关键帧放入。关键帧是全帧，用于修复当前可见的任何损坏或伪像残留。
+
+#### 混叠
+
+混叠是对从压缩数据重建后看起来与压缩前不同的东西的统称。混叠有多种形式。您可能会看到的最常见的包括：
+
+<table>
+ <tbody>
+  <tr>
+   <td>
+    <h4>莫尔纹</h4>
+    <p>莫尔纹是当源图像中的图案和编码器的操作方式在空间上略有偏离时产生的大规模空间干涉图案。然后，由编码器生成的伪像在解码时会在源图像的图案中引入奇怪的漩涡效果。。</p>
+   </td>
+   <td><img src="https://mdn.mozillademos.org/files/16680/moire-pattern.jpg" loading="lazy"></td>
+  </tr>
+  <tr>
+   <td>
+    <h4>阶梯效应</h4>
+    <p>阶梯效应是当应该平滑的对角直线或弯曲边缘呈现锯齿状外观时出现的空间伪影，看上去有点像一组阶梯。通过“抗锯齿”过滤器可以减少这种情况。</p>
+   </td>
+   <td><img src="https://mdn.mozillademos.org/files/16681/staircase-effect.jpg" loading="lazy"></td>
+  </tr>
+  <tr>
+   <td>
+    <h4>轮毂效应</h4>
+    <p>车轮效应（频闪效应）是电影中常见的视觉效果，由于帧率和压缩算法之间的相互作用，转向轮似乎以错误的速度甚至方向旋转。同样的效果也可能发生在任何移动的重复模式上，例如铁路线上的系材、路边的柱子等等，这是一个时间性的混叠问题，旋转速度会干扰压缩期间执行的采样频率。</p>
+   </td>
+   <td><img src="https://mdn.mozillademos.org/files/16682/stroboscopic-effect.gif" loading="lazy"></td>
+  </tr>
+ </tbody>
+</table>
+
+#### 色边
+
+_WIP_
+
+#### 清晰度下降
 
 _WIP_
 
@@ -431,19 +474,182 @@ SPS NAL 的第 2 位 (`binary=01100100, hex=0x64, dec=100`) 是 **profile_idc** 
 
 我们可以探究其它比特流，如 [VP9 比特流](https://storage.googleapis.com/downloads.webmproject.org/docs/vp9/vp9-bitstream-specification-v0.6-20160331-draft.pdf)，[H.265（HEVC）](http://handle.itu.int/11.1002/1000/11885-en?locatt=format:pdf)或是新的 [AV1 比特流](https://medium.com/@mbebenita/av1-bitstream-analyzer-d25f1c27072b#.d5a89oxz8)，[他们不相似](http://www.gpac-licensing.com/2016/07/12/vp9-av1-bitstream-format/)，但只要学习了其中之一，学习其他的就简单多了。
 
-### 影响编码的因素
+### 影响编码质量的因素
 
-_WIP_
+与任何编码一样，有两个基本因素会影响编码视频的大小和质量：源视频的格式和内容的详细信息，以及在对视频进行编码时使用的编解码器特性和配置。
 
-### 通用编解码器
+最简单的道理是：使编码后的视频看起来更像原始的、未压缩的视频体积会更大。因此，始终要在尺寸与质量之间进行权衡。在某些情况下，为了降低体积而质量变差是值得的。其他情况下，质量的损失是不可接受的。并且必须接受会导致文件体积变大的编解码器配置。
 
-_WIP_
+此外，所有编解码器都有其优点和缺点。有些会在特定种类的形状和图案时表现糟糕，或者不擅长处理锋利的边缘，或者在黑暗区域丢失细节，任何可能性中丢失细节。这一切都取决于编解码器的算法。 
+
+#### 源视频格式和内容的影响
+
+源视频格式和内容对编码视频质量和体积的影响。
+
+<table>
+ <thead>
+  <tr>
+   <th>特性</th>
+   <th>对质量的影响</th>
+   <th>对体积的影响</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <th>颜色深度</th>
+   <td>颜色位深越高，视频中颜色保真度质量就越高。除此之外，在图像饱和部分，低于每分量 10 色深允许条带化，如果没有可见色阶跃就无法表示渐变。</td>
+   <td>较高的颜色深度可能会导致较大的压缩体积。决定因素是压缩数据使用哪种内部存储格式。</td>
+  </tr>
+  <tr>
+   <th>帧率</th>
+   <td>影响图像运动的感知平滑度。在某种程度上，帧率越高，运动就会显得越平滑，越真实。</td>
+   <td>在编码期间不降低帧率，则较高的帧率会导致压缩的视频体积更大。</td>
+  </tr>
+  <tr>
+   <th>运动</th>
+   <td>视频压缩通常通过比较帧，找到它们之间的差异以及构造包含足够信息以更新前一帧以近似下一帧的外观的记录来进行。连续的帧越不同，差异越大，压缩效果越差，而且越难避免将伪像引入压缩视频中。</td>
+   <td>由运动引入的复杂性导致较大的中间帧，这是因为帧之间的差异数量更多。 由于这个和其他原因，视频中的运动越多，输出文件通常会越大。</td>
+  </tr>
+  <tr>
+   <th>噪音</th>
+   <td>图片噪声（例如胶片颗粒效果，灰尘或图像的其他粗糙感）会引入可变性。可变性通常会使压缩更加困难，由于需要删除细节以实现相同的压缩级别，导致质量损失更大。</td>
+   <td>图像中存在较大的可变性（例如噪声），压缩过程越复杂，算法将图像压缩到相同程度的成功可能性就越小。除非您以忽略噪声引起的部分（或全部变化）的方式配置编码器，否则压缩后的视频会更大。</td>
+  </tr>
+  <tr>
+   <th>分辨率</th>
+   <td>以相同的屏幕尺寸呈现的高分辨率视频通常可以更准确地描绘原始场景。</td>
+   <td>视频的分辨率越高，最终输出的视频的分辨率就越高。这在视频的最终体积上起着关键的作用。</td>
+  </tr>
+ </tbody>
+</table>
+
+这些影响最终编码视频的程度取决于具体细节，包括您使用的编码器及其配置方式。除了常规编解码器选项外，还可以将编码器配置为降低码率、清除噪声或降低编码过程中视频的整体分辨率。
+
+#### 编解码器配置的影响
+
+视频编码器配置对编码视频质量和体积的影响。
+
+用于对视频进行编码的算法通常使用一种或多种技术来执行其编码。
+一般而言，任何减小视频输出体积的配置选项都可能会对视频的整体质量产生负面影响，或者将某些类型的伪像引入视频中。
+还可以选择无损编码形式，这将导致编码文件体积很大，但解码时可以完美再现原始视频。
+
+另外，每个编码器在处理源视频的方式上可能会有所不同，从而导致输出质量或体积上的差异。
+
+<table>
+ <thead>
+  <tr>
+   <th>特性</th>
+   <th>对质量的影响</th>
+   <th>对体积的影响</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <th>无损压缩</th>
+   <td>没有质量损失</td>
+   <td>无损压缩无法像有损压缩一样减少整体视频体积。生成的文件对于一般用途而言可能仍然太大。</td>
+  </tr>
+  <tr>
+   <th>有损压缩</th>
+   <td>在某种程度上，会出现伪影和其他形式的质量下降，具体取决于编解码器以及压缩程度。</td>
+   <td>编码的视频能够接受与源的差异越多，实现更高的压缩率就越容易。</td>
+  </tr>
+  <tr>
+   <th>质量设置</th>
+   <td>质量配置得越高，编码后的视频看起来就越像原始视频。</td>
+   <td>通常较高的质量设置将导致较大的编码视频文件；程度取决于编解码器实现。</td>
+  </tr>
+  <tr>
+   <th>比特率</th>
+   <td>更高的比特率通常会提高质量。</td>
+   <td>更高的比特率会需要更大的体积。</td>
+  </tr>
+ </tbody>
+</table>
+
+每一个编解码器的选项和对应值都有所不同，这取决于编解码器软件。可以查看具体的编解码器文档来了解这些选项对编码视频的影响。
+
+### 常用的编码格式
+
+以下视频编码格式是目前最常用的视频编码格式。对于每个编码格式，还列出了可以支持它们的容器格式（文件类型）。
+
+<table>
+ <thead>
+  <tr>
+   <th>Codec name (short)</th>
+   <th>Full codec name</th>
+   <th>Container support</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <th><a>AV1</a></th>
+   <td>AOMedia Video 1</td>
+   <td><a>MP4</a>, <a>WebM</a></td>
+  </tr>
+  <tr>
+   <th><a>AVC (H.264)</a></th>
+   <td>Advanced Video Coding</td>
+   <td><a>3GP</a>, <a>MP4</a>, <a>WebM</a></td>
+  </tr>
+  <tr>
+   <th><a>H.263</a></th>
+   <td>H.263 Video</td>
+   <td><a>3GP</a></td>
+  </tr>
+  <tr>
+   <th><a>HEVC (H.265)</a></th>
+   <td>High Efficiency Video Coding</td>
+   <td><a>MP4</a></td>
+  </tr>
+  <tr>
+   <th><a>MP4V-ES</a></th>
+   <td>MPEG-4 Video Elemental Stream</td>
+   <td><a>3GP</a>, <a>MP4</a></td>
+  </tr>
+  <tr>
+   <th><a>MPEG-1</a></th>
+   <td>MPEG-1 Part 2 Visual</td>
+   <td><a>MPEG</a>, <a>QuickTime</a></td>
+  </tr>
+  <tr>
+   <th><a href="#mpeg-2">MPEG-2</a></th>
+   <td>MPEG-2 Part 2 Visual</td>
+   <td><a>MP4</a>, <a>MPEG</a>, <a>QuickTime</a></td>
+  </tr>
+  <tr>
+   <th><a>Theora</a></th>
+   <td>Theora</td>
+   <td><a>Ogg</a></td>
+  </tr>
+  <tr>
+   <th><a>VP8</a></th>
+   <td>Video Processor 8</td>
+   <td><a>3GP</a>, <a>Ogg</a>, <a>WebM</a></td>
+  </tr>
+  <tr>
+   <th><a>VP9</a></th>
+   <td>Video Processor 9</td>
+   <td><a>MP4</a>, <a>Ogg</a>, <a>WebM</a></td>
+  </tr>
+ </tbody>
+</table>
 
 ### 选择合适的编码格式
 
 _WIP_
 
 ## 视频容器
+
+### 什么是容器格式
+
+_WIP_
+
+### 常用的容器格式
+
+_WIP_
+
+### 选择合适的容器格式
 
 _WIP_
 
