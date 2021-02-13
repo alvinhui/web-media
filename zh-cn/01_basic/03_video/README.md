@@ -700,8 +700,8 @@ _WIP_
 <table>
  <thead>
   <tr>
-   <th>容器名称</th>
-   <th>全名</th>
+   <th>缩写</th>
+   <th>全称</th>
    <th>浏览器兼容性</th>
   </tr>
  </thead>
