@@ -697,11 +697,96 @@ _WIP_
 
 ### 常用的容器格式
 
-_WIP_
+<table>
+ <thead>
+  <tr>
+   <th>容器名称</th>
+   <th>全名</th>
+   <th>浏览器兼容性</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <th><a>3GP</a></th>
+   <td>Third Generation Partnership</td>
+   <td>Firefox for Android</td>
+  </tr>
+  <tr>
+   <th><a>ADTS</a></th>
+   <td>Audio Data Transport Stream</td>
+   <td>Firefox</td>
+  </tr>
+  <tr>
+   <th><a>FLAC</a></th>
+   <td>Free Lossless Audio Codec</td>
+   <td>Chrome 56, Edge 16, Firefox 51, Safari 11</td>
+  </tr>
+  <tr>
+   <th><a>MPEG / MPEG-2</a></th>
+   <td>Moving Picture Experts Group (1 and 2)</td>
+   <td>—</td>
+  </tr>
+  <tr>
+   <th><a>MPEG-4 (MP4)</a></th>
+   <td>Moving Picture Experts Group 4</td>
+   <td>Chrome 3, Edge 12, Firefox, Internet Explorer 9,&nbsp;Opera 24, Safari 3.1</td>
+  </tr>
+  <tr>
+   <th><a>Ogg</a></th>
+   <td>Ogg</td>
+   <td>Chrome 3, Firefox 3.5, Edge 17&nbsp;(desktop only), Internet Explorer 9, Opera&nbsp;10.50</td>
+  </tr>
+  <tr>
+   <th><a>QuickTime (MOV)</a></th>
+   <td>Apple QuickTime movie</td>
+   <td>Only older versions of Safari, plus other browsers that supported Apple's QuickTime plugin</td>
+  </tr>
+  <tr>
+   <th><a>WebM</a></th>
+   <td>Web Media</td>
+   <td>Chrome 6, Edge 17&nbsp;(desktop only), Firefox 4, Opera 10.6, Safari (WebRTC only)</td>
+  </tr>
+ </tbody>
+</table>
 
 ### 选择合适的容器格式
 
-_WIP_
+选择媒体的容器时，需要考虑两个比较重要的因素：版权要求以及目标受众的兼容性要求。
+
+#### 指导方针
+
+- 如果目标受众是使用移动设备的用户，特别是在低端设备或慢速网络上的用户，则在 3GP 容器中提供经过压缩的版本。
+- 如果有任何特定的编码要求，请确保选择的容器支持相应的编解码器。
+- 如果希望采用非专有的格式，则需要使用开放的容器格式，例如 WebM。
+- 如果只能提供一种容器格式的媒体，则选择在最广泛的设备和浏览器上可用的格式，例如 MP4。
+- 如果媒体是纯音频的，则选择纯音频的容器格式。MP3 是一种受到广泛支持的不错选择。WAVE 兼容性也不错，但未压缩，因此不适合将其用于大型音频。如果目标浏览器都支持 FLAC，则由于其无损压缩，是一个非常好的选择。
+
+### 容器选择建议
+
+<table>
+ <thead>
+  <tr>
+   <th>如果你需要...</th>
+   <t>考虑使用此容器格式</th>
+  </tr>
+  <tr>
+   <td>通用视频，最好是开放格式</td>
+   <td>WebM (兜底方案：MP4)</td>
+  </tr>
+  <tr>
+   <td>通用视频</td>
+   <td>MP4 (兜底方案：WebM 或 Ogg)</td>
+  </tr>
+  <tr>
+   <td>高压缩率优化用于低速的网络环境</td>
+   <td>3GP (兜底方案：MP4)</td>
+  </tr>
+  <tr>
+   <td>良好的旧设备/浏览器兼容性</td>
+   <td>QuickTime (兜底方案：AVI 或 MPEG-2)</td>
+  </tr>
+ </thead>
+</table>
 
 ## 参考资料
 
