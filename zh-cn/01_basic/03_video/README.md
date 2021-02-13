@@ -663,7 +663,7 @@ SPS NAL 的第 2 位 (`binary=01100100, hex=0x64, dec=100`) 是 **profile_idc** 
    <td><a>MPEG</a>, <a>QuickTime</a></td>
   </tr>
   <tr>
-   <th><a href="#mpeg-2">MPEG-2</a></th>
+   <th>MPEG-2</th>
    <td>MPEG-2 Part 2 Visual</td>
    <td><a>MP4</a>, <a>MPEG</a>, <a>QuickTime</a></td>
   </tr>
