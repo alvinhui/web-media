@@ -626,9 +626,9 @@ SPS NAL 的第 2 位 (`binary=01100100, hex=0x64, dec=100`) 是 **profile_idc** 
 <table>
  <thead>
   <tr>
-   <th>Codec name (short)</th>
-   <th>Full codec name</th>
-   <th>Container support</th>
+   <th>缩写</th>
+   <th>全称</th>
+   <th>支持的容器</th>
   </tr>
  </thead>
  <tbody>
@@ -705,6 +705,7 @@ _WIP_
    <th>缩写</th>
    <th>全称</th>
    <th>MIME 类型</th>
+   <th>支持的编解码器</th>
    <th>浏览器兼容性</th>
   </tr>
  </thead>
@@ -713,48 +714,56 @@ _WIP_
    <th><a>3GP</a></th>
    <td>Third Generation Partnership</td>
    <td>video/3gpp, video/3gpp2, video/3gp2</td>
+   <td>AVC (H.264), H.263, MPEG-4 Part 2 (MP4v-es), VP8</td>
    <td>Firefox for Android</td>
   </tr>
   <tr>
    <th><a>ADTS</a></th>
    <td>Audio Data Transport Stream</td>
    <td>audio/aac, audio/mpeg</td>
+   <td>AAC, MP3</td>
    <td>Firefox</td>
   </tr>
   <tr>
    <th><a>FLAC</a></th>
    <td>Free Lossless Audio Codec</td>
    <td>audio/flac, audio/x-flac (non-standard)</td>
+   <td>FLAC</td>
    <td>Chrome 56, Edge 16, Firefox 51, Safari 11</td>
   </tr>
   <tr>
    <th><a>MPEG / MPEG-2</a></th>
    <td>Moving Picture Experts Group (1 and 2)</td>
    <td>video/mpeg</td>
+   <td>MPEG-1 Part 2, MPEG-2 Part 2</td>
    <td>—</td>
   </tr>
   <tr>
    <th><a>MPEG-4 (MP4)</a></th>
    <td>Moving Picture Experts Group 4</td>
    <td>video/mp4</td>
+   <td>AVC (H.264), AV1, H.263, VP9</td>
    <td>Chrome 3, Edge 12, Firefox, Internet Explorer 9,&nbsp;Opera 24, Safari 3.1</td>
   </tr>
   <tr>
    <th><a>Ogg</a></th>
    <td>Ogg</td>
    <td>video/ogg</td>
+   <td>Theora, VP8, VP9</td>
    <td>Chrome 3, Firefox 3.5, Edge 17&nbsp;(desktop only), Internet Explorer 9, Opera&nbsp;10.50</td>
   </tr>
   <tr>
    <th><a>QuickTime (MOV)</a></th>
    <td>Apple QuickTime movie</td>
    <td>video/quicktime</td>
-   <td>Only older versions of Safari, plus other browsers that supported Apple's QuickTime plugin</td>
+   <td>-</td>
+   <td>-</td>
   </tr>
   <tr>
    <th><a>WebM</a></th>
    <td>Web Media</td>
    <td>video/webm</td>
+   <td></td>
    <td>Chrome 6, Edge 17&nbsp;(desktop only), Firefox 4, Opera 10.6, Safari (WebRTC only)</td>
   </tr>
  </tbody>
@@ -801,5 +810,6 @@ _WIP_
 
 ## 参考资料
 
-- [多媒体容器格式](https://developer.mozilla.org/zh-CN/docs/Web/Media/Formats/Containers)：通用的多媒体容器的优点、局限性以及用法。 
 - [视频编解码器指南](https://developer.mozilla.org/zh-CN/docs/Web/Media/Formats/%E8%A7%86%E9%A2%91%E7%BC%96%E8%A7%A3%E7%A0%81%E5%99%A8)：提供有关主要浏览器支持的视频编解码器的基本信息，以及一些不普遍支持但仍可能会遇到的视频编解码器。还涵盖了编解码器功能，优势，限制以及浏览器支持级别和限制相关内容。
+- [多媒体容器格式](https://developer.mozilla.org/zh-CN/docs/Web/Media/Formats/Containers)：通用的多媒体容器的优点、局限性以及用法。 
+- [常见媒体类型中的“编解码器”参数](https://developer.mozilla.org/zh-CN/docs/Web/Media/Formats/codecs_parameter)：当指定描述媒体格式的 MIME 类型时，可以使用 `codecs` 参数作为类型字符串的一部分来提供详细信息。本指南描述了 `codecs` 常见媒体类型的参数的格式和可能的值。
