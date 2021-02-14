@@ -217,9 +217,9 @@ P 帧利用了一个事实：当前的画面几乎总能**使用之前的一帧�
 
 ### 副作用
 
-伪影（Artifacts）是有损压缩过程的副作用，丢失或重新排列数据会导致明显的负面影响。
+伪影（Artifacts）是有损压缩后的副作用，产生的原因是因为压缩的过程中会丢失或重新排列数据。
 
-为了解决这个问题，并改善通过视频数据查找问题的时间，可以在一段周期内将关键帧放入，用于修复当前看到任何损坏或伪像残留。
+为了降低副作用的影响，并让查找问题更容器，可以在一段周期内将关键帧放入，用于修复当前看到任何损坏或伪像残留。
 
 #### 混叠（Aliasing）
 
@@ -230,7 +230,7 @@ P 帧利用了一个事实：当前的画面几乎总能**使用之前的一帧�
   <tr>
    <td>
     <h4>莫尔纹</h4>
-    <p>莫尔纹是当源图像中的图案和编码器的操作方式在空间上略有偏离时产生的大规模空间干涉图案。然后，由编码器生成的伪像在解码时会在源图像的图案中引入奇怪的漩涡效果。。</p>
+    <p>莫尔纹是当源图像中的图案和编码器的操作方式在空间上略有偏离时产生的大规模空间干涉图案。然后，由编码器生成的伪像在解码时会在源图像的图案中引入奇怪的漩涡效果。</p>
    </td>
    <td><img src="https://mdn.mozillademos.org/files/16680/moire-pattern.jpg" loading="lazy"></td>
   </tr>
@@ -528,9 +528,9 @@ SPS NAL 的第 2 位 (`binary=01100100, hex=0x64, dec=100`) 是 **profile_idc** 
 
 与任何编码一样，有两个基本因素会影响编码视频的大小和质量：源视频的格式和内容的详细信息，以及在对视频进行编码时使用的编解码器特性和配置。
 
-最简单的道理是：使编码后的视频看起来更像原始的、未压缩的视频体积会更大。因此，始终要在尺寸与质量之间进行权衡。在某些情况下，为了降低体积而质量变差是值得的。其他情况下，质量的损失是不可接受的。并且必须接受会导致文件体积变大的编解码器配置。
+一个普遍的规律是：使编码后的视频看起来更像原始的、未压缩的视频体积会更大。因此，始终要在尺寸与质量之间进行权衡。在某些情况下，为了减小体积而降低质量是值得的。其他情况下，质量的损失是不可接受的。并且我们必须接受会导致文件体积变大的编解码器配置。
 
-此外，所有编解码器都有其优点和缺点。有些会在特定种类的形状和图案时表现糟糕，或者不擅长处理锋利的边缘，或者在黑暗区域丢失细节，任何可能性中丢失细节。这一切都取决于编解码器的算法。 
+此外，所有编解码器都有其优点和缺点。有些会在处理某种类型的形状和图案时表现糟糕，或者不擅长处理锋利的边缘、在黑暗区域丢失细节（或者其他条件下中丢失细节）。这一切都取决于编解码器使用的算法。 
 
 #### 源视频格式和内容的影响
 
@@ -697,11 +697,14 @@ _WIP_
 
 ### 常用的容器格式
 
+下面列出了常用的容器格式。一些仅支持音频，而另一些同时支持音频和视频。
+
 <table>
  <thead>
   <tr>
    <th>缩写</th>
    <th>全称</th>
+   <th>MIME 类型</th>
    <th>浏览器兼容性</th>
   </tr>
  </thead>
@@ -709,41 +712,49 @@ _WIP_
   <tr>
    <th><a>3GP</a></th>
    <td>Third Generation Partnership</td>
+   <td>video/3gpp, video/3gpp2, video/3gp2</td>
    <td>Firefox for Android</td>
   </tr>
   <tr>
    <th><a>ADTS</a></th>
    <td>Audio Data Transport Stream</td>
+   <td>audio/aac, audio/mpeg</td>
    <td>Firefox</td>
   </tr>
   <tr>
    <th><a>FLAC</a></th>
    <td>Free Lossless Audio Codec</td>
+   <td>audio/flac, audio/x-flac (non-standard)</td>
    <td>Chrome 56, Edge 16, Firefox 51, Safari 11</td>
   </tr>
   <tr>
    <th><a>MPEG / MPEG-2</a></th>
+   <td>video/mpeg</td>
    <td>Moving Picture Experts Group (1 and 2)</td>
    <td>—</td>
   </tr>
   <tr>
    <th><a>MPEG-4 (MP4)</a></th>
    <td>Moving Picture Experts Group 4</td>
+   <td>video/mp4</td>
    <td>Chrome 3, Edge 12, Firefox, Internet Explorer 9,&nbsp;Opera 24, Safari 3.1</td>
   </tr>
   <tr>
    <th><a>Ogg</a></th>
    <td>Ogg</td>
+   <td>video/ogg</td>
    <td>Chrome 3, Firefox 3.5, Edge 17&nbsp;(desktop only), Internet Explorer 9, Opera&nbsp;10.50</td>
   </tr>
   <tr>
    <th><a>QuickTime (MOV)</a></th>
    <td>Apple QuickTime movie</td>
+   <td>video/quicktime</td>
    <td>Only older versions of Safari, plus other browsers that supported Apple's QuickTime plugin</td>
   </tr>
   <tr>
    <th><a>WebM</a></th>
    <td>Web Media</td>
+   <td>video/webm</td>
    <td>Chrome 6, Edge 17&nbsp;(desktop only), Firefox 4, Opera 10.6, Safari (WebRTC only)</td>
   </tr>
  </tbody>
