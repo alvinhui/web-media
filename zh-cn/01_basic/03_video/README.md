@@ -729,8 +729,8 @@ _WIP_
   </tr>
   <tr>
    <th><a>MPEG / MPEG-2</a></th>
-   <td>video/mpeg</td>
    <td>Moving Picture Experts Group (1 and 2)</td>
+   <td>video/mpeg</td>
    <td>—</td>
   </tr>
   <tr>
