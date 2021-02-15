@@ -7,4 +7,6 @@
 
 ## 开源技术
 
-- [Chromium Media](https://github.com/chromium/chromium/tree/master/media) ![](https://img.shields.io/github/stars/chromium/chromium?style=social): 媒体元素实现源码
+- [Chromium Media](https://github.com/chromium/chromium/tree/master/media) ![](https://img.shields.io/github/stars/chromium/chromium?style=social)：媒体元素实现源码
+- [Chromium Design Docs](https://github.com/chromium/chromium/blob/master/docs/design/README.md)
+- [Chromium Audio/Video](http://www.chromium.org/audio-video)：Chromium 中有关音频/视频的所有信息。
