@@ -762,6 +762,60 @@ let recorder = new MediaRecorder(sourceStream, options);
 
 你可能需要根据硬件性能、具体需求和使用的特定编解码格式来调整这些值。这样比特率对于网络传输显然是不现实的，该仅适合在本地使用。
 
+`codecs` 参数以小数点来分隔标识属性值，示例中 `av01.2.19H.12.0.000.09.16.09.1` 值对应的含义如下：
+
+<table>
+ <thead>
+  <tr>
+   <th>值</th>
+   <th>描述</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+   <td><code>av01</code></td>
+   <td>表示使用 AV1 编码格式。</td>
+  </tr>
+  <tr>
+   <td><code>2</code></td>
+   <td>profile 类型。2 表示“专业”。 1 表示高级，0 表示主要。</td>
+  </tr>
+  <tr>
+   <td><code>19H</code></td>
+   <td>级别和层级。来自 AV1 规范的<a href="https://aomediacodec.github.io/av1-spec/#levels">第 A.3 小节</a>，该值表示使用 6.3 级的较高级别。</td>
+  </tr>
+  <tr>
+   <td><code>12</code></td>
+   <td>颜色深度。可用的值还有 8 和 10，12 是 AV1 中可用的最高值。</td>
+  </tr>
+  <tr>
+   <td><code>0</code></td>
+   <td>单色模式标志。如果为 1，则不会记录任何色度平面，所有数据亮度数据，从而产生灰度图像。指定 0 代表想要颜色。</td>
+  </tr>
+  <tr>
+   <td><code>000</code></td>
+   <td>色度子采样模式，来自 AV1 规范的<a href="https://aomediacodec.github.io/av1-spec/#color-config-semantics">第 6.4.2 小节</a>。值为 000，再加上 单色模式值 0，则表明要使用 `4：4：4` 色度子采样。</td>
+  </tr>
+  <tr>
+   <td><code>09</code></td>
+   <td>要使用的原色。来自 AV1 规范中的第 6.4.2 小节。9 表示要使用用于 HDR 的 BT.2020 颜色。</td>
+  </tr>
+  <tr>
+   <td><code>16</code></td>
+   <td>要使用的传输特性。也来自第 6.4.2 小节。16 表示要使用 BT.2100 PQ 颜色的特征。</td>
+  </tr>
+  <tr>
+   <td><code>09</code></td>
+   <td>转换用的矩阵系数，也来自第 6.4.2 小节。9 表示要使用亮度可变的 BT.2020。</td>
+  </tr>
+  <tr>
+   <td><code>1</code></td>
+   <td>“颜色范围”，1 表示要使用全部色彩范围。</td>
+  </tr>
+ </tbody>
+</table>
+
+
 ## 视频容器
 
 ### 什么是容器格式
