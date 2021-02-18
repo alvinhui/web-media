@@ -703,18 +703,16 @@ SPS NAL 的第 2 位 (`binary=01100100, hex=0x64, dec=100`) 是 **profile_idc** 
 首先看一下在典型网站（例如博客、信息站点、小型企业网站）上呈现的视频的最佳选择。在该网站上，视频用于演示产品（而不是视频本身就是产品）。
 
 1. WebM 容器，视频使用 VP8 编码格式，音频使用 Opus 编码格式。这些都是开放的，免专利费的格式，但只有在最新的浏览器中才得到很好的支持；
-
-  ```html
-  <video controls src="filename.webm"></video>
-  ```
+    ```html
+    <video controls src="filename.webm"></video>
+    ```
 2. MP4 容器，视频使用 AVC（H.264）编码格式，音频使用 AAC 编码格式。主流浏览器都对 MP4 容器中使用 AVC 和 AAC 编码格式的提供了支持，相对于其他编码格式，该选择质量通常而言是最好的。
-
-  ```html
-  <video controls>
-    <source type="video/webm" src="filename.webm">
-    <source type="video/mp4" src="filename.mp4">
-  </video>
-  ```
+    ```html
+    <video controls>
+      <source type="video/webm" src="filename.webm">
+      <source type="video/mp4" src="filename.mp4">
+    </video>
+    ```
 
 #### 高质量场景
 
