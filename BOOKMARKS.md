@@ -15,7 +15,13 @@
 
 ### [MDN(Mozilla Developer Network)](https://developer.mozilla.org/zh-CN/)
 
-#### Web 技术（Web technology for developers）
+MDN 站点的内容有三大部分组成：Web 技术（Web Technologies）、学习 Web 开发（Learn Web Development）、开发者工具（Developer Tools），内容间互有跳转。下面梳理了 MDN 中与多媒体相关的文章及其概要。
+
+MDN 的文章可以分为两大类型：索引文章和内容文章。索引文章，提供一个主题相关文章的目录；内容文章，提供一个主题的具体内容。
+
+MDN 的索引文章通常由三部分组成：参考（Reference）、指南（Guide）、教程（Tutorials）。
+
+#### Web 技术（Web Technologies）
 
 - [Web 媒体技术](https://developer.mozilla.org/zh-CN/docs/Web/媒体)：列出了可能对掌握 Web 媒体技术有帮助的多种 API 与其文档链接。
 - Web 开发指南：
@@ -31,7 +37,7 @@
 
 ![脑图](https://img.alicdn.com/imgextra/i3/O1CN01b0RMFt1RPfyycYnzH_!!6000000002104-2-tps-1505-1364.png)
 
-#### 学习 Web 开发（Learn web development）
+#### 学习 Web 开发（Learn Web Development）
 
 - [可访问性 - 多媒体的可访问性](https://developer.mozilla.org/zh-CN/docs/learn/Accessibility/%E5%A4%9A%E5%AA%92%E4%BD%93)：可以提高可访问性的另一类内容是多媒体 - 视频，音频和图像内容需要提供适当的文本替代方案，以便辅助技术和相应的用户能够理解。
 - [HTML 指南与教程 - 多媒体与嵌入](https://developer.mozilla.org/zh-CN/docs/Learn/HTML/Multimedia_and_embedding)：探索怎样用 HTML 来让网页包含多媒体，包括可以包含图像的不同方式，以及怎样嵌入视频。
