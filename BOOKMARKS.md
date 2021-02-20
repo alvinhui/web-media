@@ -15,11 +15,22 @@
 
 ### [MDN(Mozilla Developer Network)](https://developer.mozilla.org/zh-CN/)
 
-MDN 站点的内容有三大部分组成：Web 技术（Web Technologies）、学习 Web 开发（Learn Web Development）、开发者工具（Developer Tools），内容间互有跳转。下面梳理了 MDN 中与多媒体相关的文章及其概要。
+MDN 站点的内容有以下三大部分组成，内容间互有跳转。这个章节梳理了 MDN 中与多媒体相关的文章及其概要。
 
-MDN 的文章可以分为两大类型：索引文章和内容文章。索引文章，提供一个主题相关文章的目录；内容文章，提供一个主题的具体内容。
+- Web 技术（Web Technologies）
+- 学习 Web 开发（Learn Web Development）
+- 开发者工具（Developer Tools）
 
-MDN 的索引文章通常由三部分组成：参考（Reference）、指南（Guide）、教程（Tutorials）。
+MDN 的文章可以分为两个类型：
+
+- 索引文章：提供一个主题相关文章的目录
+- 内容文章：提供一个主题的具体内容
+
+MDN 的索引文章通常由三部分组成：
+
+- 参考（Reference）
+- 指南（Guide）
+- 教程（Tutorials）。
 
 #### Web 技术（Web Technologies）
 
