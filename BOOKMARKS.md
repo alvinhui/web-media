@@ -27,7 +27,7 @@ MDN 的索引文章通常由三部分组成：参考（Reference）、指南（G
 - Web 开发指南：
   - [添加音视频](https://developer.mozilla.org/zh-CN/docs/Web/Guide/Audio_and_video_delivery)：基于 Web 的媒体的各种传输机制以及与流行浏览器的兼容性的入门参考。
   - [控制音视频](https://developer.mozilla.org/zh-CN/docs/Web/Guide/Audio_and_video_manipulation)：将音频和视频数据流与 `<canvas>`，WebGL 或 Web Audio API 等技术一起使用，以直接修改音频和视频的参考。
-- Web APIs:
+- Web APIs 参考：
   - [媒体流处理 API（MediaStream API）](https://developer.mozilla.org/zh-CN/docs/Web/API/Media_Streams_API)
   - [网络音频 API（Web Audio API）](https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Audio_API)
   - [媒体源扩展 API（Media Source Extensions API）](https://developer.mozilla.org/zh-CN/docs/Web/API/Media_Source_Extensions_API) 
@@ -35,7 +35,7 @@ MDN 的索引文章通常由三部分组成：参考（Reference）、指南（G
   - [网络视频文本轨道 API（Web Video Text Tracks Format）](https://developer.mozilla.org/zh-CN/docs/Web/API/WebVTT_API)
   - [Web 实时通讯 API（Web Real-Time Communications API）](https://developer.mozilla.org/zh-CN/docs/Web/API/WebRTC_API)
 
-![脑图](https://img.alicdn.com/imgextra/i3/O1CN01b0RMFt1RPfyycYnzH_!!6000000002104-2-tps-1505-1364.png)
+![MDN 内容脑图](https://img.alicdn.com/imgextra/i1/O1CN018lNLDr1JuLZxSay11_!!6000000001088-2-tps-1587-1372.png)
 
 #### 学习 Web 开发（Learn Web Development）
 
