@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./main.css">
+</head>
+
+<body>
+  <figure id="videoContainer" data-fullscreen="false">
+    <video id="video" controls preload="metadata" poster="https://img.alicdn.com/imgextra/i4/O1CN0159dgwS1TMaXfDoJKP_!!6000000002368-0-tps-460-460.jpg">
+      <source src="http://jPlayer.org/video/m4v/Big_Buck_Bunny_Trailer.m4v" type="video/mp4">
+      <source src="http://jPlayer.org/video/webm/Big_Buck_Bunny_Trailer.webm" type="video/webm">
+      <!-- Offer download -->
+      <a href="http://jPlayer.org/video/m4v/Big_Buck_Bunny_Trailer.m4v">Download MP4</a>
+    </video>
+    <ul id="videoControls" class="controls">
+      <li><button id="playpause" type="button">Play/Pause</button></li>
+      <li><button id="stop" type="button">Stop</button></li>
+      <li class="progress">
+        <progress id="progress" value="0" min="0">
+          <!-- feedback -->
+          <span id="progressBar"></span>
+        </progress>
+      </li>
+      <li><button id="mute" type="button">Mute/Unmute</button></li>
+      <li><button id="volinc" type="button">Vol+</button></li>
+      <li><button id="voldec" type="button">Vol-</button></li>
+      <li><button id="fs" type="button">Fullscreen</button></li>
+    </ul>
+  </figure>
+  <script src="./main.js"></script>
+</body>
+
+</html>
