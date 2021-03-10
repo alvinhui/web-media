@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    video {
+        width: 640px;
+        height: 360px;
+    }
+  </style>
+</head>
+<body>
+  <!-- <video controls>
+    <source src="my_video_manifest.mpd">
+    <source src="my_video.mp4">
+    Your browser does not support the video tag.
+  </video> -->
+  <video id="videoPlayer" controls></video>
+  <script src="http://cdn.dashjs.org/latest/dash.all.min.js"></script>
+  <script>
+      (function(){
+          var url = "./my_video_manifest.mpd";
+          // var url = "https://dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd";
+          var player = dashjs.MediaPlayer().create();
+          player.initialize(document.querySelector("#videoPlayer"), url, true);
+      })();
+  </script>
+</body>
+</html>
