@@ -4,28 +4,34 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Web Phone!</title>
+    <title>Video call</title>
     <link rel="stylesheet" href="./index.css">
 </head>
 <body>
     <div class="container">
-        <h1>Phone a friend</h1>
+        <h1>视频通话</h1>
         <p id="caststatus" class="big">
-            Connecting...
+            连接中...
         </p>
         <p>
-            Please use headphones!
+            请使用耳机！
         </p>
         <button class="call-btn">
-            Call
+            开始
         </button>
         <section class="call-container" hidden>
-            <div class="audio-container">
-                <audio controls id="remoteAudio"></audio>
-                <audio controls id="localAudio" hidden muted="true"></audio>
+            <div class="video-container">
+                <div>
+                  <div>自己</div>
+                  <video id="remoteVideo"></video>
+                </div>
+                <div>
+                  <div>对方</div>
+                  <video id="localVideo"></video>
+                </div>
             </div>
             <button class="hangup-btn">
-                Hang up
+               挂断
             </button>
         </section>
     </div>

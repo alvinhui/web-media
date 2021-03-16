@@ -43,3 +43,7 @@ button {
   margin-left: 6rem;
   margin-top: 4rem;
 }
+
+.video-container {
+  display: flex;
+}

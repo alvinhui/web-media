@@ -21,7 +21,7 @@ function showConnectedContent() {
   audioContainer.hidden = false;
 }
 
-const peer = new Peer(''+Math.floor(Math.random()*2**18).toString(36).padStart(4,0));
+const peer = new Peer();
 peer.on('open', showCallContent);
 peer.on('connection', createConn);
 peer.on('call', function(call) {
