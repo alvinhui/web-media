@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Web Phone!</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Phone a friend</h1>
+        <p id="caststatus" class="big">
+            Connecting...
+        </p>
+        <p>
+            Please use headphones!
+        </p>
+        <button class="call-btn">
+            Call
+        </button>
+        <section class="call-container" hidden>
+            <div class="audio-container">
+                <p>You're automatically muted, unmute yourself!</p>
+                <audio controls id="remoteAudio" muted="true"></audio>
+                <audio controls id="localAudio" muted="true"></audio>
+            </div>
+            <button class="hangup-btn">
+                Hang up
+            </button>
+        </section>
+    </div>
+    <section class="modal" hidden>
+        <div id="close">
+            close
+        </div>
+        <div class="inner-modal">
+            <label>Give us your friend's device ID</label>
+            <input placeholder="Enter your friend's device ID" aria-colcount="10">
+            <button class="connect-btn" >
+                Connect
+            </button>
+        </div>
+    </section>
+    <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+    <script src="./script.js" defer></script>
+</body>
+</html>
