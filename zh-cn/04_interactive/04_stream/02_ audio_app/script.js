@@ -7,24 +7,21 @@ function createConn(connection) {
 const hangUpBtn = document.querySelector('.hangup-btn');
 const audioContainer = document.querySelector('.call-container');
 const callBtn = document.querySelector('.call-btn');
+const castStatus = document.getElementById('caststatus');
 
 function showCallContent() {
-  window.caststatus.textContent = `Your device ID is: ${peer.id}`;
+  castStatus.textContent = `Your device ID is: ${peer.id}`;
   callBtn.hidden = false;
   audioContainer.hidden = true;
 }
 
 function showConnectedContent() {
-  window.caststatus.textContent = `You're connected`;
+  castStatus.textContent = `You're connected`;
   callBtn.hidden = true;
   audioContainer.hidden = false;
 }
 
-const peer = new Peer(''+Math.floor(Math.random()*2**18).toString(36).padStart(4,0), {
-  host: location.hostname,
-  debug: 1,
-  path: '/myapp'
-});
+const peer = new Peer(''+Math.floor(Math.random()*2**18).toString(36).padStart(4,0));
 peer.on('open', showCallContent);
 peer.on('connection', createConn);
 peer.on('call', function(call) {
