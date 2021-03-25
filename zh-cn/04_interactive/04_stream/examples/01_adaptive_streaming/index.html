@@ -22,8 +22,8 @@
   <script src="http://cdn.dashjs.org/latest/dash.all.min.js"></script>
   <script>
       (function(){
-          var url = "./my_video_manifest.mpd";
-          // var url = "https://dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd";
+          // var url = "./my_video_manifest.mpd";
+          var url = "https://dash.akamaized.net/envivio/EnvivioDash3/manifest.mpd";
           var player = dashjs.MediaPlayer().create();
           player.initialize(document.querySelector("#videoPlayer"), url, true);
       })();
