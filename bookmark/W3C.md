@@ -12,16 +12,18 @@
 
 ## 多媒体技术的相关小组
 
-- 工作组
+> [关于 W3C 小组](https://www.w3.org/groups/)
+
+- [工作组（Working Group）](https://www.w3.org/groups/wg/)
   - [Web 超文本应用技术工作组（WHATWG）](https://whatwg.org/)
   - [网络实时通信工作组（Web Real-Time Communications Working Group）](https://www.w3.org/groups/wg/webrtc)
   - [音频工作组（Audio Working Group）](https://www.w3.org/2011/audio/)
   - [媒体工作组（Media Working Group）](https://www.w3.org/media-wg/)
   - [定时文本工作组（Timed Text Working Group）](https://www.w3.org/AudioVideo/TT/)
-- 社区组
-  - [Web 媒体 API 社区组（Web Media API Community Group）](https://www.w3.org/community/webmediaapi)
-- 兴趣小组
+- [兴趣组（Interest Group）](https://www.w3.org/groups/ig/)
   - [媒体和娱乐兴趣小组（Media and Entertainment Interest Group）](https://www.w3.org/groups/ig/me)
+- [社区和商务组（Community and Business Groups）](https://www.w3.org/groups/cg/)
+  - [Web 媒体 API 社区组（Web Media API Community Group）](https://www.w3.org/community/webmediaapi)
 
 ## 多媒体技术的相关内容
 
