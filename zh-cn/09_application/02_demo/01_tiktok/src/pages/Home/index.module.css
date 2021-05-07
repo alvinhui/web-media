@@ -1,0 +1,21 @@
+body {
+  margin: 0;
+}
+
+.slider {
+  width: 750rpx;
+  position: relative;
+  overflow: hidden;
+  height: 500rpx;
+  background-color: #cccccc;
+}
+
+.itemWrap {
+  width: 750rpx;
+  height: 500rpx;
+}
+
+.image {
+  width: 750rpx;
+  height: 500rpx;
+}
