@@ -14,6 +14,7 @@
 
 ## 目录
 
+- [序言](./zh-cn/00_preface)
 - [媒体基础](./zh-cn/01_basic)
   - [理解图像](./zh-cn/01_basic/01_image)
   - 理解音频
