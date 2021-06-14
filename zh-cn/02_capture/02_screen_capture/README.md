@@ -1,6 +1,6 @@
 # 获取屏幕内容
 
-开发多媒体应用会需要处理的另一个场景，就是从设备屏幕上获取内容。这里面包含两种情况，一种是将 Web 应用程序中生成或查看的媒体内容转换为媒体流（用于录制或传输），更常见的是将由任何应用程序或整个屏幕的内容转换成媒体流（截图或录屏）。
+从设备屏幕上获取内容是开发多媒体应用需要处理的一个常见场景。这里面包含两种情况，一种是将 Web 应用程序中生成或查看的媒体内容转换为媒体流（用于录制或传输），更常见的是将由任何应用程序或整个屏幕的内容转换成媒体流（用于截图或录屏）。
 
 ## 获取 Web 中的媒体内容
 
@@ -9,7 +9,7 @@
 - 从 canvas 中录制或直播游戏：例如为用户提供实时的游戏界面分享功能；
 
   ![示例](https://img.alicdn.com/imgextra/i1/O1CN01uSKWvQ1LIuSUNxZmr_!!6000000001277-1-tps-960-501.gif)
-- 从照相机获取视频，然后为其添加其他内容或特效：例如绿幕、美颜；
+- 为视频流添加其他内容或特效：例如绿幕、美颜等；
 
   ![示例](https://img.alicdn.com/imgextra/i1/O1CN01cGf9Yz1y0NRnxBmx2_!!6000000006516-0-tps-281-500.jpg)
   > 图片来源：[视频美颜助手app](http://www.87g.com/az/58890.html)
@@ -19,7 +19,7 @@
   > 图片来源：[《iOS13新增FaceTime通话注视感知校正功能，视频通话更自然》](http://iphone.poppur.com/Apps/9349.html)
 - 在 canvas 中合并视频和图像；
 
-Web 应用程序可以通过对网页上的画布和媒体元素调用 `captureStream()` 方法来实现这样的效果。该方法使得来自画布和媒体元素中的任何视频或音频流都能够通过 WebRTC 进行录制或直播，又或者放到 `<canvas>` 中与特效或其他媒体流相结合。
+Web 应用程序可以通过对网页上的画布和媒体元素调用 `captureStream()` 方法来实现这些效果。该方法使得来自画布和媒体元素中的任何视频或音频流都能够通过 WebRTC 进行录制或直播，又或者放到 `<canvas>` 中与特效或其他媒体流相结合。
 
 `captureStream()` API 的使用方式非常简单：
 
@@ -31,6 +31,7 @@ Web 应用程序可以通过对网页上的画布和媒体元素调用 `captureS
 
     // 每秒帧数参数是可选的。
     var stream = canvas.captureStream(25);
+
     // 将 video 元素的源设置为 canvas 中的流
     video.srcObject = stream;
     ```
@@ -41,7 +42,7 @@ Web 应用程序可以通过对网页上的画布和媒体元素调用 `captureS
     var rightVideo = document.getElementById('rightVideo');
 
     leftVideo.onplay = function() {
-      // 将一个 video 元素的源设置为另一个元素的流
+      // 将一个 video 元素的源设置为另一个 video 元素的流
       var stream = leftVideo.captureStream();
       rightVideo.srcObject = stream;
     };
@@ -58,7 +59,7 @@ Web 应用程序可以通过对网页上的画布和媒体元素调用 `captureS
 
 更常见的场景是获取应用程序窗口或整个屏幕上的内容，转换为媒体流，用于录制或通过网络进行共享。
 
-例如可以在一个会议服务应用程序中共享演讲者的演示文稿，又或者为远程控制工具（例如 Chrome remote Desktop）向负责控制的计算机提供受控计算机的屏幕图像。
+例如，可以在一个会议服务应用程序中共享演讲者的演示文稿，又或者为远程控制工具（例如 [Chrome remote Desktop](https://remotedesktop.google.com/)）向负责控制的计算机提供受控计算机的屏幕图像。
 
 ### 如何获取
 
