@@ -1,6 +1,6 @@
 # 获取屏幕内容
 
-让我们来看一下如何从设备屏幕上获取内容。这里面包含两种情况，一种是将 Web 应用程序中生成或查看的媒体内容转换为媒体流（用于录制或传输），更常见的是将由任何应用程序或整个屏幕的内容转换成媒体流（截图或录屏）。
+开发多媒体应用会需要处理的另一个场景，就是从设备屏幕上获取内容。这里面包含两种情况，一种是将 Web 应用程序中生成或查看的媒体内容转换为媒体流（用于录制或传输），更常见的是将由任何应用程序或整个屏幕的内容转换成媒体流（截图或录屏）。
 
 ## 获取 Web 中的媒体内容
 
@@ -15,7 +15,7 @@
   > 图片来源：[视频美颜助手app](http://www.87g.com/az/58890.html)
 - 使用 canvas 用多个视频实现画中画效果：例如视频通话时的小窗口；
 
-  ![示例](https://img.alicdn.com/imgextra/i2/O1CN01qs3fMu1cSO7exFnaK_!!6000000003599-0-tps-800-390.jpg)
+  ![示例](https://img.alicdn.com/imgextra/i2/O1CN01qs3fMu1cSO7exFnaK_!!6000000003599-0-tps-800-390.jpg_790x10000)
   > 图片来源：[《iOS13新增FaceTime通话注视感知校正功能，视频通话更自然》](http://iphone.poppur.com/Apps/9349.html)
 - 在 canvas 中合并视频和图像；
 
@@ -54,7 +54,7 @@
 - 尝试对通过[加密媒体扩展](http://www.html5rocks.com/en/tutorials/eme/basics/)实现内容保护的媒体元素使用 `captureStream()` 将引发异常。
 - 调用 `captureStream()` 从 `<canvas>` 捕获时可以设置最大帧速率。例如，`canvas.captureStream(10)` 意味着 canvas 输出在 0 到 10fps 之间。如果在 `<canvas>` 上没有绘制任何内容，则不会捕获任何内容。即使 `<canvas>` 以 30fps 的速度绘制，也会捕获 `10fps` 的内容。
 
-## 获取应用程序窗口或整个屏幕
+## 获取屏幕上的内容
 
 更常见的场景是获取应用程序窗口或整个屏幕上的内容，转换为媒体流，用于录制或通过网络进行共享。
 
@@ -62,20 +62,36 @@
 
 ### 如何获取
 
-通过调用 `navigator.mediaDevices.getDisplayMedia()` 来将屏幕内容转换为实时 `MediaStream`，该方法将返回一个 Promise，Promise 为包含实时屏幕内容的流：
+通过调用 `navigator.mediaDevices.getDisplayMedia()` 来将屏幕内容转换为实时 `MediaStream`，该方法将返回一个 `Promise`，`Promise` 为包含实时屏幕内容的流数据：
 
 ```js
-navigator.mediaDevices.getDisplayMedia(displayMediaOptions)
-    .catch(err => { console.error("Error:" + err); return null; });
+navigator
+  .mediaDevices
+  .getDisplayMedia(displayMediaOptions)
+  .catch(err => { console.error("Error:" + err); return null; });
 ```
 
 调用该方法后，浏览器会弹出一个用户界面来提示用户选择要共享的屏幕区域：
 
-![示例](https://img.alicdn.com/imgextra/i3/O1CN01YuvW7E1fZfGQBgbfa_!!6000000004021-2-tps-1239-1041.png)
+![示例](https://img.alicdn.com/imgextra/i3/O1CN01YuvW7E1fZfGQBgbfa_!!6000000004021-2-tps-1239-1041.png_790x10000)
+
+可以选择的区域范围有：整个屏幕、某个应用程序窗口或浏览器上的某个标签。
 
 #### 选项
 
-_WIP_
+`getDisplayMedia()` 方法可以接收一个 [`DisplayMediaStreamConstraints`](https://developer.mozilla.org/en-US/docs/Web/API/DisplayMediaStreamConstraints) 对象用于配置捕获到的媒体流。
+
+`DisplayMediaStreamConstraints` 对象用于指定在返回的媒体流中是否包含视频或音频流，以及如何对其进行处理。对于音频或视频流的处理配置是通过 [`MediaTrackConstraints`](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints) 对象指定的：
+
+```ts
+interface DisplayMediaStreamConstraints {
+  video?: boolean | MediaTrackConstraints;
+  audio?: boolean | MediaTrackConstraints;
+}
+function getDisplayMedia(options?: DisplayMediaStreamConstraints): Promise<MediaStream>;
+```
+
+选项只会应用于捕获到的媒体流结果，对选择屏幕区域的弹窗和捕获的过程没有约束。例如，如果用 `width` 属性指定视频流的配置，则在用户选择要共享的区域后将通过缩放视频来应用它，它没有对源本身的大小设置限制。
 
 #### 可见和不可见部分
 

@@ -1,0 +1,17 @@
+#video {
+  border: 1px solid #999;
+  width: 98%;
+  max-width: 860px;
+}
+
+.error {
+  color: red;
+}
+
+.warn {
+  color: orange;
+}
+
+.info {
+  color: darkgreen;
+}
