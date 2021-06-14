@@ -122,36 +122,6 @@ G = Y - 0.344Cb - 0.714Cr
   </thead>
   <tbody>
     <tr>
-      <th><a>APNG</a></th>
-      <th>
-        Animated Portable Network Graphics<br>
-        <strong>动态便携式网络图像</strong>
-      </th>
-      <td><code>image/apng</code></td>
-      <td><code>.apng</code></td>
-      <td>Chrome, Edge, Firefox, Opera, Safari</td>
-    </tr>
-    <tr>
-      <th><a>AVIF</a></th>
-      <th>
-        AV1 Image File Format<br>
-        AV1&nbsp;图像文件格式
-      </th>
-      <td><code>image/avif</code></td>
-      <td><code>.avif</code></td>
-      <td>Chrome, Opera, Firefox (feature flag)</td>
-      </tr>
-      <tr>
-      <th><a>GIF</a></th>
-      <th>
-        Graphics Interchange Format<br>
-        图像互换格式
-      </th>
-      <td><code>image/gif</code></td>
-      <td><code>.gif</code></td>
-      <td>Chrome, Edge, Firefox, Internet Explorer, Opera, Safari</td>
-    </tr>
-    <tr>
       <th><a>JPEG</a></th>
       <th>
         Joint Photographic Expert Group image<br>
@@ -207,6 +177,36 @@ G = Y - 0.344Cb - 0.714Cr
   </tr>
  </thead>
  <tbody>
+  <tr>
+    <th><a>APNG</a></th>
+    <th>
+      Animated Portable Network Graphics<br>
+      <strong>动态便携式网络图像</strong>
+    </th>
+    <td><code>image/apng</code></td>
+    <td><code>.apng</code></td>
+    <td>Chrome, Edge, Firefox, Opera, Safari</td>
+  </tr>
+  <tr>
+    <th><a>AVIF</a></th>
+    <th>
+      AV1 Image File Format<br>
+      AV1&nbsp;图像文件格式
+    </th>
+    <td><code>image/avif</code></td>
+    <td><code>.avif</code></td>
+    <td>Chrome, Opera, Firefox (feature flag)</td>
+    </tr>
+    <tr>
+    <th><a>GIF</a></th>
+    <th>
+      Graphics Interchange Format<br>
+      图像互换格式
+    </th>
+    <td><code>image/gif</code></td>
+    <td><code>.gif</code></td>
+    <td>Chrome, Edge, Firefox, Internet Explorer, Opera, Safari</td>
+  </tr>
   <tr>
    <th><a>BMP</a></th>
    <th>Bitmap file</th>
@@ -293,3 +293,4 @@ PNG 可能是最好的选择，但是无损 WebP 可以得到更好的压缩效�
 
 - [图像文件类型与格式指南](https://developer.mozilla.org/zh-CN/docs/Web/Media/Formats/Image_types)
 - [编码颜色](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_concepts#encoding_color)
+- [Wiki: Image file formats](https://en.wikipedia.org/wiki/Image_file_formats)
