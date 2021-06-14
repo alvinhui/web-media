@@ -122,6 +122,16 @@ G = Y - 0.344Cb - 0.714Cr
   </thead>
   <tbody>
     <tr>
+      <th><a>GIF</a></th>
+      <th>
+        Graphics Interchange Format<br>
+        图像互换格式
+      </th>
+      <td><code>image/gif</code></td>
+      <td><code>.gif</code></td>
+      <td>Chrome, Edge, Firefox, Internet Explorer, Opera, Safari</td>
+    </tr>
+    <tr>
       <th><a>JPEG</a></th>
       <th>
         Joint Photographic Expert Group image<br>
@@ -197,16 +207,7 @@ G = Y - 0.344Cb - 0.714Cr
     <td><code>.avif</code></td>
     <td>Chrome, Opera, Firefox (feature flag)</td>
     </tr>
-    <tr>
-    <th><a>GIF</a></th>
-    <th>
-      Graphics Interchange Format<br>
-      图像互换格式
-    </th>
-    <td><code>image/gif</code></td>
-    <td><code>.gif</code></td>
-    <td>Chrome, Edge, Firefox, Internet Explorer, Opera, Safari</td>
-  </tr>
+  <tr>
   <tr>
    <th><a>BMP</a></th>
    <th>Bitmap file</th>
