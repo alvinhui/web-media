@@ -21,7 +21,7 @@
   - [理解视频](./zh-cn/01_basic/03_video)
 - [媒体捕获](./zh-cn/02_capture)
   - [捕获音频和视频](./zh-cn/02_capture/01_camera_and_mike)
-  - 获取屏幕内容
+  - [获取屏幕内容](./zh-cn/02_capture/02_screen_capture)
   - 设置摄像设备
 - 媒体传输
   - 自适应流
