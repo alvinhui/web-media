@@ -62,7 +62,7 @@ Web 应用程序可以通过对网页上的画布和媒体元素调用 `captureS
 
 ### 如何获取
 
-Web 应用程序可以通过调用 `navigator.mediaDevices.getDisplayMedia()` 方法来将屏幕内容转换为实时的 `MediaStream`，该方法将返回一个 `Promise`，包含实时屏幕内容的流数据：
+Web 应用程序可以通过调用 `navigator.mediaDevices.getDisplayMedia()` 方法来将屏幕内容转换为实时的 [MediaStream](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream)，该方法将返回一个 `Promise`，包含实时屏幕内容的流数据：
 
 ```js
 navigator.mediaDevices.getDisplayMedia()
@@ -146,7 +146,154 @@ Feature-Policy: display-capture 'self'
 
 ### 示例 
 
-_WIP_
+接下来我们通过一个示例来演示如何获取用户的屏幕内容并显示在 Web 应用内。下面是这个示例的最终效果：
+
+![](https://img.alicdn.com/imgextra/i2/O1CN01X4CrkP1jlLpvDavjW_!!6000000004588-2-tps-887-855.png_790x10000)
+
+可以看到这个示例由三个部分组成：
+
+1. 操作区：允许用户通过启动按钮主动发起获取屏幕内容的操作
+2. 内容显示区：将获取到的屏幕内容将显示到这里
+3. 日志区：如果获取屏幕内容程序启动成功，将输出对视频流的约束和设置，如果失败则显示错误信息
+
+#### HTML
+
+首先实现 HTML 部分：
+
+```html
+<div>
+  <p>
+    将在下面的区域显示获取到的用户屏幕内容。
+  </p>
+  <div>
+    <button id="start">
+      开始获取
+    </button>
+    <button id="stop">
+      停止获取
+    </button>
+  </div>
+  <br />
+  <video id="video" autoplay></video>
+  <div>
+    <strong>日志：</strong>
+    <br />
+    <pre id="log"></pre>
+  </div>
+</div>
+```
+
+1. 通过两个 [button](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button) 元素来允许用户来开始和终止屏幕内容的获取
+2. 获取到的媒体流将输出给 [video](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video) 元素进行显示
+3. 用 pre 元素来显示操作结果
+
+#### CSS
+
+接下来实现 CSS 部分，视频区添加边框加以区分，`error` 和 `info` 是应用于日志区的文本样式。
+
+```css
+#video {
+  border: 1px solid #999;
+  width: 98%;
+  max-width: 860px;
+}
+.error {
+  color: red;
+}
+.info {
+  color: green;
+}
+```
+
+#### JavaScript
+
+最后来实现获取屏幕内容的核心 JavaScript 部分代码。
+
+声明常量来引用页面上的元素：
+
+```js
+const videoElem = document.getElementById('video');
+const logElem = document.getElementById('log');
+const startElem = document.getElementById('start');
+const stopElem = document.getElementById('stop');
+```
+
+为 start 和 stop 按钮添加点击事件监听：
+
+```js
+startElem.addEventListener('click', startCapture, false);
+stopElem.addEventListener('click', stopCapture, false);
+```
+
+添加日志函数，将日志函数的内容输出到 pre 元素上：
+
+```js
+const error = msg => logElem.innerHTML += `<span class="error">${msg}</span><br>`;
+const info = msg => logElem.innerHTML += `<span class="info">${msg}</span><br>`;
+```
+
+实现开始获取屏幕内容程序：
+
+```js
+async function startCapture() {
+  // 每次启动获取屏幕程序都将使用全新的日志
+  logElem.innerHTML = '';
+
+  try {
+    const displayMediaOptions = {
+      video: {
+        cursor: 'always',
+      },
+      audio: true
+    };
+    // 必须使用异步的方式调用 getDisplayMedia
+    // 因为需要等待用户的选择确认授权
+    const mediaStream = await navigator.mediaDevices.getDisplayMedia(displayMediaOptions);
+
+    // 获取到的媒体流通过视频元素进行实时显示
+    videoElem.srcObject = mediaStream;
+
+    // 将相关流的信息输出到日志框
+    dumpOptionsInfo();
+  } catch(err) {
+    // 如果获取失败，则显示错误信息
+    error('Error: ' + err);
+  }
+}
+```
+
+停止获取屏幕内容：
+
+```js
+function stopCapture() {
+  // 获取当前视频元素的所有媒体轨道
+  const tracks = videoElem.srcObject.getTracks();
+
+  // 停止媒体轨道的流获取
+  tracks.forEach(track => track.stop());
+
+  // 销毁媒体流对象
+  videoElem.srcObject = null;
+}
+```
+
+显示媒体流信息：
+
+```js
+function dumpOptionsInfo() {
+  const videoTrack = videoElem.srcObject.getVideoTracks()[0];
+  info('Track settings:');
+  info(JSON.stringify(videoTrack.getSettings(), null, 2));
+  info('Track constraints:');
+  info(JSON.stringify(videoTrack.getConstraints(), null, 2));
+}
+```
+
+使用 [getSettings()](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/getSettings) 方法获取当前视频流的设置，以及使用 [getConstraints()](https://developer.mozilla.org/en-US/docs/Web/API/MediaStreamTrack/getConstraints) 来获取视频流的约束。
+
+关于 Settings 和 Constraints 可参考[《功能、约束和设置》](https://developer.mozilla.org/en-US/docs/Web/API/Media_Streams_API/Constraints)。
+
+完整的示例代码可以在 [Github 上找到](https://github.com/alvinhui/web-media/tree/main/zh-cn/02_capture/02_screen_capture/examples/02_getDisplayMedia)。
 
 ## 参考资料
 
