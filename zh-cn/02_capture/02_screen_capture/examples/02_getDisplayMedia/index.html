@@ -4,33 +4,29 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>getDisplayMedia</title>
+    <title>Screen Capture</title>
     <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
     <div>
       <p>
-        This example shows you the contents of the selected part of your display.
-        Click the Start Capture button to begin.
+       将在下面的区域显示获取到的用户屏幕内容。
       </p>
-  
-      <p>
+      <div>
         <button id="start">
-          Start Capture
+          开始获取
         </button>
-        &nbsp;
         <button id="stop">
-          Stop Capture
+          停止获取
         </button>
-      </p>
-  
+      </div>
+      <br />
       <video id="video" autoplay></video>
-  
-      <br />
-  
-      <strong>Log:</strong>
-      <br />
-      <pre id="log"></pre>
+      <div>
+        <strong>日志：</strong>
+        <br />
+        <pre id="log"></pre>
+      </div>
     </div>
     <script src="./index.js"></script>
   </body>
