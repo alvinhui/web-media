@@ -294,4 +294,4 @@ PNG 可能是最好的选择，但是无损 WebP 可以得到更好的压缩效�
 
 - [图像文件类型与格式指南](https://developer.mozilla.org/zh-CN/docs/Web/Media/Formats/Image_types)
 - [编码颜色](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_concepts#encoding_color)
-- [Wiki: Image file formats](https://en.wikipedia.org/wiki/Image_file_formats)
+- [Wikipedia: Image file formats](https://en.wikipedia.org/wiki/Image_file_formats)

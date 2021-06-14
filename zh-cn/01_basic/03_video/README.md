@@ -820,7 +820,9 @@ let recorder = new MediaRecorder(sourceStream, options);
 
 ### 什么是容器格式
 
-_WIP_
+又称封装格式，是把已经编码封装好的视频、音频按照一定的规范放在一起的组织方式（例如有些容器格式规定文件内容分为头部、主体、索引三部分），容器中可能还有字幕、脚本等内容。。
+
+同一种容器格式中可以放不同编码的视频，通常一种视频容器格式一般只支持某几类编码格式的视频。
 
 ### 常用的容器格式
 
@@ -937,7 +939,8 @@ _WIP_
 
 ## 参考资料
 
-- [Digital video concepts](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_concepts)
+- [Wikipedia: Video file format](https://en.wikipedia.org/wiki/Video_file_format)
+- [Digital video concepts](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Video_concepts)：探讨有助于理解视频的重要概念，以便能够掌握如何处理网络上的视频。
 - [网络视频编解码器指南](https://developer.mozilla.org/zh-CN/docs/Web/Media/Formats/%E8%A7%86%E9%A2%91%E7%BC%96%E8%A7%A3%E7%A0%81%E5%99%A8)：提供有关主要浏览器支持的视频编解码器的基本信息，以及一些不普遍支持但仍可能会遇到的视频编解码器。还涵盖了编解码器功能，优势，限制以及浏览器支持级别和限制相关内容。
 - [多媒体容器格式](https://developer.mozilla.org/zh-CN/docs/Web/Media/Formats/Containers)：通用的多媒体容器的优点、局限性以及用法。 
 - [The "codecs" parameter in common media types](https://developer.mozilla.org/en-US/docs/Web/Media/Formats/codecs_parameter)：当指定描述媒体格式的 MIME 类型时，可以使用 `codecs` 参数作为类型字符串的一部分来提供详细信息。本指南描述了 `codecs` 常见媒体类型的参数的格式和可能的值。
