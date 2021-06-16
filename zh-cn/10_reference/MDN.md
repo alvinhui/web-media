@@ -21,7 +21,7 @@
 
 ## 怎么学？
 
-我刚打开 MDN 的时候是一脸懵逼的。相信你也会有这样的感觉：琳琅满目的文章列表，复杂的循环链接跳转…… 我们可能会陷入内容的回调地狱而无法建立一套知识结构体系。
+MDN 内容非常丰富，但也有它的缺点。笔者以为，由于 MDN 是多人编辑、处在高速地迭代当中、内容，我们可能会陷入内容的回调地狱而无法建立一套知识结构体系。
 
 ### 页面类型和结构
 
@@ -60,7 +60,7 @@ MDN 的页面是有一定的模板的（遵循一定的组织结构），有如�
 
 ## Web 多媒体技术学习清单
 
-![内容思维图](https://img.alicdn.com/imgextra/i4/O1CN01dXlzb31rrJtiLdfrE_!!6000000005684-55-tps-1678-1721.svg)
+![内容思维图](https://img.alicdn.com/imgextra/i3/O1CN01wxyqoA1Ijz1frL8qw_!!6000000000930-2-tps-1785-1701.png)
 
 ### 学习 Web 开发（Learn Web Development）
 
@@ -70,10 +70,10 @@ MDN 的页面是有一定的模板的（遵循一定的组织结构），有如�
 ### Web 技术（Web Technologies）
 
 - [Web 媒体技术](https://developer.mozilla.org/zh-CN/docs/Web/媒体)：列出了可能对掌握 Web 媒体技术有帮助的多种 API 与其文档链接。
-- Web 开发指南：
-  - [添加音视频](https://developer.mozilla.org/zh-CN/docs/Web/Guide/Audio_and_video_delivery)：基于 Web 的媒体的各种传输机制以及与流行浏览器的兼容性的入门参考。
-  - [控制音视频](https://developer.mozilla.org/zh-CN/docs/Web/Guide/Audio_and_video_manipulation)：将音频和视频数据流与 `<canvas>`，WebGL 或 Web Audio API 等技术一起使用，以直接修改音频和视频的参考。
-- Web APIs 参考：
+- [Web 开发指南](https://developer.mozilla.org/en-US/docs/Web/Guide)：
+  - [提供音视频内容](https://developer.mozilla.org/zh-CN/docs/Web/Guide/Audio_and_video_delivery)：基于 Web 的媒体的各种传输机制以及与流行浏览器的兼容性的入门参考。
+  - [进行音视频处理](https://developer.mozilla.org/en-US/docs/Web/Guide/Audio_and_video_manipulation)：将音频和视频数据流与 `<canvas>`，WebGL 或 Web Audio API 等技术一起使用，以直接修改音频和视频的参考。
+- [Web APIs 参考](https://developer.mozilla.org/zh-CN/docs/Web/API)：
   - [网络音频 API（Web Audio API）](https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Audio_API)
   - [实时通讯 API（WebRTC API）](https://developer.mozilla.org/zh-CN/docs/Web/API/WebRTC_API)
   - [媒体源扩展 API（Media Source Extensions API）](https://developer.mozilla.org/zh-CN/docs/Web/API/Media_Source_Extensions_API) 

@@ -313,3 +313,4 @@ function dumpOptionsInfo() {
 - [Screen Capture API](https://developer.mozilla.org/en-US/docs/Web/API/Screen_Capture_API)
 - [Capture a MediaStream From a Canvas, Video or Audio Element](https://developers.google.com/web/updates/2016/10/capture-stream)
 - [Using the Screen Capture API](https://developer.mozilla.org/en-US/docs/Web/API/Screen_Capture_API/Using_Screen_Capture)
+- [Audio and video manipulation](https://developer.mozilla.org/en-US/docs/Web/Guide/Audio_and_video_manipulation)
