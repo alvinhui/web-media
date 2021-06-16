@@ -29,7 +29,7 @@ MDN 上的页面可以分为以下几种类型，一个页面可以属于多个�
 
 - 导航页（Navigation）：提供到其他页面的链接，导航页通常是关于某一个相关主题的（参考：[Web media technologies](https://developer.mozilla.org/en-US/docs/Web/Media)）。
 - 指南页（Guide）：描述如何做某事或使用某个功能，它的内容是根据目标进行组织的（参考：[Visualizations with Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API)）。
-- 参考页（Reference）：描述某个事物的细节，它的内容是根据所描述事物的结构进行组织的（参考：[<video> element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video)）。
+- 参考页（Reference）：描述某个事物的细节，它的内容是根据所描述事物的结构进行组织的（参考：[`<video>` element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/video)）。
 - 教程页（Tutorials）
 
 MDN 的页面是有一定的模板的（遵循一定的组织结构），有如下模板。
