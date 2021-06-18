@@ -1,4 +1,4 @@
-# 流媒体
+# 播放流媒体
 
 ## 指南
 
@@ -72,3 +72,5 @@
 - [Live streaming web audio and video](https://developer.mozilla.org/en-US/docs/Web/Guide/Audio_and_video_delivery/Live_streaming_web_audio_and_video)
 - [Setting up adaptive streaming media sources](https://developer.mozilla.org/en-US/docs/Web/Guide/Audio_and_video_delivery/Setting_up_adaptive_streaming_media_sources)
 - [DASH Adaptive Streaming for HTML 5 Video](https://developer.mozilla.org/en-US/docs/Web/Media/DASH_Adaptive_Streaming_for_HTML_5_Video)
+- [Demystifying HTML5 Video Player](https://medium.com/@eyevinntechnology/demystifying-html5-video-player-e480846328f0)
+- [How to build your own streaming video HTML player](https://medium.com/@eyevinntechnology/how-to-build-your-own-streaming-video-html-player-6ee85d4d078a)
