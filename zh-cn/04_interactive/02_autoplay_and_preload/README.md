@@ -10,9 +10,9 @@
   - [功能政策](#功能政策)
   - [最佳实践](#最佳实践)
 - [预加载资源](#预加载资源)
-  - [视频元素属性](#视频元素属性)
-  - [资源链接标签](#资源链接标签)
-  - [手动缓冲](#手动缓冲)
+  - [使用视频元素属性](#使用视频元素属性)
+  - [使用资源链接标签](#使用资源链接标签)
+  - [使用手动缓冲](#使用手动缓冲)
 - [参考资料](#参考资料)
 
 ## 自动播放
@@ -180,7 +180,7 @@ Feature-Policy: autoplay 'self' https://example.media
 | 资源链接标签 | 在不阻塞文档 `onload` 事件的情况下请求视频资源；与 MSE 和文件段配合良好。	| 与 HTTP 范围请求不兼容；获取整个媒体资源时应仅限于小型文件 (<5 MB)。|
 | 手动缓冲 | 完全控制	| 复杂的错误处理。 |
 
-### 视频元素属性
+### 使用视频元素属性
 
 如果视频资源托管在 Web 服务器上只有完整的文件，则可以使用 `video` 元素的 [`preload`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/video#attr-preload) 属性向浏览器指示要预加载多少的内容。
 
@@ -226,7 +226,7 @@ Feature-Policy: autoplay 'self' https://example.media
 
 如果在同一个域中包含许多视频资源，则建议将 `preload` 值设置为 `metadata` 或定义 `poster` 属性并设置`preload` 的值为 `none`：这样可以避免超过同域的最大 HTTP 连接数（HTTP 1.1 规范为 6 个）；如果视频不是网页要提供的核心内容，这也可以提高页面的渲染速度。
 
-### 资源链接标签
+### 使用资源链接标签
 
 [资源预加载链接](https://w3c.github.io/preload/)是一种获取声明，用于强制浏览器请求某资源而不阻塞页面下载 和 load 事件。通过 `<link rel="preload">` 加载的资源被缓存到本地浏览器，在 DOM、JavaScript 或 CSS 中明确引用它们之前不会被载入。
 
@@ -309,7 +309,7 @@ function preloadFirstSegmentSupported() {
 }
 ```
 
-### 手动缓冲
+### 使用手动缓冲
 
 让我们看看如何使用 MSE 手动缓冲视频，下面的示例假设 Web 服务器支持 HTTP [Range](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Range) 请求。
 

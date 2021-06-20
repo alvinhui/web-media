@@ -8,7 +8,7 @@
 - [获取屏幕上的媒体内容](#获取屏幕上的媒体内容)
   - [如何获取](#如何获取)
   - [功能策略](#功能策略)
-  - [示例](#示例)
+  - [代码示例](#代码示例)
 - [参考资料](#参考资料)
 
 ## 获取Web中的媒体内容
@@ -154,7 +154,7 @@ Feature-Policy: display-capture 'self'
 <iframe src="https://mycode.example.net/etc" allow="display-capture"></iframe>
 ```
 
-### 示例 
+### 代码示例 
 
 接下来我们通过一个示例来演示如何获取用户的屏幕内容并显示在 Web 应用内。下面是这个示例的最终效果：
 
