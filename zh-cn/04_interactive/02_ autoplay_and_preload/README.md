@@ -1,4 +1,4 @@
-# 自动播放和预加载
+# 自动播放和预加载资源
 
 ## 自动播放
 
@@ -146,13 +146,73 @@ Feature-Policy: autoplay 'self' https://example.media
 
 这个视频元素配置了 `controls` 属性以包含用户控件（通常是播放/暂停、在视频的时间轴、音量控制和静音），此外由于设置了 `muted` 和 `autoplay` 属性，视频将自动播放但静音。但是，用户仍可以通过单击控件中的取消静音按钮来重新启用音频。
 
-## 预加载
+## 预加载资源
 
-### 通过视频元素属性预加载
+当用户点击开始播放按钮后，应尽可能地减少[缓冲带来的等待](https://www.digitaltrends.com/web/buffer-rage/)，更快速流畅地播放媒体。
 
-...
+接下来将介绍几种通过主动预加载资源来加速媒体播放的技术。
 
-### 通过链接标签预加载
+<video controls muted playsinline>
+  <source src="https://storage.googleapis.com/web-dev-assets/fast-playback-with-preload/video-preload-hero.webm#t=1.1" type="video/webm">
+  <source src="https://storage.googleapis.com/web-dev-assets/fast-playback-with-preload/video-preload-hero.mp4#t=1.1" type="video/mp4">
+</video>
+
+预加载媒体资源有三种常见的方法，来看一下他们的优缺点：
+
+|   | 优点 | 缺点 |
+| -------- | -------- | -------- |
+| 视频属性 | 易用，尤其是托管在 Web 服务器上只有完整的媒体文件 | 浏览器可能会忽略该属性；当 HTML 文档被完全加载和解析后才开始获取资源。|
+| 链接标签 | 在不阻塞文档 `onload` 事件的情况下请求视频资源；与 MSE 和文件段配合良好。	| 与 HTTP 范围请求不兼容；获取整个媒体资源时应仅限于小型文件 (<5 MB)。|
+| 手动缓冲 | 完全控制	| 复杂的错误处理。 |
+
+### 通过视频元素属性预加载资源
+
+如果视频资源托管在 Web 服务器上只有完整的文件，则可以使用 `video` 元素的 [`preload`](https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/video#attr-preload) 属性向浏览器指示要预加载多少的内容。
+
+只有在 HTML 文档完全加载和解析后才会开始获取资源（例如 DOMContentLoaded 事件已触发），而在实际获取资源时将触发 load 事件：
+
+![](https://img.alicdn.com/imgextra/i4/O1CN014Y1JxL1zhiXu93u8N_!!6000000006746-55-tps-856-250.svg)
+
+将 `preload` 属性设置为 `metadata` 表示不需要整个视频但需要获取其元数据（尺寸、时长等）。需要注意的是，该属性的默认值在不同浏览器中是不同的。
+
+```html
+<video id="video" preload="metadata" src="file.mp4" controls></video>
+
+<script>
+  video.addEventListener('loadedmetadata', function() {
+    if (video.buffered.length === 0) return;
+
+    const bufferedSeconds = video.buffered.end(0) - video.buffered.start(0);
+    console.log(`${bufferedSeconds} seconds of video are ready to play.`);
+  });
+</script>
+```
+
+将 `preload` 属性设置为 `auto` 指示浏览器如果需要的话可以下载整个视频（即使用户并不一定会用它），从而可以在用户播放时不需要进一步缓冲地完成播放。
+
+```html
+<video id="video" preload="auto" src="file.mp4" controls></video>
+
+<script>
+  video.addEventListener('loadedmetadata', function() {
+    if (video.buffered.length === 0) return;
+
+    const bufferedSeconds = video.buffered.end(0) - video.buffered.start(0);
+    console.log(`${bufferedSeconds} seconds of video are ready to play.`);
+  });
+</script>
+```
+
+需要注意的是，W3C 规范没有强制浏览器去遵循该属性的值；这仅仅只是个提示。以下是 Chrome 中的一些规则：
+
+- 当 ["Save-Data"](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Save-Data) 模式启动时，Chrome 会强制 `preload` 的值为 `none`；
+- 由于 Android 的 [Bug](https://bugs.chromium.org/p/chromium/issues/detail?id=612909)，在 Android 4.3 中 Chrome 强制 `preload` 的值为 `none`；
+- 在蜂窝网络连接（2G、3G 和 4G）上，Chrome 会强制 `preload` 的值为 `metadata`。
+
+如果在同一个域中包含许多视频资源，则建议将 `preload` 值设置为 `metadata`，或定义 `poster` 属性并设置`preload` 为 `none`：这样可以避免超过同域的最大 HTTP 连接数（HTTP 1.1 规范为 6 个）；如果视频不是网页要提供的核心内容，这也可以提高页面的渲染速度。
+
+
+### 通过链接标签预加载资源
 
 #### 预加载完整视频
 
@@ -194,5 +254,5 @@ Feature-Policy: autoplay 'self' https://example.media
 
 ## 参考资料
 
-- [媒体和 Web 音频 API 的自动播放指南](https://developer.mozilla.org/zh-CN/docs/Web/%E5%AA%92%E4%BD%93/Autoplay_guide)：关于自动播放的指南，提供了一些技巧，告诉您何时以及如何使用它，以及如何使用浏览器优雅地处理自动播放阻塞。
+- [媒体和 Web 音频 API 的自动播放指南](https://developer.mozilla.org/en-US/docs/Web/Media/Autoplay_guide)
 - [通过主动预加载资源来加速媒体播放](https://web.dev/fast-playback-with-preload/)
