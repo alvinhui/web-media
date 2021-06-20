@@ -188,7 +188,7 @@ Feature-Policy: autoplay 'self' https://example.media
 </script>
 ```
 
-将 `preload` 属性设置为 `auto` 指示浏览器如果需要的话可以下载整个视频（即使用户并不一定会用它），从而可以在用户播放时不需要进一步缓冲地完成播放。
+将 `preload` 属性设置为 `auto` 指示浏览器如果需要的话可以下载整个视频（即使用户并不一定会用它），从而可以在用户播放时不需要进一步缓冲来完成播放。
 
 ```html
 <video id="video" preload="auto" src="file.mp4" controls></video>
@@ -203,14 +203,13 @@ Feature-Policy: autoplay 'self' https://example.media
 </script>
 ```
 
-需要注意的是，W3C 规范没有强制浏览器去遵循该属性的值；这仅仅只是个提示。以下是 Chrome 中的一些规则：
+需要注意的是，W3C 规范没有强制浏览器去遵循该属性的值来实现预加载策略，这仅仅只是个提示。以下是 Chrome 中的一些规则：
 
 - 当 ["Save-Data"](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Save-Data) 模式启动时，Chrome 会强制 `preload` 的值为 `none`；
 - 由于 Android 的 [Bug](https://bugs.chromium.org/p/chromium/issues/detail?id=612909)，在 Android 4.3 中 Chrome 强制 `preload` 的值为 `none`；
-- 在蜂窝网络连接（2G、3G 和 4G）上，Chrome 会强制 `preload` 的值为 `metadata`。
+- 在蜂窝网络连接（2G、3G 和 4G）时，Chrome 会强制 `preload` 的值为 `metadata`。
 
-如果在同一个域中包含许多视频资源，则建议将 `preload` 值设置为 `metadata`，或定义 `poster` 属性并设置`preload` 为 `none`：这样可以避免超过同域的最大 HTTP 连接数（HTTP 1.1 规范为 6 个）；如果视频不是网页要提供的核心内容，这也可以提高页面的渲染速度。
-
+如果在同一个域中包含许多视频资源，则建议将 `preload` 值设置为 `metadata` 或定义 `poster` 属性并设置`preload` 的值为 `none`：这样可以避免超过同域的最大 HTTP 连接数（HTTP 1.1 规范为 6 个）；如果视频不是网页要提供的核心内容，这也可以提高页面的渲染速度。
 
 ### 通过链接标签预加载资源
 
