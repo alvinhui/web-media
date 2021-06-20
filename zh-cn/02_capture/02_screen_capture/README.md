@@ -7,7 +7,7 @@
 - [获取Web中的媒体内容](#获取Web中的媒体内容)
 - [获取屏幕上的媒体内容](#获取屏幕上的媒体内容)
   - [如何获取](#如何获取)
-  - [安全策略](#安全策略)
+  - [功能策略](#功能策略)
   - [示例](#示例)
 - [参考资料](#参考资料)
 
@@ -136,7 +136,7 @@ navigator.mediaDevices.getDisplayMedia({
 })
 ```
 
-### 安全策略
+### 功能策略
 
 [Web 功能策略](https://developer.mozilla.org/en-US/docs/Web/HTTP/Feature_Policy) 允许开发人员有选择地启用、禁用和修改浏览器中某些功能和 API 的行为。它类似于[内容安全策略](https://developer.mozilla.org/en-US/docs/Glossary/CSP)，但控制功能而不是安全行为。
 
