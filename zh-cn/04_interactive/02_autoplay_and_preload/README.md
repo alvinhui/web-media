@@ -167,10 +167,7 @@ Feature-Policy: autoplay 'self' https://example.media
 
 接下来将介绍几种通过主动预加载资源来加速媒体播放的技术。
 
-<video controls muted playsinline>
-  <source src="https://storage.googleapis.com/web-dev-assets/fast-playback-with-preload/video-preload-hero.webm#t=1.1" type="video/webm">
-  <source src="https://storage.googleapis.com/web-dev-assets/fast-playback-with-preload/video-preload-hero.mp4#t=1.1" type="video/mp4">
-</video>
+![](https://img.alicdn.com/imgextra/i2/O1CN01RVEl5O1DFgkZzmKNc_!!6000000000187-1-tps-1490-616.gif)
 
 预加载媒体资源有三种常见的方法，来看一下他们的优缺点：
 
