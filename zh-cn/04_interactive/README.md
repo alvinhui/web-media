@@ -1,6 +1,17 @@
 # 媒体交互
 
-## 开源技术
+媒体内容为用户提供了越来越丰富交互的形式。在这一章节中，我们将来看看如何在 Web 应用中使用媒体内容，并借助 Web 技术提供更好的媒体交互体验。
+
+## 目录
+
+- [嵌入音频和视频](./01_audio_and_video)
+- [自动播放和预加载](./02_autoplay_and_preload)
+- [定制播放行为](./03_player)
+- [播放流媒体](./04_stream)
+
+## 参考资料
+
+### 开源技术
 
 - [video.js](https://github.com/videojs/video.js) ![](https://img.shields.io/github/stars/videojs/video.js?style=social): A web video player built from the ground up for an HTML5 world.
 - [flv.js](https://github.com/bilibili/flv.js) ![](https://img.shields.io/github/stars/bilibili/flv.js?style=social): An HTML5 Flash Video (FLV) Player written in pure JavaScript without Flash.
@@ -16,7 +27,7 @@
   - [ReactPlayer](https://github.com/CookPete/react-player) ![](https://img.shields.io/github/stars/CookPete/react-player?style=social): A React component for playing a variety of URLs, including file paths, YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia and DailyMotion
   - [video-react](https://github.com/video-react/video-react) ![](https://img.shields.io/github/stars/video-react/video-react?style=social): A web video player built for the HTML5 world using React library.
 
-## 商业化方案
+### 商业化方案
 
 - [FlowPlayer](https://flowplayer.com/): The Performance First Online Video Platform
 - [TheoPlayer](https://www.theoplayer.com/): Universal Video Player solution
