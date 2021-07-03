@@ -20,7 +20,7 @@
    	var mute = document.getElementById('mute');
    	var volinc = document.getElementById('volinc');
    	var voldec = document.getElementById('voldec');
-   	var progress = document.getElementById('progress');
+   	var progressWrap = document.getElementById('progressWrap');
     var progressBar = document.getElementById('progressBar');
    	var fullscreen = document.getElementById('fs');
 
@@ -55,7 +55,7 @@
    	if (document.addEventListener) {
    		// Wait for the video's meta data to be loaded, then set the progress bar's max value to the duration of the video
    		video.addEventListener('loadedmetadata', function() {
-   			progress.setAttribute('max', video.duration);
+				progressWrap.setAttribute('max', video.duration);
    		});
 
    		// Add events for all buttons
@@ -68,7 +68,7 @@
    		stop.addEventListener('click', function(e) {
    			video.pause();
    			video.currentTime = 0;
-   			progress.value = 0;
+   			progressWrap.value = 0;
    		});
    		mute.addEventListener('click', function(e) {
    			video.muted = !video.muted;
@@ -108,13 +108,13 @@
    		// As the video is playing, update the progress bar
    		video.addEventListener('timeupdate', function() {
         // For mobile browsers, ensure that the progress element's max attribute is set
-        if (!progress.getAttribute('max')) progress.setAttribute('max', video.duration);
-        progress.value = video.currentTime;
+        if (!progressWrap.getAttribute('max')) progressWrap.setAttribute('max', video.duration);
+        progressWrap.value = video.currentTime;
         progressBar.style.width = Math.floor((video.currentTime / video.duration) * 100) + '%';
    		});
 
       // React to the user clicking within the progress bar
-      progress.addEventListener('click', function(e) {
+      progressWrap.addEventListener('click', function(e) {
         var pos = (e.pageX  - this.offsetLeft) / this.offsetWidth;
         video.currentTime = pos * video.duration;
       });

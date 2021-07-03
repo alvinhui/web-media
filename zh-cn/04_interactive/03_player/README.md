@@ -1,21 +1,20 @@
 # 定制播放行为
 
-![](https://img.alicdn.com/imgextra/i4/O1CN01ASKxpu1Dz1xqFjg1I_!!6000000000286-2-tps-920-520.png)
+![播放器演示效果](https://img.alicdn.com/imgextra/i4/O1CN01ASKxpu1Dz1xqFjg1I_!!6000000000286-2-tps-920-520.png)
 
 在网页中我们可以通过 `<video>` 标签便捷地引入视频内容。但依然存在一些问题，例如：
 
-- 不同的系统平台（iOS、安卓）或不同的浏览器的播放体验是不同的 —— 播放器形态及交互方式存在差异；
-- 无法为播放器添加更多的控件 —— 例如是否开启弹窗、是否需要字幕等。
+- 不同的系统平台（iOS、安卓）或不同的浏览器的播放体验是不同的 —— 它们所提供的播放器形态及交互方式存在差异；
+- 无法为播放器添加更多的控件 —— 例如是否开启弹窗、是否需要字幕等等。
 
 这就是为什么开发者可能需要定制播放器的原因之一，如果希望在网页上为用户创造更好的媒体体验的话。
 
-本文将展示如何通过大量的 Web API 渐进式地增强媒体体验，构建一个包含自定义控件、全屏体验及后台播放能力的移动端播放器。
+本文将展示如何渐进式地增强媒体体验，构建一个包含自定义控件、全屏体验及后台播放能力的移动端播放器。
 
 ## 自定义控件
 
-用于创建媒体播放器的 HTML 布局非常简单：一个 `<div>` 根元素包含一个 `<video>` 媒体元素和一个 `<div>` 元素用于存放视频控件。视频控件包括：播放/暂停按钮、全屏按钮、后退和前进按钮，当前和整体播放时间及进度条。
-
-![](https://img.alicdn.com/imgextra/i3/O1CN01UNDNnv1hahOitfcGI_!!6000000004294-2-tps-2506-1410.png)
+用于创建我们的自定义控件媒体播放器的 HTML 布局非常简单：一个 `<div>` 根元素包裹着一个 `<video>` 媒体元素和一个用于存放视频控件 `<div>` 元素。
+我们要自定义的视频控件包括：播放/暂停按钮、全屏按钮、后退和前进按钮，视频时长和当前播放时间、进度条。
 
 ```html
 <div id="videoContainer">
@@ -24,9 +23,11 @@
 </div>
 ```
 
+![HTML 布局示意](https://img.alicdn.com/imgextra/i3/O1CN01UNDNnv1hahOitfcGI_!!6000000004294-2-tps-2506-1410.png)
+
 ### 获取视频元数据
 
-首先我们获取视频的元数据来设置视频时长、当前时间并初始化进度条。
+首先我们获取视频的元数据来设置视频时长、当前播放时间及进度条。
 
 ```diff
 <div id="videoContainer">
@@ -34,7 +35,9 @@
   <div id="videoControls">
 +   <div id="videoCurrentTime"></div>
 +   <div id="videoDuration"></div>
-+   <div id="videoProgressBar"></div>
++   <progress id="videoProgressWrap" value="0">
++     <span id="progressBar"></span>
++   </progress>
   </div>
 </div>
 ```
@@ -43,16 +46,16 @@
 video.addEventListener('loadedmetadata', function() {
   videoDuration.textContent = secondsToTimeCode(video.duration);
   videoCurrentTime.textContent = secondsToTimeCode(video.currentTime);
-  videoProgressBar.style.transform = `scaleX(${video.currentTime / video.duration})`;
+  videoProgressWrap.setAttribute('max', video.duration);
+  videoProgressWrap.value = video.currentTime;
 });
-// secondsToTimeCode() 函数的作用是将秒数转换为 “hh:mm:ss” 格式的字符串
 ```
+
+> `secondsToTimeCode()` 函数的作用是将秒数转换为 “hh:mm:ss” 格式的字符串
 
 效果如下：
 
-![](https://img.alicdn.com/imgextra/i4/O1CN01JU3Cdn1SecYDlazCT_!!6000000002272-2-tps-1024-768.png)
-
-> 显示视频元数据的媒体播放器
+![显示视频元数据的媒体播放器](https://img.alicdn.com/imgextra/i4/O1CN01JdPwJZ22Ot7889PpC_!!6000000007111-2-tps-426-750.png)
 
 ### 播放/暂停
 
@@ -65,7 +68,9 @@ video.addEventListener('loadedmetadata', function() {
 +   <button id="playPauseButton"></button>
     <div id="videoCurrentTime"></div>
     <div id="videoDuration"></div>
-    <div id="videoProgressBar"></div>
+    <progress id="videoProgressWrap" value="0" min="0">
+      <span id="progressBar"></span>
+    </progress>
   </div>
 </div>
 ```
@@ -81,8 +86,7 @@ playPauseButton.addEventListener('click', function(event) {
 });
 ```
 
-接下来我们通过监听视频的 `play` 和 `pause` 事件来改变视频控件的样式，而不是在 `click` 事件中处理。
-这样的好处是当浏览器或其他程序触发视频播放状态变更时，我们的视频控制依然能保持与播放状态的同步。
+我们通过监听视频的 `play` 和 `pause` 事件来改变视频控件的样式，而不是在 `click` 事件中处理。这样的好处是当浏览器或其他程序触发视频播放状态变更时，我们的视频控件依然能保持与播放状态的同步。
 
 - 当视频开始播放时，我们向按钮添加 "playing" 样式类来改变按钮状态，并移除视频控件元素的 "visible" 样式类来隐藏视频控件。
 - 当视频暂停时，我们将移除按钮的 "playing" 样式类来改变按钮状态，并向视频控件元素添加 "visible" 样式类来显示视频控件。
@@ -99,18 +103,19 @@ video.addEventListener('pause', function() {
 });
 ```
 
-当 video 的 currentTime 属性更改时将触发 timeupdate 事件，我们通过监听该事件来更新自定义控件（如果它们可见）。
+当 video 的 `currentTime` 属性变更时将触发 video 元素的 `timeupdate` 事件，我们通过监听该事件来更新这些自定义控件的状态。
 
 ```js
 video.addEventListener('timeupdate', function() {
-  if (videoControls.classList.contains('visible')) {
+  if (videoControls.classList.contains('visible')) { // 只在可见时更新控件
     videoCurrentTime.textContent = secondsToTimeCode(video.currentTime);
-    videoProgressBar.style.transform = `scaleX(${video.currentTime / video.duration})`;
+    videoProgressWrap.value = video.currentTime;
+    progressBar.style.width = Math.floor((video.currentTime / video.duration) * 100) + '%';
   }
 });
 ```
 
-当视频结束时，我们需要将按钮状态更新为“播放”，将视频当前时间设置回 0 并暂时显示视频控件。
+当视频结束时，我们将按钮状态更新为“播放”，将视频当前时间设置回 0 并显示视频控件。
 
 ```js
 video.addEventListener('ended', function() {
@@ -133,13 +138,15 @@ video.addEventListener('ended', function() {
 +   <button id="seekBackwardButton"></button>
     <div id="videoCurrentTime"></div>
     <div id="videoDuration"></div>
-    <div id="videoProgressBar"></div>
+    <progress id="videoProgressWrap" value="0">
+      <span id="progressBar"></span>
+    </progress>
   </div>
 </div>
 ```
 
 ```js
-var skipTime = 10; // Time to skip in seconds
+const skipTime = 10; // Time to skip in seconds
 
 seekForwardButton.addEventListener('click', function(event) {
   event.stopPropagation();
@@ -152,9 +159,9 @@ seekBackwardButton.addEventListener('click', function(event) {
 });
 ```
 
-跟播放/暂停按钮一致，这里我们不在 `click` 事件中处理前进后退的样式，而是监听 `seeking` 和 `seeked` 事件来调整视频的亮度。
+跟播放/暂停按钮一样，这里我们不在 `click` 事件中处理前进后退要应用的样式，而是监听 `seeking` 和 `seeked` 事件来调整视频的亮度。
 
-"seeking" 样式类的实现类似：`filter: brightness(0);`
+> "seeking" 样式类的实现类似：`filter: brightness(0);`
 
 ```js
 video.addEventListener('seeking', function() {
@@ -166,21 +173,52 @@ video.addEventListener('seeked', function() {
 });
 ```
 
-### 音量控制/静音
-
-...
-
 ### 进度条
 
-...
+最后让我们来看看进度条的实现。
 
-以下就是我们迄今为止创建的内容。在下一节中，我们将实现全屏体验。
+首先是进度条的样式。我们使用到了 [progress](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress) 元素，它接受 `max` 属性指示进度条的总进度长度，`value` 属性指示进度条的当前的进度。
 
-![效果.gif]()
+```html
+<progress value="70" max="100"></progress>
+```
+
+![](https://img.alicdn.com/imgextra/i2/O1CN018BQEZW1FiCe2hdh61_!!6000000000520-2-tps-204-58.png)
+
+progress 的子元素是用来做兜底显示的，当浏览器不支持 progress 元素渲染时将显示其子元素。
+
+我在示例中添加了一个 span 元素来作为兜底的进度显示：
+
+```html
+<progress id="videoProgressWrap" value="0">
+  <span id="progressBar"></span>
+</progress>
+```
+
+当视频的元数据加载完成，我们就可以使用这些数据来创建进度条：
+
+```js
+videoProgressWrap.setAttribute('max', video.duration);
+videoProgressWrap.value = video.currentTime;
+progressBar.style.width = Math.floor((video.currentTime / video.duration) * 100) + '%';
+```
+
+当用户点击进度条时，我们可以根据用户的点击位置来设置视频的当前播放时间：
+
+```js
+videoProgressWrap.addEventListener('click', function(e) {
+  const pos = (e.pageX  - this.offsetLeft) / this.offsetWidth;
+  video.currentTime = pos * video.duration;
+});
+```
+
+以下就是我们迄今为止创建的内容效果。
+
+![自定义控件演示效果](https://img.alicdn.com/imgextra/i1/O1CN017ATCsY1K1DY8WNNNZ_!!6000000001103-1-tps-428-694.gif)
 
 ## 全屏体验
 
-在这一节中，我们将使用一些 Web API 来创建良好的全屏体验。要查看它的实际效果，可以访问[线上示例]()。
+在这一节中，我们将尝试创建良好的全屏体验。要查看它的实际效果，可以访问[线上示例]()。
 
 ### 防止自动全屏
 
@@ -208,7 +246,9 @@ video.addEventListener('seeked', function() {
 +   <button id="fullscreenButton"></button>
     <div id="videoCurrentTime"></div>
     <div id="videoDuration"></div>
-    <div id="videoProgressBar"></div>
+    <progress id="videoProgressWrap" value="0">
+      <span id="progressBar"></span>
+    </progress>
   </div>
 </div>
 ```
@@ -238,9 +278,9 @@ document.addEventListener('fullscreenchange', function() {
 });
 ```
 
-![效果.gif]()
+![单击按钮进入全屏演示效果](https://img.alicdn.com/imgextra/i1/O1CN01BRZK6Q1jKKTIHvRg4_!!6000000004529-1-tps-590-1280.gif)
 
-### 屏幕方向改变切换全屏
+### 屏幕方向改变自动切换全屏
 
 当用户正在播放视频，并且旋转设备到横向时，我们可以主动进入切换至全屏模式。这需要使用到 [Screen Orientation API](https://w3c.github.io/screen-orientation/)。
 
@@ -249,7 +289,6 @@ document.addEventListener('fullscreenchange', function() {
 ```js
 if ('orientation' in screen) {
   screen.orientation.addEventListener('change', function() {
-    // Let's request fullscreen if user switches device in landscape mode.
     if (screen.orientation.type.startsWith('landscape')) {
       requestFullscreenVideo();
     } else if (document.fullscreenElement) {
@@ -261,9 +300,9 @@ if ('orientation' in screen) {
 
 ### 锁定横向全屏
 
-横向模式下的观看视频的体验更佳，所以我们可以在用户单击 “全屏按钮” 时以横向模式锁定屏幕。这需要使用到之前 Screen Orientation API 和一些[媒体查询](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)能力。
+横向模式下的观看视频的体验更佳，所以我们可以在用户单击 “全屏按钮” 时以横向模式锁定屏幕。这需要使用到之前的 Screen Orientation API 和一些[媒体查询](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)的能力。
 
-我们可以通过调用 `screen.orientation.lock('landscape')` 很方便地横向锁定屏幕，但需要注意的是我们应该在设备处于纵向模式且设备非宽屏时才这样做（排除掉平板电脑的场景）。
+我们可以通过调用 `screen.orientation.lock('landscape')` 很方便地横向锁定屏幕，但需要注意的是，我们应该在设备处于纵向模式且设备非宽屏时才这样做（排除掉平板电脑的场景）。
 
 ```diff
 fullscreenButton.addEventListener('click', function(event) {
@@ -288,13 +327,11 @@ function lockScreenInLandscape() {
 }
 ```
 
-[效果.gif]()
-
 ### 屏幕方向改变时退出全屏
 
 我们刚刚创建的锁屏体验并不完美，因为当用户设备切换回纵向后我们并没有退出全屏。
 
-为了解决这个问题，我们需要使用到 [Device Orientation API](https://w3c.github.io/deviceorientation/spec-source-orientation.html)。该 API 提供来自硬件的信息，用于测量设备在空间中的位置和运动。当我们检测到设备方向变化时，判断当前是在纵向模式下并且屏幕是横向锁定状态则调用 `screen.orientation.unlock()` 解除锁定。
+为了解决这个问题，我们需要使用到 [Device Orientation API](https://w3c.github.io/deviceorientation/spec-source-orientation.html)。该 API 提供来自硬件的信息，用于测量设备在空间中的位置和运动。当我们检测到设备方向变化时，判断当前是在纵向模式下并且屏幕是横向锁定状态，则调用 `screen.orientation.unlock()` 解除锁定。
 
 ```diff
 function lockScreenInLandscape() {
@@ -339,7 +376,7 @@ function listenToDeviceOrientationChanges() {
 
 来看看最终的全屏体验效果：
 
-![效果.gif]()
+![全屏体验演示效果](https://img.alicdn.com/imgextra/i3/O1CN01HQY7A11kraqz2aUCL_!!6000000004737-1-tps-590-1280.gif)
 
 ## 后台播放
 
@@ -351,7 +388,6 @@ function listenToDeviceOrientationChanges() {
 
 ```js
 document.addEventListener('visibilitychange', function() {
-  // Pause video when page is hidden.
   if (document.hidden) {
     video.pause();
   }
@@ -362,7 +398,7 @@ document.addEventListener('visibilitychange', function() {
 
 使用 [Intersection Observer API](https://developers.google.com/web/updates/2016/04/intersectionobserver) 可以获得更精细粒度的信息。可以通过该 API 观察到的元素何时进入或退出浏览器的视窗。
 
-下面让我们来实现根据页面中的视频的可见性显示/隐藏静音按钮。如果视频正在播放但当前不可见，页面右下角将显示一个迷你的静音按钮，让用户控制视频声音。`volumechange` 视频事件用于更新静音按钮的样式。
+下面让我们来实现根据页面中的视频的可见性显示或隐藏静音按钮。如果视频正在播放但当前不可见，页面右下角将显示一个迷你的静音按钮，让用户控制视频声音。`volumechange` 视频事件用于更新静音按钮的样式。
 
 ```html
 <button id="muteButton"></button>
@@ -370,18 +406,16 @@ document.addEventListener('visibilitychange', function() {
 
 ```js
 if ('IntersectionObserver' in window) {
-  // Show/hide mute button based on video visibility in the page.
   function onIntersection(entries) {
     entries.forEach(function(entry) {
       muteButton.hidden = video.paused || entry.isIntersecting;
     });
   }
-  var observer = new IntersectionObserver(onIntersection);
+  const observer = new IntersectionObserver(onIntersection);
   observer.observe(video);
 }
 
 muteButton.addEventListener('click', function() {
-  // Mute/unmute video on button click.
   video.muted = !video.muted;
 });
 
@@ -390,26 +424,27 @@ video.addEventListener('volumechange', function() {
 });
 ```
 
-![效果.gif]()
+![演示效果](https://img.alicdn.com/imgextra/i2/O1CN01EYZs2021LOTfBkGnH_!!6000000006968-1-tps-590-1280.gif)
 
 ### 一次只播放一个视频
 
-最后，如果页面上有多个视频，则应该只播放一个并自动暂停其他视频，这样用户就不必听到多个音轨同时播放。
+最后，如果页面上有多个视频，则应该只播放一个视频并自动暂停其他视频，这样用户就不必听到多个音轨同时播放。
 
 ```js
 // Note: This array should be initialized once all videos have been added.
-var videos = Array.from(document.querySelectorAll('video'));
+const videos = Array.from(document.querySelectorAll('video'));
 
 videos.forEach(function(video) {
   video.addEventListener('play', pauseOtherVideosPlaying);
 });
 
 function pauseOtherVideosPlaying(event) {
-  var videosToPause = videos.filter(function(video) {
+  const videosToPause = videos.filter(function(video) {
     return !video.paused && video != event.target;
   });
-  // Pause all other videos currently playing.
-  videosToPause.forEach(function(video) { video.pause(); });
+  videosToPause.forEach(function(video) {
+    video.pause();
+  });
 }
 ```
 

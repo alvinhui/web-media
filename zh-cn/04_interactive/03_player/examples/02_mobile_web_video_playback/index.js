@@ -2,8 +2,8 @@
 
 function showVideoControls() {
   videoControls.classList.add('visible');
-  videoCurrentTime.textContent = secondsToTimeCode(video.currentTime);
-  videoProgressBar.style.transform = `scaleX(${video.currentTime / video.duration})`;
+  setCurrentTime();
+  setProgressBar();
 }
 
 function hideVideoControls() {
@@ -41,8 +41,9 @@ function secondsToTimeCode(seconds) {
 
 video.addEventListener('loadedmetadata', function() {
   videoDuration.textContent = secondsToTimeCode(video.duration);
-  videoCurrentTime.textContent = secondsToTimeCode(video.currentTime);
-  videoProgressBar.style.transform = `scaleX(${video.currentTime / video.duration})`;
+  setCurrentTime();
+  videoProgressWrap.setAttribute('max', video.duration);
+  setProgressBar();
 });
 
 playPauseButton.addEventListener('click', function(event) {
@@ -73,17 +74,21 @@ video.addEventListener('ended', function() {
   showVideoControls();
 });
 
+videoProgressWrap.addEventListener('click', function(e) {
+  const pos = (e.pageX  - this.offsetLeft) / this.offsetWidth;
+  video.currentTime = pos * video.duration;
+});
+
 document.addEventListener('fullscreenchange', function() {
   toggleFullscreenButton.classList.toggle('active', document.fullscreenElement);
 });
 
 video.addEventListener('timeupdate', function() {
   console.log('timeupdate');
-  if (!videoControls.classList.contains('visible')) {
-    return;
+  if (videoControls.classList.contains('visible')) {
+    setCurrentTime();
+    setProgressBar();
   }
-  videoCurrentTime.textContent = secondsToTimeCode(video.currentTime);
-  videoProgressBar.style.transform = `scaleX(${video.currentTime / video.duration})`;
 });
 
 seekForwardButton.addEventListener('click', function(event) {
@@ -97,6 +102,15 @@ seekBackwardButton.addEventListener('click', function(event) {
 });
 
 const skipTime = 10;
+
+function setProgressBar() {
+  videoProgressWrap.value = video.currentTime;
+  progressBar.style.width = Math.floor((video.currentTime / video.duration) * 100) + '%';
+}
+
+function setCurrentTime() {
+  videoCurrentTime.textContent = secondsToTimeCode(video.currentTime);
+}
 
 function seekForward() {
   video.currentTime = Math.min(video.currentTime + skipTime, video.duration);
@@ -213,7 +227,7 @@ if ('IntersectionObserver' in window) {
       muteButton.hidden = video.paused || entry.isIntersecting;
     });
   }
-  var observer = new IntersectionObserver(onIntersection);
+  const observer = new IntersectionObserver(onIntersection);
   observer.observe(video);
 }
 

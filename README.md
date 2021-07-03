@@ -30,7 +30,7 @@
 - [媒体交互](./zh-cn/04_interactive)
   - [嵌入音频和视频](./zh-cn/04_interactive/01_audio_and_video)
   - [自动播放和预加载](./zh-cn/04_interactive/02_autoplay_and_preload)
-  - 定制播放行为
+  - [定制播放行为](./zh-cn/04_interactive/03_player)
   - 播放流媒体
 - 媒体处理
   - 保护媒体版权
