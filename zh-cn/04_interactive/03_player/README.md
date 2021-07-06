@@ -13,22 +13,24 @@
 
 ## 目录
 
-- [自定义控件](#自定义控件)
-  - [获取视频元数据](#获取视频元数据)
-  - [播放/暂停](#播放暂停)
-  - [快进和后退](#快进和后退)
-  - [进度条](#进度条)
-- [全屏体验](#全屏体验)
-  - [防止自动全屏](#防止自动全屏)
-  - [单击按钮切换全屏](#单击按钮切换全屏)
-  - [屏幕方向改变自动切换全屏](#屏幕方向改变自动切换全屏)
-  - [锁定横向全屏](#锁定横向全屏)
-  - [屏幕方向改变时退出全屏](#屏幕方向改变时退出全屏)
-- [后台播放](#后台播放)
-  - [页面不可见时暂停视频](#页面不可见时暂停视频)
-  - [视频可见性更改时显示或隐藏静音按钮](#视频可见性更改时显示或隐藏静音按钮)
-  - [一次只播放一个视频](#一次只播放一个视频)
-- [参考资料](#参考资料)
+- [定制播放行为](#定制播放行为)
+  - [目录](#目录)
+  - [自定义控件](#自定义控件)
+    - [获取视频元数据](#获取视频元数据)
+    - [播放/暂停](#播放暂停)
+    - [快进和后退](#快进和后退)
+    - [进度条](#进度条)
+  - [全屏体验](#全屏体验)
+    - [防止自动全屏](#防止自动全屏)
+    - [单击按钮切换全屏](#单击按钮切换全屏)
+    - [屏幕方向改变自动切换全屏](#屏幕方向改变自动切换全屏)
+    - [锁定横向全屏](#锁定横向全屏)
+    - [屏幕方向改变时退出全屏](#屏幕方向改变时退出全屏)
+  - [后台播放](#后台播放)
+    - [页面不可见时暂停视频](#页面不可见时暂停视频)
+    - [视频可见性更改时显示或隐藏静音按钮](#视频可见性更改时显示或隐藏静音按钮)
+    - [一次只播放一个视频](#一次只播放一个视频)
+  - [参考资料](#参考资料)
 
 ## 自定义控件
 
@@ -470,4 +472,10 @@ function pauseOtherVideosPlaying(event) {
 ## 参考资料
 
 - [Creating a cross-browser video player](https://developer.mozilla.org/en-US/docs/Web/Guide/Audio_and_video_delivery/cross_browser_video_player)
-- [Mobile Web Video Playback](https://developers.google.com/web/fundamentals/media/mobile-web-video-playback): 展示如何通过大量 Web API 以渐进的方式增强媒体体验，通过自定义控件、全屏和后台播放来构建简单的移动播放器体验。
+- [Mobile Web Video Playback](https://developers.google.com/web/fundamentals/media/mobile-web-video-playback)
+- [Fullscreen API](https://fullscreen.spec.whatwg.org/)
+- [Screen Orientation API](https://w3c.github.io/screen-orientation/)
+- [Device Orientation API](https://w3c.github.io/deviceorientation/spec-source-orientation.html)
+- [Page Visibility API](https://www.w3.org/TR/page-visibility/)
+- [Intersection Observer API](https://developers.google.com/web/updates/2016/04/intersectionobserver)
+- [Using media queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries)

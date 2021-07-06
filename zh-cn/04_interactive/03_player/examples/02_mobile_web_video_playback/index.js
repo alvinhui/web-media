@@ -212,7 +212,6 @@ function listenToDeviceOrientationChanges() {
 /* Background Playback */
 
 document.addEventListener('visibilitychange', function() {
-  // Pause video when page is hidden.
   if (document.hidden) {
     video.pause();
   }
@@ -232,7 +231,6 @@ if ('IntersectionObserver' in window) {
 }
 
 muteButton.addEventListener('click', function() {
-  // Mute/unmute video on button click.
   video.muted = !video.muted;
 });
 
