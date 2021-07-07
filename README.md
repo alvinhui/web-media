@@ -20,7 +20,7 @@
   - 理解音频
   - [理解视频](./zh-cn/01_basic/03_video)
 - [媒体捕获](./zh-cn/02_capture)
-  - [捕获音频和视频](./zh-cn/02_capture/01_camera_and_mike)
+  - 捕获音频和视频
   - [获取屏幕内容](./zh-cn/02_capture/02_screen_capture)
   - 设置摄像设备
 - 媒体传输
@@ -28,7 +28,7 @@
   - 片段流
   - 实时分发
 - [媒体交互](./zh-cn/04_interactive)
-  - [嵌入音频和视频](./zh-cn/04_interactive/01_audio_and_video)
+  - 嵌入音频和视频
   - [自动播放和预加载](./zh-cn/04_interactive/02_autoplay_and_preload)
   - [定制播放行为](./zh-cn/04_interactive/03_player)
   - 播放流媒体
