@@ -473,6 +473,7 @@ function pauseOtherVideosPlaying(event) {
 
 - [Creating a cross-browser video player](https://developer.mozilla.org/en-US/docs/Web/Guide/Audio_and_video_delivery/cross_browser_video_player)
 - [Mobile Web Video Playback](https://developers.google.com/web/fundamentals/media/mobile-web-video-playback)
+- [How to build a Custom HTML5 Video Player with JavaScript](https://freshman.tech/custom-html5-video/)
 - [Fullscreen API](https://fullscreen.spec.whatwg.org/)
 - [Screen Orientation API](https://w3c.github.io/screen-orientation/)
 - [Device Orientation API](https://w3c.github.io/deviceorientation/spec-source-orientation.html)

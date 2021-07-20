@@ -32,3 +32,9 @@
 - [FlowPlayer](https://flowplayer.com/): The Performance First Online Video Platform
 - [TheoPlayer](https://www.theoplayer.com/): Universal Video Player solution
 - [Bitmovin Player](https://bitmovin.com/docs/player): Deliver high quality video everywhere
+- [JW Player](https://www.jwplayer.com/): A complete video platform
+
+### 相关文章
+
+- [Demystifying HTML5 Video Player](https://medium.com/@eyevinntechnology/demystifying-html5-video-player-e480846328f0)
+- [How to build your own streaming video HTML player](https://medium.com/@eyevinntechnology/how-to-build-your-own-streaming-video-html-player-6ee85d4d078a)
