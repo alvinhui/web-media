@@ -1,6 +1,6 @@
 # 播放流媒体
 
-![](https://www.cloudflare.com/img/learning/performance/what-is-streaming/what-is-streaming.svg)
+![](https://img.alicdn.com/imgextra/i4/O1CN0148VCFB1zNZ7yLvT7z_!!6000000006702-55-tps-700-138.svg)
 
 ## 目录
 
