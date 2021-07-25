@@ -22,7 +22,7 @@
 - [媒体捕获](./zh-cn/02_capture)
   - [捕获音频和画面](./zh-cn/02_capture/01_camera_and_mike)
   - [捕获屏幕内容](./zh-cn/02_capture/02_screen_capture)
-  - 设置摄像设备
+  - 控制摄像设备
 - 媒体传输
   - 自适应流
   - 片段流

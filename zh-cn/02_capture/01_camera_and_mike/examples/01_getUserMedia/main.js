@@ -4,13 +4,15 @@ window.addEventListener('load', function() {
   var width = 320;
   var height = 0;
 
-  // 我们需要控制的 video 元素的引用
+  // 声明需要操作的元素
   var video = document.getElementById('video');
   var photo = document.getElementById('photo');
   var canvas = document.getElementById('canvas');
   var recording = document.getElementById('recording');
   var recordButton = document.getElementById('recordButton');
   var downloadButton = document.getElementById('downloadButton');
+
+  // 中间变量
   var imageCapture;
   var mediaRecorder;
   var recordedBlobs = [];
@@ -35,7 +37,6 @@ window.addEventListener('load', function() {
     streaming = true;
   }, false);
 
-  // 按钮点击，从视频流中捕获图像
   document.getElementById('takePhotoButton').addEventListener('click', function(ev){
     ev.preventDefault();
     grabFrame();
@@ -43,6 +44,7 @@ window.addEventListener('load', function() {
   }, false);
 
   recordButton.addEventListener('click', function() {
+    recordButton.attributes.recording
     if (recordButton.textContent === '开始录制') {
       startRecording();
     } else {
@@ -66,9 +68,9 @@ window.addEventListener('load', function() {
   }, false);
 
   function startRecording() {
+    recordButton.textContent = '停止录制';
     recordedBlobs = [];
     mediaRecorder = new MediaRecorder(video.captureStream(), {mimeType: 'video/webm;codecs=vp9', bitsPerSecond: 100000});
-    recordButton.textContent = '停止录制';
     downloadButton.disabled = true;
     mediaRecorder.onstop = function() {
       var type = (recordedBlobs[0] || {}).type;
@@ -91,7 +93,6 @@ window.addEventListener('load', function() {
 
   function grabFrame() {
     setCanvasAndPhoto(width, height, video);
-
     // imageCapture.grabFrame().then(function(imageBitmap) {
     //   setCanvasAndPhoto(width, height, imageBitmap);
     // }).catch(function(error) {
