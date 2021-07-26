@@ -167,14 +167,16 @@ navigator.mediaDevices.getUserMedia({video: true, audio: true})
 #### 设置显示效果
 
 ```js
+// 设置拍摄照片的宽度和高度，这里设置宽度固定值，高度基于输入流的纵横比计算得出。
+var width = 320;
+var height = 0;
+
 video.addEventListener('canplay', function(ev){
   height = video.videoHeight / (video.videoWidth /  width);
   video.style.width = width + 'px';
   video.style.height = height + 'px';
 }, false);
 ```
-
-
 
 ## 截取用户画面
 
