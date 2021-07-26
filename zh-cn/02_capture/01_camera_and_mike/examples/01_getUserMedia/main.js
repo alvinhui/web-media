@@ -12,20 +12,21 @@ window.addEventListener('load', function() {
   var recordButton = document.getElementById('recordButton');
   var downloadButton = document.getElementById('downloadButton');
 
-  // 中间变量
+  // 声明一些中间变量
   var imageCapture;
   var mediaRecorder;
   var recordedBlobs = [];
 
   // 请求访问用户的摄像头
-  var constraints = {video: {width: 320, height: 180, facingMode: 'user'}};
-  navigator.mediaDevices.getUserMedia({video: constraints, audio: true})
+  navigator.mediaDevices.getUserMedia({video: true, audio: true})
     .then(function(stream) {
-      video.srcObject = stream; // 将获取到媒体流作为视频元素的源
+      // 将获取到媒体流作为视频元素的源
+      video.srcObject = stream;
       video.play();
       imageCapture = new ImageCapture(stream.getVideoTracks()[0]); 
     })
-    .catch(function(err) { // 在没有连接兼容的相机，或者用户拒绝访问时，会进入这个逻辑块。
+    .catch(function(err) {
+      // 在没有连接兼容的相机，或者用户拒绝访问时，会进入这个逻辑块。
       alert('发生了一个错误： ' + err);
     });
 
@@ -34,7 +35,6 @@ window.addEventListener('load', function() {
     height = video.videoHeight / (video.videoWidth /  width);
     video.style.width = width + 'px';
     video.style.height = height + 'px';
-    streaming = true;
   }, false);
 
   document.getElementById('takePhotoButton').addEventListener('click', function(ev){
