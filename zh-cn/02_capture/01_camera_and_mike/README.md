@@ -6,7 +6,8 @@
 
 先来看看如何捕获用户的画面并将其实时地显示在我们的应用程序上。
 
-首先我们需要一个能够实时显示媒体流的 HTML 元素，最简单的方式就是使用 Video 元素。当然还有别的方式，例如 canvas 元素。但让我们从最简单的开始。
+首先我们需要一个能够实时显示媒体流的 HTML 元素，将从输入设备获取到的媒体流输出到页面。
+最简单的方式就是使用 video 元素。当然还有别的方式，例如 canvas 元素。但让我们从最简单的开始。
 
 我们使用的 HTML 结构如下：
 
@@ -19,7 +20,8 @@
 </div>
 ```
 
-注意我没有给 video 元素设置播放源和控制条，因此在没有任何流输入给它之前，它会是一个白屏画面。为了能够在界面上把它区分出来，我给它添加了一些样式：
+注意我没有给 video 元素设置播放源和控制条，因此在没有任何流输入给它之前，它会是一个白屏画面。
+为了能够在界面上把它区分出来，我给它添加了一些样式：
 
 ```css
 #video {
@@ -32,7 +34,7 @@
 
 ### getUserMedia
 
-接下来让我们使用 `getUserMedia` API 来获取用户的媒体输入：
+接下来让我们使用 [`MediaDevices.getUserMedia()`](https://developer.mozilla.org/zh-CN/docs/Web/API/MediaDevices/getUserMedia) API 来获取用户的媒体输入：
 
 ```js
 navigator.mediaDevices.getUserMedia(constraints)
@@ -44,7 +46,9 @@ navigator.mediaDevices.getUserMedia(constraints)
   });
 ```
 
-这首先取决于浏览器是否具备使用摄像头的权限：
+#### 权限
+
+`getUserMedia` 能否调用成功首先取决于浏览器是否具备使用摄像头的权限：
 
 ![](https://img.alicdn.com/imgextra/i1/O1CN016cFauH1EQ3KxiF2ep_!!6000000000345-2-tps-668-573.png)
 
@@ -131,16 +135,16 @@ navigator.mediaDevices.getUserMedia(constraints)
 { audio: true, video: { facingMode: 'user' } }
 ```
 
-更多参数可访问：[Properties of video tracks](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints#properties_of_video_tracks) 了解。
+更多参数可访问：[Properties of video tracks](https://developer.mozilla.org/zh-CN/docs/Web/API/MediaTrackConstraints#properties_of_video_tracks) 了解。
 
 #### 返回值
 
-`getUserMedia()` 返回一个 Promise ， 这个 Promise 成功后的回调函数带一个 [MediaStream](https://developer.mozilla.org/en-US/docs/Web/API/MediaStream) 对象作为其参数。
+`getUserMedia()` 返回一个 Promise ， 这个 Promise 成功后的回调函数带一个 [MediaStream](https://developer.mozilla.org/zh-CN/docs/Web/API/MediaStream) 对象作为其参数。
 
 而失败的回调函数则带一个 [DOMException](https://developer.mozilla.org/zh-CN/docs/Web/API/DOMException) 对象作为其参数。可能的异常有：
 
 - **AbortError［中止错误］**：尽管用户和操作系统都授予了访问设备硬件的权限，而且未出现 `NotReadableError` 异常，但仍然出现了一些问题导致了设备无法被使用。
-- **NotAllowedError［拒绝错误］**：用户拒绝了当前的浏览器的设备访问权限，或者用户拒绝了当前站点的设备访问权限，或者用户在浏览器设置了拒绝所有的设备访问权限；如果页面是使用 HTTP 而不是 HTTPS 加载的，则也会返回此错误；在支持使用[功能策略](https://developer.mozilla.org/en-US/docs/Web/HTTP/Feature_Policy)管理媒体权限的浏览器上，如果功能策略未配置为允许访问输入源，则也会返回此错误。
+- **NotAllowedError［拒绝错误］**：用户拒绝了当前的浏览器的设备访问权限，或者用户拒绝了当前站点的设备访问权限，或者用户在浏览器设置了拒绝所有的设备访问权限；如果页面是使用 HTTP 而不是 HTTPS 加载的，则也会返回此错误；在支持使用[功能策略](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Feature_Policy)管理媒体权限的浏览器上，如果功能策略未配置为允许访问输入源，则也会返回此错误。
 - **NotFoundError［找不到错误］**：找不到满足请求参数的媒体设备类型。
 - **NotReadableError［无法读取错误］**：尽管用户已经授权使用相应的设备，操作系统上某个硬件、浏览器或者网页层面发生的错误导致设备无法被访问。
 - **OverConstrainedError［无法满足要求错误］**：指定的要求无法被设备满足，此异常是一个类型为 `OverconstrainedError` 的对象，拥有一个 `constraint` 属性，这个属性包含了当前无法被满足的 `constraint` 对象，还拥有一个 `message` 属性包含了用来说明情况。
@@ -156,23 +160,29 @@ navigator.mediaDevices.getUserMedia({video: true, audio: true})
   .then(function(stream) {
     // 将获取到媒体流作为视频元素的媒体源
     video.srcObject = stream; 
+
+    // 流被链接到 video 元素后，调用 video 元素的 play 方法开始播放
     video.play();
   })
   .catch(function(err) { 
-    // 在没有连接兼容的相机，或者用户拒绝访问时，会进入这个逻辑。
+    // 调用失败回调函数，通常是没有找到输入设备，或者用户拒绝访问时会进入该逻辑
     alert('发生了一个错误： ' + err);
   });
 ```
 
+> 参考：[`HTMLMediaElement.play()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/play)
+
 #### 设置显示效果
 
 ```js
-// 设置拍摄照片的宽度和高度，这里设置宽度固定值，高度基于输入流的纵横比计算得出。
-var width = 320;
+var width = 320; // 无论输入视频的尺寸如何，我们将把所得到的图像缩放到 320 像素宽
 var height = 0;
 
 video.addEventListener('canplay', function(ev){
+  // 给定流的 width 和宽高比，计算出图像的输出高度
   height = video.videoHeight / (video.videoWidth /  width);
+
+  // 设置显示的宽度和高度
   video.style.width = width + 'px';
   video.style.height = height + 'px';
 }, false);
