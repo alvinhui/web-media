@@ -174,11 +174,13 @@ navigator.mediaDevices.getUserMedia({video: true, audio: true})
 
 #### 设置显示效果
 
+视频元素加载元数据之后，通过输入流的宽高比设置其显示外观。
+
 ```js
 var width = 320; // 无论输入视频的尺寸如何，我们将把所得到的图像缩放到 320 像素宽
 var height = 0;
 
-video.addEventListener('canplay', function(ev){
+video.addEventListener('loadedmetadata', function(ev){
   // 给定流的 width 和宽高比，计算出图像的输出高度
   height = video.videoHeight / (video.videoWidth /  width);
 
@@ -187,6 +189,9 @@ video.addEventListener('canplay', function(ev){
   video.style.height = height + 'px';
 }, false);
 ```
+
+> - 参考：[`HTMLVideoElement.videoHeight`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement/videoHeight)
+> - 参考：[`HTMLMediaElement: loadedmetadata event`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/loadedmetadata_event)
 
 ## 截取用户画面
 

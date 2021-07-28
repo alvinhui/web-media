@@ -30,8 +30,9 @@ window.addEventListener('load', function() {
       alert('发生了一个错误： ' + err);
     });
 
-  // 视频开始播放时根据媒体输入流设置 video 元素的宽高
-  video.addEventListener('canplay', function(ev){
+  // 获取到视频的元数据后根据媒体输入流设置 video 元素的宽高
+  video.addEventListener('loadedmetadata', function(ev){
+    console.log('video.videoWidth', video.videoWidth);
     height = video.videoHeight / (video.videoWidth /  width);
     video.style.width = width + 'px';
     video.style.height = height + 'px';
