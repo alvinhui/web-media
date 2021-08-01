@@ -248,14 +248,35 @@ video.addEventListener('loadedmetadata', function(ev){
 }, false);
 ```
 
-最后给截图按钮添加点击事件，在响应函数中捕获当前的视频帧并显示通过 img 元素显示：
+最后给截图按钮添加点击事件，在响应函数中捕获当前的视频帧并通过 img 元素显示：
 
 ```js
 document.getElementById('screenshotButton').addEventListener('click', function(ev){
-  canvas.getContext('2d').drawImage(video, 0, 0, width, height);
+  const ctx = canvas.getContext('2d');
+  ctx.drawImage(video, 0, 0, width, height);
   img.src = canvas.toDataURL('image/png');
 }, false);
 ```
+
+这是程序实现的重点部分。首先通过调用 [HTMLCanvasElement](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLCanvasElement) 的 [`getContext()`](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLCanvasElement/getContext) 方法，传入 2d 参数建立一个 [CanvasRenderingContext2D](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D) 二维渲染上下文。CanvasRenderingContext2D 可为 canvas 元素的绘图表面提供 2D 渲染，用于绘制形状，文本，图像和其他对象。
+
+然后调用 [`CanvasRenderingContext2D.drawImage()`](https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasRenderingContext2D/drawImage) 方法来绘制图像，该方法可以接受多种参数形态以多种方式在 canvas 元素上绘制图像。我们使用到的是方式是：`ctx.drawImage(image, dx, dy, dWidth, dHeight);`，其参数含义和传入值如下：
+
+- `image`：绘制到上下文的元素。允许任何的 canvas [图像源](https://developer.mozilla.org/zh-CN/docs/Web/API/CanvasImageSource)，例如：[HTMLImageEleme](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLImageElement)、[HTMLVideoElement](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLVideoElement)、[ImageBitmap](https://developer.mozilla.org/zh-CN/docs/Web/API/ImageBitmap) 等等，在我们的示例中传入的是 HTMLVideoElement；
+- `dx`：video 的左上角在目标 canvas 上 X 轴坐标，示例中传入的值是 0，意味着在 canvas 的最左侧显示图像；
+- `dy`：video 的左上角在目标 canvas 上 Y 轴坐标，示例中传入的值是 0，意味着在 canvas 的最上方显示图像；
+- `dWidth`：video 在目标 canvas 上绘制的宽度。允许对绘制的 video 进行缩放。如果不说明，在绘制时 video 宽度不会缩放；
+- `dHeight`：video 在目标 canvas 上绘制的高度。允许对绘制的 video 进行缩放。如果不说明，在绘制时 video 高度不会缩放。
+
+![](https://img.alicdn.com/imgextra/i3/O1CN011pXSUp29EXTi1aLQC_!!6000000008036-0-tps-300-290.jpg)
+
+通过调用该方法，我们将 video 元素的**当前播放帧**绘制到了 canvas 的 2D 上下文中，用帧图像填充了整个画布。
+
+一旦画布包含捕获的图像，我们通过调用 [`HTMLCanvasElement.toDataURL()`](https://developer.mozilla.org/zh-CN/docs/Web/API/HTMLCanvasElement/toDataURL) 返回一个包含 [PNG](https://en.wikipedia.org/wiki/Portable_Network_Graphics) 格式图像的 [data URI](https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Basics_of_HTTP/Data_URIs)。
+
+最后通过调用 [`HTMLImageElement.src`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/src) API 将该 data URL 设置为 img 元素的源，由此将截取到的图像显示在界面上。
+
+代码最终的实现效果：
 
 ![](https://img.alicdn.com/imgextra/i2/O1CN01zMtT1v1LxfieeAZ23_!!6000000001366-1-tps-786-560.gif)
 
