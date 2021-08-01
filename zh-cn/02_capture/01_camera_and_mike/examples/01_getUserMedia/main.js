@@ -6,7 +6,7 @@ window.addEventListener('load', function() {
 
   // 声明需要操作的元素
   var video = document.getElementById('video');
-  var photo = document.getElementById('photo');
+  var img = document.getElementById('img');
   var canvas = document.getElementById('canvas');
   var recording = document.getElementById('recording');
   var recordButton = document.getElementById('recordButton');
@@ -36,9 +36,13 @@ window.addEventListener('load', function() {
     height = video.videoHeight / (video.videoWidth /  width);
     video.style.width = width + 'px';
     video.style.height = height + 'px';
+    canvas.width = width;
+    canvas.height = height;
+    img.style.width = width + 'px';
+    img.style.height = height + 'px';
   }, false);
 
-  document.getElementById('takePhotoButton').addEventListener('click', function(ev){
+  document.getElementById('screenshotButton').addEventListener('click', function(ev){
     ev.preventDefault();
     grabFrame();
     // takePhoto();
@@ -46,7 +50,7 @@ window.addEventListener('load', function() {
 
   recordButton.addEventListener('click', function() {
     recordButton.attributes.recording
-    if (recordButton.textContent === '开始录制') {
+    if (recordButton.textContent === '录制') {
       startRecording();
     } else {
       stopRecording();
@@ -69,7 +73,7 @@ window.addEventListener('load', function() {
   }, false);
 
   function startRecording() {
-    recordButton.textContent = '停止录制';
+    recordButton.textContent = '停止';
     recordedBlobs = [];
     mediaRecorder = new MediaRecorder(video.captureStream(), {mimeType: 'video/webm;codecs=vp9', bitsPerSecond: 100000});
     downloadButton.disabled = true;
@@ -89,13 +93,13 @@ window.addEventListener('load', function() {
   function stopRecording() {
     mediaRecorder && mediaRecorder.stop();
     downloadButton.disabled = false;
-    recordButton.textContent = '开始录制';
+    recordButton.textContent = '录制';
   }
 
   function grabFrame() {
-    setCanvasAndPhoto(width, height, video);
+    setCanvasAndPhoto(video);
     // imageCapture.grabFrame().then(function(imageBitmap) {
-    //   setCanvasAndPhoto(width, height, imageBitmap);
+    //   setCanvasAndPhoto(imageBitmap);
     // }).catch(function(error) {
     //   console.error('grabFrame() error: ', error);
     // });
@@ -103,20 +107,15 @@ window.addEventListener('load', function() {
 
   function takePhoto() {
     imageCapture.takePhoto({width, height}).then(function(blob) {
-      photo.src = URL.createObjectURL(blob);
+      img.src = URL.createObjectURL(blob);
     }).catch(function(error) {
       console.error('takePhoto() error: ', error);
     });
   }
 
-  function setCanvasAndPhoto(width, height, media) {
-    canvas.width = width;
-    canvas.height = height;
+  function setCanvasAndPhoto(media) {
     canvas.getContext('2d').drawImage(media, 0, 0, width, height);
-
-    photo.style.width = width + 'px';
-    photo.style.height = height + 'px';
-    photo.src = canvas.toDataURL('image/png');
+    img.src = canvas.toDataURL('image/png');
   }
 
 }, false);

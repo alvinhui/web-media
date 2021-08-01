@@ -2,6 +2,10 @@
 
 本文将介绍如何使用 Web 技术在用户设备上访问其麦克风和摄像头来实时地捕获用户的音频和画面，截取或录制画面，并将媒体内容上传到服务器。 
 
+下图是最终实现的效果演示：
+
+![](https://img.alicdn.com/imgextra/i1/O1CN01P854oc1HQ08vnybHh_!!6000000000751-2-tps-1058-518.png)
+
 ## 捕获用户画面
 
 先来看看如何捕获用户的画面并将其实时地显示在我们的应用程序上。
@@ -181,7 +185,7 @@ var width = 320; // 无论输入视频的尺寸如何，我们将把所得到的
 var height = 0;
 
 video.addEventListener('loadedmetadata', function(ev){
-  // 给定流的 width 和宽高比，计算出图像的输出高度
+  // 根据给定流的实际和显示区域的宽度比来设置高度
   height = video.videoHeight / (video.videoWidth /  width);
 
   // 设置显示的宽度和高度
@@ -193,13 +197,73 @@ video.addEventListener('loadedmetadata', function(ev){
 > - 参考：[`HTMLVideoElement.videoHeight`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLVideoElement/videoHeight)
 > - 参考：[`HTMLMediaElement: loadedmetadata event`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/loadedmetadata_event)
 
+#### 最终效果
+
+![](https://img.alicdn.com/imgextra/i3/O1CN01ccYnI11Nxn3SYfDVG_!!6000000001637-1-tps-786-560.gif)
+
 ## 截取用户画面
 
-...
+现在我们已经获得了用户的输入设备的媒体流并用 video 元素显示在了用户的显示设备上。接下来看看如何截取用户的静态画面，也就是我们常说的「截图」。
+
+这需要利用到 [canvas](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas) 元素。
+
+让我们在原有的示例上继续添加一些元素来实现该功能：用于触发截图的 button 按钮、截取视频帧的 canvas 元素、显示截取图像的 img 元素。
+
+```diff
+<div class="main">
+  <div class="camera">
+    <div>实时画面</div>
+    <video id="video">视频流不可用</video>
++   <div class="opts">
++     <button id="screenshotButton">截图</button>
++   </div>
+  </div>
++ <canvas id="canvas"></canvas>
++ <div class="output">
++   <div>截图结果</div>
++   <img id="img" alt="截取到的图像将显示在这里" /> 
++ </div>
+</div>
+```
+
+
+canvas 是辅助实现截图功能的中间元素，不需要显示在界面上，应用下面的样式来隐藏它：
+
+```css
+#canvas {
+  display: none;
+}
+```
+
+然后我们需要设置 canvas 和 img 的显示宽高，让其和视频的显示宽高保持一致，避免畸变：
+
+```diff
++var img = document.getElementById('img');
++var canvas = document.getElementById('canvas');
+video.addEventListener('loadedmetadata', function(ev){
++ canvas.width = width;
++ canvas.height = height;
++ img.style.width = width + 'px';
++ img.style.height = height + 'px';
+}, false);
+```
+
+最后给截图按钮添加点击事件，在响应函数中捕获当前的视频帧并显示通过 img 元素显示：
+
+```js
+document.getElementById('screenshotButton').addEventListener('click', function(ev){
+  canvas.getContext('2d').drawImage(video, 0, 0, width, height);
+  img.src = canvas.toDataURL('image/png');
+}, false);
+```
+
+![](https://img.alicdn.com/imgextra/i2/O1CN01zMtT1v1LxfieeAZ23_!!6000000001366-1-tps-786-560.gif)
 
 ## 录制用户画面
 
 ...
+
+![](https://img.alicdn.com/imgextra/i1/O1CN01GlcAy51tKv9GkaYz6_!!6000000005884-1-tps-1076-626.gif)
 
 ## 上传媒体内容
 

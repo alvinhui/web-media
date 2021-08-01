@@ -12,20 +12,21 @@
     </h1>
     <p>
       示例演示如何访问设备的摄像头捕获媒体流，然后将媒体流输出到屏幕上。
-      还演示了拍照、录制视频并保存的功能。
+      还演示了截图、录制视频并保存的功能。
     </p>
     <div class="main">
       <div class="camera">
         <div>实时画面</div>
         <video id="video">视频流不可用</video>
         <div class="opts">
-          <button id="takePhotoButton">拍照</button>
-          <button id="recordButton">开始录制</button>
+          <button id="screenshotButton">截图</button>
+          <button id="recordButton">录制</button>
         </div>
       </div>
+      <canvas id="canvas"></canvas>
       <div class="output">
-        <div>拍照结果</div>
-        <img id="photo" alt="拍摄到的照片将显示在这里" /> 
+        <div>截图结果</div>
+        <img id="photo" alt="截取到的图像将显示在这里" /> 
       </div>
       <div class="output">
         <div>录制结果</div>
@@ -35,8 +36,6 @@
         </div>
       </div>
     </div>
-    <canvas id="canvas">
-    </canvas>
     <p>
       访问<a href="https://github.com/alvinhui/100-Days-Of-WebMedia">《100 天自学 Web 多媒体技术》</a>学习更多相关知识.
     </p>
