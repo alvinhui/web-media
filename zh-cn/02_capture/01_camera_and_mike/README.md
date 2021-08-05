@@ -203,7 +203,8 @@ video.addEventListener('loadedmetadata', function(ev){
 
 ## 截取用户画面
 
-现在我们已经获得了用户的输入设备的媒体流并用 video 元素显示在了用户的显示设备上。接下来看看如何截取用户的静态画面，也就是我们常说的「截图」。
+现在我们已经获得了用户的输入设备的媒体流并用 video 元素显示在了用户的显示设备上。
+接下来看看如何截取用户的静态画面，也就是我们常说的「截图」功能。
 
 这需要利用到 [canvas](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas) 元素。
 
@@ -225,7 +226,6 @@ video.addEventListener('loadedmetadata', function(ev){
 + </div>
 </div>
 ```
-
 
 canvas 是辅助实现截图功能的中间元素，不需要显示在界面上，应用下面的样式来隐藏它：
 
@@ -282,7 +282,94 @@ document.getElementById('screenshotButton').addEventListener('click', function(e
 
 ## 录制用户画面
 
-...
+除了静态画面，我们还可以截取用户的动态画面，也就是常说的「录制」功能。
+
+让我们在原有的示例上继续添加一些元素来实现该功能：用于触发录制的 button 按钮、显示录制结果的 video 元素、用于下载录制结果到本地的 button 按钮。
+
+```diff
+<div class="main">
+  <div class="camera">
+    <div>实时画面</div>
+    <video id="video">视频流不可用</video>
+    <div class="opts">
+      <button id="screenshotButton">截图</button>
++     <button id="recordButton">录制</button>
+    </div>
+  </div>
+  <canvas id="canvas"></canvas>
+  <div class="output">
+    <div>截图结果</div>
+    <img id="photo" alt="截取到的图像将显示在这里" /> 
+  </div>
++ <div class="output">
++   <div>录制结果</div>
++   <video id="recording" controls></video>
++   <div class="opts">
++     <a id="downloadButton">下载视频</a>
++   </div>
++ </div>
+</div>
+```
+
+脚本部分，首先监听录制按钮的点击事件，根据按钮的状态决定开始录制还是结束录制：
+
+```js
+var recordButton = document.getElementById('recordButton');
+recordButton.addEventListener('click', function() {
+  if (recordButton.textContent === '录制') {
+    startRecording();
+  } else {
+    stopRecording();
+  }
+}, false);
+```
+
+`startRecording` 函数是录制逻辑的实现。需要使用到进行媒体录制的 [MediaRecorder API](https://developer.mozilla.org/zh-CN/docs/Web/API/MediaRecorder)，通过调用 `MediaRecorder()` 构造方法进行实例化，构造函数会创建一个对指定的 `MediaStream` 对象进行录制 `MediaRecorder` 对象。
+
+在我们前面的示例中，已经捕获到了用户的媒体输入并通过 video 元素来进行显示。在这里我们只需要调用 [`video.captureStream()`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/captureStream) 方法来获取 MediaStream 对象，该对象包含 video 元素上实时流式传输的媒体内容。
+
+```js
+var mediaStream = video.captureStream();
+var mediaRecorder = new MediaRecorder(mediaStream);
+```
+
+
+```js
+var downloadButton = document.getElementById('downloadButton');
+var mediaRecorder;
+function startRecording() {
+  recordButton.textContent = '停止';
+  downloadButton.removeAttribute('href');
+  
+  var recordedBlobs = [];
+  var mediaStream = video.captureStream();
+  mediaRecorder = new MediaRecorder(mediaStream);
+  mediaRecorder.ondataavailable = function(event) {
+    if (event.data && event.data.size > 0) {
+      recordedBlobs.push(event.data);
+    }
+  };
+  mediaRecorder.onstop = function() {
+    if (recordedBlobs.length) {
+      var superBlob = new Blob(recordedBlobs);
+      var objectURL = URL.createObjectURL(superBlob);
+      recording.src = objectURL;
+      downloadButton.href = objectURL;
+      downloadButton.download = 'test.webm';
+    }
+  };
+  mediaRecorder.start();
+}
+```
+
+stopRecording：
+
+```js
+function stopRecording() {
+  mediaRecorder && mediaRecorder.stop();
+  recordButton.textContent = '录制';
+}
+```
 
 ![](https://img.alicdn.com/imgextra/i1/O1CN01GlcAy51tKv9GkaYz6_!!6000000005884-1-tps-1076-626.gif)
 

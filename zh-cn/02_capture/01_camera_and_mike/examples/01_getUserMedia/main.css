@@ -28,7 +28,7 @@
   box-shadow: 2px 2px 3px black;
 }
 
-#photo {
+#img {
   display: inline-block;
   width: 320px;
   height: 240px;
@@ -61,4 +61,8 @@ button {
   font-size: 14px;
   font-family: "Lucida Grande", "Arial", sans-serif;
   color: rgba(255, 255, 255, 1.0);
+}
+
+#downloadButton[href] {
+  cursor: pointer;
 }

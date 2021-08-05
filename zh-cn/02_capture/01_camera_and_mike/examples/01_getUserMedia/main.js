@@ -15,7 +15,6 @@ window.addEventListener('load', function() {
   // 声明一些中间变量
   var imageCapture;
   var mediaRecorder;
-  var recordedBlobs = [];
 
   // 请求访问用户的摄像头
   navigator.mediaDevices.getUserMedia({video: true, audio: true})
@@ -32,7 +31,6 @@ window.addEventListener('load', function() {
 
   // 获取到视频的元数据后根据媒体输入流设置 video 元素的宽高
   video.addEventListener('loadedmetadata', function(ev){
-    console.log('video.videoWidth', video.videoWidth);
     height = video.videoHeight / (video.videoWidth /  width);
     video.style.width = width + 'px';
     video.style.height = height + 'px';
@@ -49,7 +47,6 @@ window.addEventListener('load', function() {
   }, false);
 
   recordButton.addEventListener('click', function() {
-    recordButton.attributes.recording
     if (recordButton.textContent === '录制') {
       startRecording();
     } else {
@@ -57,42 +54,32 @@ window.addEventListener('load', function() {
     }
   }, false);
 
-  downloadButton.addEventListener('click', function download() {
-    var blob = new Blob(recordedBlobs, {type: 'video/webm'});
-    var url = window.URL.createObjectURL(blob);
-    var a = document.createElement('a');
-    a.style.display = 'none';
-    a.href = url;
-    a.download = 'test.webm';
-    document.body.appendChild(a);
-    a.click();
-    setTimeout(function() {
-      document.body.removeChild(a);
-      window.URL.revokeObjectURL(url);
-    }, 100);
-  }, false);
-
   function startRecording() {
     recordButton.textContent = '停止';
-    recordedBlobs = [];
-    mediaRecorder = new MediaRecorder(video.captureStream(), {mimeType: 'video/webm;codecs=vp9', bitsPerSecond: 100000});
-    downloadButton.disabled = true;
-    mediaRecorder.onstop = function() {
-      var type = (recordedBlobs[0] || {}).type;
-      var superBuffer = new Blob(recordedBlobs, { type });
-      recording.src = URL.createObjectURL(superBuffer);
-    };
+    downloadButton.removeAttribute('href');
+    var recordedBlobs = [];
+    mediaRecorder = new MediaRecorder(
+      video.captureStream(), 
+    );
     mediaRecorder.ondataavailable = function(event) {
       if (event.data && event.data.size > 0) {
         recordedBlobs.push(event.data);
       }
-    }
+    };
+    mediaRecorder.onstop = function() {
+      if (recordedBlobs.length) {
+        var superBlob = new Blob(recordedBlobs);
+        var objectURL = URL.createObjectURL(superBlob);
+        recording.src = objectURL;
+        downloadButton.href = objectURL;
+        downloadButton.download = 'test.webm';
+      }
+    };
     mediaRecorder.start();
   }
 
   function stopRecording() {
     mediaRecorder && mediaRecorder.stop();
-    downloadButton.disabled = false;
     recordButton.textContent = '录制';
   }
 
