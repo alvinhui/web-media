@@ -72,7 +72,6 @@ window.addEventListener('load', function() {
         var objectURL = URL.createObjectURL(superBlob);
         recording.src = objectURL;
         downloadButton.href = objectURL;
-        downloadButton.download = 'test.webm';
       }
     };
     mediaRecorder.start();

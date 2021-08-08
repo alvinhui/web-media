@@ -305,7 +305,7 @@ document.getElementById('screenshotButton').addEventListener('click', function(e
 +   <div>录制结果</div>
 +   <video id="recording" controls></video>
 +   <div class="opts">
-+     <a id="downloadButton">下载视频</a>
++     <a id="downloadButton" download="test.webm">下载视频</a>
 +   </div>
 + </div>
 </div>
@@ -333,6 +333,43 @@ var mediaStream = video.captureStream();
 var mediaRecorder = new MediaRecorder(mediaStream);
 ```
 
+通过监听该对象的 [`dataavailavle`](https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/ondataavailable) 方法来获取录制数据，当 MediaRecorder 获取到媒体数据以供使用时将触发该事件，数据通过 [Blob](https://developer.mozilla.org/zh-CN/docs/Web/API/Blob) 对象提供。具体来说，以下几种情况会触发该事件：
+
+1. 媒体流结束时，所有尚未传递到 ondataavailable 处理程序的媒体数据都将在单个 Blob 中传递；
+2. 调用 `MediaRecorder.stop()` 时，自记录开始或 `dataavailable` 事件最后一次发生以来已捕获的所有媒体数据都将传递到 `Blob` 中，然后录制结束；
+3. 调用 `MediaRecorder.requestData()` 时，将传递自记录开始或 `dataavailable` 事件最后一次发生以来捕获的所有媒体数据；然后 MediaRecorder 会创建一个新的 Blob 对象，并将媒体录制继续存储到该 Blob 中；
+4. 如果将 `timeslice` 属性传递到开始媒体捕获的 `MediaRecorder.start()` 方法中，`dataavailable` 事件则将每 `timeslice` 毫秒触发一次事件。
+
+```js
+var recordedBlobs = [];
+mediaRecorder.ondataavailable = function(event) {
+  if (event.data && event.data.size > 0) {
+    recordedBlobs.push(event.data);
+  }
+};
+```
+
+一旦录制结束，则将获取到的媒体数据放入事先准备好用于显示录制结果的 video 元素，同时设置下载按钮的超链接：
+
+```js
+mediaRecorder.onstop = function() {
+  if (recordedBlobs.length) {
+    // 将多个 Blob 合并到一个 Blob 对象中，以便后续进行处理
+    var superBlob = new Blob(recordedBlobs);
+    // 为 Blob 对象创建一个可访问的 URL
+    var objectURL = URL.createObjectURL(superBlob);
+    // 设置显示元素和下载按钮
+    recording.src = objectURL;
+    downloadButton.href = objectURL;
+  }
+};
+```
+
+> 参考 [`URL.createObjectURL()`](https://developer.mozilla.org/zh-CN/docs/Web/API/URL/createObjectURL)
+
+然后马上调用 [`mediaRecorder.start()`](https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder/start) 方法来启动录制。
+
+将上面的所有示例代码放到一起，就是下面的 `startRecording` 函数完整实现：
 
 ```js
 var downloadButton = document.getElementById('downloadButton');
@@ -362,7 +399,7 @@ function startRecording() {
 }
 ```
 
-stopRecording：
+最后让我们来实现 `stopRecording` 方法以完成整个程序：
 
 ```js
 function stopRecording() {
@@ -370,6 +407,8 @@ function stopRecording() {
   recordButton.textContent = '录制';
 }
 ```
+
+代码最终的实现效果：
 
 ![](https://img.alicdn.com/imgextra/i1/O1CN01GlcAy51tKv9GkaYz6_!!6000000005884-1-tps-1076-626.gif)
 
