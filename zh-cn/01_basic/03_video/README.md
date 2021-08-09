@@ -642,22 +642,22 @@ SPS NAL 的第 2 位 (`binary=01100100, hex=0x64, dec=100`) 是 **profile_idc** 
    <td>Advanced Video Coding</td>
    <td><a>3GP</a>, <a>MP4</a>, <a>WebM</a></td>
   </tr>
-  <tr>
+  <!-- <tr>
    <th><a>H.263</a></th>
    <td>H.263 Video</td>
    <td><a>3GP</a></td>
-  </tr>
+  </tr> -->
   <tr>
    <th><a>HEVC (H.265)</a></th>
    <td>High Efficiency Video Coding</td>
    <td><a>MP4</a></td>
   </tr>
-  <tr>
+  <!-- <tr>
    <th><a>MP4V-ES</a></th>
    <td>MPEG-4 Video Elemental Stream</td>
    <td><a>3GP</a>, <a>MP4</a></td>
-  </tr>
-  <tr>
+  </tr> -->
+  <!-- <tr>
    <th><a>MPEG-1</a></th>
    <td>MPEG-1 Part 2 Visual</td>
    <td><a>MPEG</a>, <a>QuickTime</a></td>
@@ -666,17 +666,17 @@ SPS NAL 的第 2 位 (`binary=01100100, hex=0x64, dec=100`) 是 **profile_idc** 
    <th>MPEG-2</th>
    <td>MPEG-2 Part 2 Visual</td>
    <td><a>MP4</a>, <a>MPEG</a>, <a>QuickTime</a></td>
-  </tr>
-  <tr>
+  </tr> -->
+  <!-- <tr>
    <th><a>Theora</a></th>
    <td>Theora</td>
    <td><a>Ogg</a></td>
-  </tr>
-  <tr>
+  </tr> -->
+  <!-- <tr>
    <th><a>VP8</a></th>
    <td>Video Processor 8</td>
    <td><a>3GP</a>, <a>Ogg</a>, <a>WebM</a></td>
-  </tr>
+  </tr> -->
   <tr>
    <th><a>VP9</a></th>
    <td>Video Processor 9</td>
@@ -689,7 +689,7 @@ SPS NAL 的第 2 位 (`binary=01100100, hex=0x64, dec=100`) 是 **profile_idc** 
 
 考虑使用哪种编码格式的参考维度：
 
-- *开放格式* * 还是*专有格式* * ？
+- *开放格式* 还是*专有格式* * ？
 - 是否可以为视频提供一种以上的格式？使用备选功能可以极大地简化决策过程。
 - 用户主要使用的浏览器的有哪些？
 - 需要对的旧版本的浏览器兼容到怎样的程度？例如，是否需要在过去 5 年或仅仅一年内使用的所有浏览器上工作？
@@ -702,11 +702,11 @@ SPS NAL 的第 2 位 (`binary=01100100, hex=0x64, dec=100`) 是 **profile_idc** 
 
 首先看一下在典型网站（例如博客、信息站点、小型企业网站）上呈现的视频的最佳选择。在该网站上，视频用于演示产品（而不是视频本身就是产品）。
 
-1. WebM 容器，视频使用 VP8 编码格式，音频使用 Opus 编码格式。这些都是开放的，免专利费的格式，但只有在最新的浏览器中才得到很好的支持；
+1. WebM 容器，视频使用 **VP8 编码格式**，音频使用 Opus 编码格式。这些都是开放的，免专利费的格式，但只有在最新的浏览器中才得到很好的支持；
     ```html
     <video controls src="filename.webm"></video>
     ```
-2. MP4 容器，视频使用 AVC（H.264）编码格式，音频使用 AAC 编码格式。主流浏览器都对 MP4 容器中使用 AVC 和 AAC 编码格式的提供了支持，相对于其他编码格式，该选择质量通常而言是最好的。
+2. MP4 容器，视频使用 **AVC（H.264）编码格式**，音频使用 AAC 编码格式。主流浏览器都对 MP4 容器中使用 AVC 和 AAC 编码格式的提供了支持，相对于其他编码格式，该选择质量通常而言是最好的。
     ```html
     <video controls>
       <source type="video/webm" src="filename.webm">
@@ -718,8 +718,8 @@ SPS NAL 的第 2 位 (`binary=01100100, hex=0x64, dec=100`) 是 **profile_idc** 
 
 如果是要以更高的质量显示视频，则需要提供尽可能多的格式，因为具有最佳质量的编码格式也往往是最新的，因此可能在浏览器中得不到支持。
 
-1. WebM 容器，视频使用 AV1 编码格式，音频使用 Opus 编码格式。如果在对 AV1 进行编码时可以使用“高级”或“专业”配置文件，例如使用 6.3 级别，可以在保持出色视频质量的同时以 4K 或 8K 分辨率获得很高的比特率；
-2. MP4 容器，视频使用 HEVC 编码格式，音频以高采样率（至少 48 kHz，理想情况下为 96 kHz）使用 AAC 编码格式，并以「复杂」而非「快速」进行编码。
+1. WebM 容器，视频使用 **AV1 编码格式**，音频使用 Opus 编码格式。如果在对 AV1 进行编码时可以使用“高级”或“专业”配置文件，例如使用 6.3 级别，可以在保持出色视频质量的同时以 4K 或 8K 分辨率获得很高的比特率；
+2. MP4 容器，视频使用 **HEVC 编码格式**，音频以高采样率（至少 48 kHz，理想情况下为 96 kHz）使用 AAC 编码格式，并以「复杂」而非「快速」模式进行编码。
 
 #### 存档或编辑场景
 
@@ -729,7 +729,7 @@ SPS NAL 的第 2 位 (`binary=01100100, hex=0x64, dec=100`) 是 **profile_idc** 
 
 ##### 存档视频
 
-要提供用于存档的视频，可以使用例如 [x264](https://www.videolan.org/developers/x264.html) 的应用程序以很高的比特率将视频编码为 AVC 格式：
+要提供用于存档的视频，可以使用例如 [x264](https://www.videolan.org/developers/x264.html) 的应用程序以很高的比特率将视频编码为 **AVC 格式**：
 
 ```bash
 x264 --crf 18 -preset ultrafast --output outFilename.mp4 inputFile
@@ -737,7 +737,7 @@ x264 --crf 18 -preset ultrafast --output outFilename.mp4 inputFile
 
 ##### 录制影片
 
-要获得接近无损的质量，你可以考虑使用 AVC 或 AV1 编码格式。例如，如果是使用 `MediaStream Recording API` 录制视频，则在创建 `MediaRecorder` 对象时可以参考以下示例代码：
+要获得接近无损的质量，你可以考虑使用 **AVC 或 AV1 编码格式**。例如，如果是使用 `MediaStream Recording API` 录制视频，则在创建 `MediaRecorder` 对象时可以参考以下示例代码：
 
 ```js
 const kbps = 1024;
@@ -839,34 +839,27 @@ let recorder = new MediaRecorder(sourceStream, options);
   </tr>
  </thead>
  <tbody>
-  <tr>
-   <th><a>3GP</a></th>
-   <td>Third Generation Partnership</td>
-   <td>video/3gpp, video/3gpp2, video/3gp2</td>
-   <td>AVC (H.264), H.263, MPEG-4 Part 2 (MP4v-es), VP8</td>
-   <td>Firefox for Android</td>
-  </tr>
-  <tr>
+  <!-- <tr>
    <th><a>ADTS</a></th>
    <td>Audio Data Transport Stream</td>
    <td>audio/aac, audio/mpeg</td>
    <td>AAC, MP3</td>
    <td>Firefox</td>
-  </tr>
-  <tr>
+  </tr> -->
+  <!-- <tr>
    <th><a>FLAC</a></th>
    <td>Free Lossless Audio Codec</td>
    <td>audio/flac, audio/x-flac (non-standard)</td>
    <td>FLAC</td>
    <td>Chrome 56, Edge 16, Firefox 51, Safari 11</td>
-  </tr>
-  <tr>
+  </tr> -->
+  <!-- <tr>
    <th><a>MPEG / MPEG-2</a></th>
    <td>Moving Picture Experts Group (1 and 2)</td>
    <td>video/mpeg</td>
    <td>MPEG-1 Part 2, MPEG-2 Part 2</td>
    <td>—</td>
-  </tr>
+  </tr> -->
   <tr>
    <th><a>MPEG-4 (MP4)</a></th>
    <td>Moving Picture Experts Group 4</td>
@@ -875,11 +868,11 @@ let recorder = new MediaRecorder(sourceStream, options);
    <td>Chrome 3, Edge 12, Firefox, Internet Explorer 9,&nbsp;Opera 24, Safari 3.1</td>
   </tr>
   <tr>
-   <th><a>Ogg</a></th>
-   <td>Ogg</td>
-   <td>video/ogg</td>
-   <td>Theora, VP8, VP9</td>
-   <td>Chrome 3, Firefox 3.5, Edge 17&nbsp;(desktop only), Internet Explorer 9, Opera&nbsp;10.50</td>
+   <th><a>WebM</a></th>
+   <td>Web Media</td>
+   <td>video/webm</td>
+   <td></td>
+   <td>Chrome 6, Edge 17&nbsp;(desktop only), Firefox 4, Opera 10.6, Safari (WebRTC only)</td>
   </tr>
   <tr>
    <th><a>QuickTime (MOV)</a></th>
@@ -889,11 +882,18 @@ let recorder = new MediaRecorder(sourceStream, options);
    <td>-</td>
   </tr>
   <tr>
-   <th><a>WebM</a></th>
-   <td>Web Media</td>
-   <td>video/webm</td>
-   <td></td>
-   <td>Chrome 6, Edge 17&nbsp;(desktop only), Firefox 4, Opera 10.6, Safari (WebRTC only)</td>
+  <tr>
+   <th><a>Ogg</a></th>
+   <td>Ogg</td>
+   <td>video/ogg</td>
+   <td>Theora, VP8, VP9</td>
+   <td>Chrome 3, Firefox 3.5, Edge 17&nbsp;(desktop only), Internet Explorer 9, Opera&nbsp;10.50</td>
+  </tr>
+   <th><a>3GP</a></th>
+   <td>Third Generation Partnership</td>
+   <td>video/3gpp, video/3gpp2, video/3gp2</td>
+   <td>AVC (H.264), H.263, MPEG-4 Part 2 (MP4v-es), VP8</td>
+   <td>Firefox for Android</td>
   </tr>
  </tbody>
 </table>
@@ -936,6 +936,13 @@ let recorder = new MediaRecorder(sourceStream, options);
   </tr>
  </thead>
 </table>
+
+## Web 中的多媒体 API(TODO)
+
+- Buffer
+- Track
+- MediaStream
+- Blob
 
 ## 参考资料
 
