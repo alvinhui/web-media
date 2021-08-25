@@ -6,6 +6,13 @@
 
 ![](https://img.alicdn.com/imgextra/i1/O1CN01P854oc1HQ08vnybHh_!!6000000000751-2-tps-1058-518.png)
 
+## 目录
+
+- [捕获用户画面](#捕获用户画面)
+- [截取用户画面](#截取用户画面)
+- [录制用户画面](#录制用户画面)
+- [上传媒体内容](#上传媒体内容)
+
 ## 捕获用户画面
 
 先来看看如何捕获用户的画面并将其实时地显示在我们的应用程序上。
@@ -414,5 +421,111 @@ function stopRecording() {
 
 ## 上传媒体内容
 
+上面我们都是在使用 Web API 调用的方式来启用设备的媒体捕获能力。还有一种方式是从文件上传控件中声明性地请求使用媒体捕获能力来实时地捕获媒体内容。
 
-...
+一种常见的应用场景是上传用户头像。比方类似下面这样的表单中的 "Profile picture" 字段：
+
+![](https://img.alicdn.com/imgextra/i2/O1CN01MgV2mU1OqIC3zyLFi_!!6000000001756-2-tps-746-358.png)
+
+当一个 `input` 元素的 `type` 属性为 `file`，并且它的 `accept` 属性被指定时，则可以通过 [`capture`](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/capture) 属性来指定启用媒体捕获能力。
+
+例如，当一个 `input` 元素的 `accept` 属性设置为 `image/*` 并且 `capture` 属性被指定时，文件选择器可以呈现如下所示：
+
+![](https://img.alicdn.com/imgextra/i1/O1CN01Hu4PEV1J1qUQjCdSM_!!6000000000969-2-tps-520-404.png)
+
+下面来看一些代码示例。
+
+- 要使用设备的前置摄像头拍摄照片，并上传使用 HTML 表单上传拍摄到的照片：
+
+  ```html
+  <form action="server.cgi" method="post" enctype="multipart/form-data">
+    <input type="file" name="image" accept="image/*" capture="user">
+    <input type="submit" value="Upload">
+  </form>
+  ```
+- 或者使用设备的后置摄像头捕获视频：
+
+  ```html
+  <form action="server.cgi" method="post" enctype="multipart/form-data">
+    <input type="file" name="video" accept="video/*" capture="environment">
+    <input type="submit" value="Upload">
+  </form>
+  ```
+- 又或者使用设备的本地麦克风捕获音频：
+
+  ```html
+  <form action="server.cgi" method="post" enctype="multipart/form-data">
+    <input type="file" name="audio" accept="audio/*" capture>
+    <input type="submit" value="Upload">
+  </form>
+  ```
+- 对于更高级的用例，可以指定 capture 属性：
+
+  ```html
+  <input type="file" accept="image/*" capture>
+  <canvas></canvas>
+  ```
+
+  然后在脚本中通过 XMLHttpRequest 来处理文件上传：
+
+  ```js
+  var input = document.querySelector('input[type=file]');
+
+  input.onchange = function () {
+    var file = input.files[0];
+
+    upload(file);
+    drawOnCanvas(file); 
+    displayAsImage(file);
+  };
+
+  function upload(file) {
+    var form = new FormData(),
+        xhr = new XMLHttpRequest();
+
+    form.append('image', file);
+    xhr.open('post', 'server.php', true);
+    xhr.send(form);
+  }
+  ```
+
+  图像也可以在客户端显示而无需上传，例如用于客户端编辑图像的目的。使用 [`FileReader`](https://developer.mozilla.org/en-US/docs/Web/API/FileReader) 和 `canvas` 元素来实现：
+
+  ```js
+  function drawOnCanvas(file) {
+    var reader = new FileReader();
+
+    reader.onload = function (e) {
+      var dataURL = e.target.result,
+          c = document.querySelector('canvas'), 
+          ctx = c.getContext('2d'),
+          img = new Image();
+
+      img.onload = function() {
+        c.width = img.width;
+        c.height = img.height;
+        ctx.drawImage(img, 0, 0);
+      };
+
+      img.src = dataURL;
+    };
+
+    reader.readAsDataURL(file);
+  }
+  ```
+
+  或者，只显示图像，使用 [`createObjectURL()`](https://developer.mozilla.org/en-US/docs/Web/API/URL/createObjectURL) 方法和 `img` 元素来实现：
+
+  ```js
+  function displayAsImage(file) {
+    var imgURL = URL.createObjectURL(file),
+        img = document.createElement('img');
+
+    img.onload = function() {
+      URL.revokeObjectURL(imgURL);
+    };
+
+    img.src = imgURL;
+    document.body.appendChild(img);
+  }
+  ```
