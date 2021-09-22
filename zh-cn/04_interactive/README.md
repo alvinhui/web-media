@@ -23,9 +23,11 @@
 - [xgplayer](https://github.com/bytedance/xgplayer): 西瓜播放器是一个Web视频播放器类库，它本着一切都是组件化的原则设计了独立可拆卸的 UI 组件。
 - [dash.js](https://github.com/Dash-Industry-Forum/dash.js) ![](https://img.shields.io/github/stars/Dash-Industry-Forum/dash.js?style=social): A reference client implementation for the playback of MPEG DASH via Javascript and compliant browsers.
 - [Chimee](https://github.com/Chimeejs/chimee) ![](https://img.shields.io/github/stars/Chimeejs/chimee?style=social): H5 播放器，它支持 mp4、m3u8、flv 等多种格式。通过插件式开发，能满足业务方快速迭代、灰度发布等要求。让开发者能够轻松快捷地完成视频场景的开发。
-- React Components: 
-  - [ReactPlayer](https://github.com/CookPete/react-player) ![](https://img.shields.io/github/stars/CookPete/react-player?style=social): A React component for playing a variety of URLs, including file paths, YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia and DailyMotion
-  - [video-react](https://github.com/video-react/video-react) ![](https://img.shields.io/github/stars/video-react/video-react?style=social): A web video player built for the HTML5 world using React library.
+
+React Components: 
+
+- [ReactPlayer](https://github.com/CookPete/react-player) ![](https://img.shields.io/github/stars/CookPete/react-player?style=social): A React component for playing a variety of URLs, including file paths, YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia and DailyMotion
+- [video-react](https://github.com/video-react/video-react) ![](https://img.shields.io/github/stars/video-react/video-react?style=social): A web video player built for the HTML5 world using React library.
 
 ### 商业化方案
 

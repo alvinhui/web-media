@@ -939,10 +939,10 @@ let recorder = new MediaRecorder(sourceStream, options);
 
 ## Web 中的多媒体 API(TODO)
 
-- Buffer
-- Track
 - MediaStream
+- Track
 - Blob
+- Buffer
 
 ## 参考资料
 
