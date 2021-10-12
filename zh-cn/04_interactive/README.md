@@ -29,6 +29,13 @@ React Components:
 - [ReactPlayer](https://github.com/CookPete/react-player) ![](https://img.shields.io/github/stars/CookPete/react-player?style=social): A React component for playing a variety of URLs, including file paths, YouTube, Facebook, Twitch, SoundCloud, Streamable, Vimeo, Wistia and DailyMotion
 - [video-react](https://github.com/video-react/video-react) ![](https://img.shields.io/github/stars/video-react/video-react?style=social): A web video player built for the HTML5 world using React library.
 
+H.265 Player:
+
+- [WasmVideoPlayer](https://github.com/sonysuqin/WasmVideoPlayer) ![](https://img.shields.io/github/stars/sonysuqin/WasmVideoPlayer?style=social): Play file/stream with wasm & webgl & web audio api, using ffmpeg for multi codec support, especially for h265，support http, websocket, http-flv stream.
+- [goldvideo](https://github.com/goldvideo/h265player) ![](https://img.shields.io/github/stars/goldvideo/h265player?style=social): 一套完整的 Web 版 H.265 播放器解决方案，非常适合学习交流和实际应用。基于 JS 码流解封装、WebAssembly(FFmpeg) 视频解码，利用 Canvas 画布投影、AudioContext 播放音频。
+- [libde265.js](https://github.com/strukturag/libde265.js) ![](https://img.shields.io/github/stars/strukturag/libde265.js?style=social): JavaScript-only version of libde265 HEVC/H.265 decoder.
+- [h265web.js](https://github.com/numberwolf/h265web.js) ![](https://img.shields.io/github/stars/numberwolf/h265web.js?style=social): H.265/HEVC Web直播/点播 Player。
+
 ### 商业化方案
 
 - [FlowPlayer](https://flowplayer.com/): The Performance First Online Video Platform
